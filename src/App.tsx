@@ -1,8 +1,9 @@
-import { useState } from "react";
+
 import "./style.scss";
 
 function App() {
-  return <></>;
+  return <>
+  </>;
 }
 
 export default App;
