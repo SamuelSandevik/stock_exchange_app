@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./style.scss";
+import HeaderPage from "./components/HeaderPage/HeaderPage";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <HeaderPage />
+    </>
+  );
 }
 
 export default App;
