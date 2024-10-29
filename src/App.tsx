@@ -1,8 +1,11 @@
 import "./style.scss";
-import HeaderPage from "./components/HeaderPage/HeaderPage";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <ExploreMainPage />
+    </>
+  );
 }
 
 export default App;
