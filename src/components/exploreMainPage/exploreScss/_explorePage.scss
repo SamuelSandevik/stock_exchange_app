@@ -1,10 +1,11 @@
+@use "../../../scss/variables/variables" as v;
 #dailyShowStock {
   margin: auto;
   width: 369px;
   border-radius: 10px;
   background-color: #f4f4f4;
   #dailyShowStockName {
-    background-color: #4988fe;
+    background-color: v.$mainColor;
     border-radius: 10px;
     width: 140px;
     text-align: center;
@@ -26,7 +27,7 @@
     height: 260px;
     background-color: #f4f4f4;
     .stockDivTitle {
-      background-color: #4988fe;
+      background-color: v.$mainColor;
       border-radius: 10px;
       width: fit-content;
       margin: 10px;
