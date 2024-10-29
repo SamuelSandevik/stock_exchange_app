@@ -1,11 +1,7 @@
 import "./style.scss";
 
 function App() {
-  return (
-    <>
-      <ExploreMainPage />
-    </>
-  );
+  return <></>;
 }
 
 export default App;
