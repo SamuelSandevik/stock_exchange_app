@@ -1,11 +1,12 @@
-import { useState } from "react";
+import Footer from "./components/FooterPage/FooterPage";
+import SignUpForm from "./components/SignUpPage/SignUpForm";
 import "./style.scss";
 
 
 function App() {
   return (
     <>
-
+    
   
   </>);
 }
