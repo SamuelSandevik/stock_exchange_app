@@ -1,10 +1,13 @@
+import Footer from "./components/FooterPage/FooterPage";
 import SignUpForm from "./components/SignUpPage/SignUpForm";
 import "./style.scss";
 
 function App() {
-  return <>
-  <SignUpForm />
-  </>;
+  return (
+    <>
+      <Footer />
+    </>
+  );
 }
 
 export default App;

@@ -1,0 +1,23 @@
+@use '../../scss/variables/mixins/mixins' as m;
+@use '../../scss/variables/variables' as v;
+
+
+
+.footer-container {
+    @include m.size(auto, 100vw);
+    @include m.flex(column, space-evenly, center);
+    gap: 1rem;
+    background-color: v.$mainColor;
+    color: v.$secondaryTextColor;
+    padding: 2rem;
+
+    @include m.forSize(v.$desktop) {
+        @include m.flex(row, space-evenly, center);
+    }
+
+    .footer-section {
+        @include m.size(100%, auto);
+        @include m.flex(column, center, flex-start);
+
+    }
+}
