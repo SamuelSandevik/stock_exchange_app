@@ -6,7 +6,7 @@ const GetDisplayStocksApi = async () => {
   try {
     const results = stocks.map((stock) => {
       const results = axios.get<IDisplayStock>(
-        `https://api.polygon.io/v2/aggs/ticker/${stock}/range/20/minute/2024-10-28/2024-10-31?adjusted=true&sort=asc&apiKey=qsYxsMPmpFENUUFxpzsmj9GzloEpL3CN`
+        `https://api.polygon.io/v2/aggs/ticker/${stock}/range/20/minute/2024-11-01/2024-11-05?adjusted=true&sort=asc&apiKey=qsYxsMPmpFENUUFxpzsmj9GzloEpL3CN`
       );
       return results;
     });
@@ -15,18 +15,33 @@ const GetDisplayStocksApi = async () => {
 
     const stockElements = values.map((response, index) => {
       const stockData = response.data;
+      const results = stockData.results;
+
+      const openingPrice = results[0].o;
+      const latestClosePrice = results[results.length - 1].c;
+      const percentageChange =
+        ((latestClosePrice - openingPrice) / openingPrice) * 100;
+
       return (
         <div className="stock" key={index}>
-          <h2>{stockData.ticker}</h2>
-          <p>Open: {stockData.o}</p>
-          <p>Close: {stockData.c}</p>
-          <p>High: {stockData.h}</p>
-          <p>Low: {stockData.l}</p>
+          <div className="left stockCard">
+            <p>{stockData.ticker}</p>
+          </div>
+          <div className="right stockCard">
+            <p>$ {stockData.results[0].c}</p>
+            <p
+              className={`procent ${
+                percentageChange < 0 ? "negativePercentage" : "percentage"
+              }`}
+            >
+              {percentageChange.toFixed(3)}%
+            </p>
+          </div>
         </div>
       );
     });
 
-    return stockElements;
+    return stockElements.filter((el) => el !== null);
   } catch (error) {
     return [];
   }
