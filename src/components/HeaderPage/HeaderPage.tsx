@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../HeaderPage/_header.scss";
+import logo from "./logo.png";
 
 function HeaderPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ function HeaderPage() {
 
   return (
     <div className="Nav-container">
-      <div className="logo">Logo</div>
+      <div className="logo"><img src={logo} alt="fulllogo" /></div>
       <div className="nav-items">
         <input type="text" placeholder="Search" id="search-bar" />
         <button id="search-btn">
