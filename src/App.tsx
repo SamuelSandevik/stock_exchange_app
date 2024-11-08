@@ -1,5 +1,6 @@
-import ExploreMainPage from "./components/exploreMainPage/ExploreMainPage";
 import Footer from "./components/FooterPage/FooterPage";
+import StocksDisplay from "./components/DisplayStocks/DisplayStock";
+import ExploreMainPage from "./components/exploreMainPage/ExploreMainPage";
 import HeaderPage from "./components/HeaderPage/HeaderPage";
 import SignUpForm from "./components/SignUpPage/SignUpForm";
 import "./style.scss";
@@ -8,8 +9,10 @@ import "./style.scss";
 function App() {
   return (
     <>
-
-  </>);
+     <StocksDisplay />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
