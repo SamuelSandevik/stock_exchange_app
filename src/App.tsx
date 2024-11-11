@@ -34,7 +34,7 @@ const App = () => {
   return (
     <>
       <Footer />
-    </Router>
+    </>
   );
 };
 export default App;
