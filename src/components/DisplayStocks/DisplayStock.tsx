@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { GetDisplayStocksApi } from "./GetStockAPI";
+import "./displayStocksScss/_displayStocks.scss";
 
 const StocksDisplay = () => {
   const [stocksElements, setStocksElements] = useState<
