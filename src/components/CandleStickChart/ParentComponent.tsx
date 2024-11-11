@@ -13,6 +13,34 @@ const ParentComponent: React.FC = () => {
     chart: {
       type: "candlestick",
       height: 350,
+      toolbar: {
+        show: false,
+        offsetX: 0,
+        offsetY: 0,
+        tools: {
+          download: false,
+          selection: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          customIcons: []
+        },
+       
+        autoSelected: 'zoom' 
+      },
+      animations: {
+        enabled: true,
+        speed: 800,
+        animateGradually: {
+            enabled: true,
+            delay: 150
+        },
+        dynamicAnimation: {
+            enabled: true,
+            speed: 350
+        }
+    }
     },
     title: {
       text: "Stock Data", 
