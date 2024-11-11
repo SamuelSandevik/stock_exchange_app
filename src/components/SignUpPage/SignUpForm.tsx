@@ -97,7 +97,7 @@ const SignUpForm = () => {
                 }}
                 name="email"
                 placeholder="Enter email"
-                className={`usernameInput ${isSignUp ? "" : "hidden"}`}
+                className={`emailInput ${isSignUp ? "" : "hidden"}`}
               />
 
               <input

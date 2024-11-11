@@ -8,7 +8,7 @@ import "./style.scss";
 const App = () => {
   return (
     <>
-      <Footer />
+      <SignUpForm />
     </>
   );
 };
