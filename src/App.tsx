@@ -5,11 +5,10 @@ import HeaderPage from "./components/HeaderPage/HeaderPage";
 import SignUpForm from "./components/SignUpPage/SignUpForm";
 import "./style.scss";
 
-
 function App() {
   return (
     <>
-     <StocksDisplay />
+      <SignUpForm />
       <Footer />
     </>
   );
