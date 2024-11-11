@@ -5,7 +5,7 @@ import axios from "axios";
 const SignUpForm = () => {
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
 
-  const [signUpDetails, setSignUpDetails] = useState<{
+  const [userDetails, setUserDetails] = useState<{
     username: string;
     password: string;
     email: string;
@@ -14,9 +14,9 @@ const SignUpForm = () => {
   function signUp(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
     const response = axios.post("http://localhost:3000/signUpForm", {
-      userName: signUpDetails.username,
-      userPswrd: signUpDetails.password,
-      email: signUpDetails.email,
+      userName: userDetails.username,
+      userPswrd: userDetails.password,
+      email: userDetails.email,
     });
     console.log(response);
   }
@@ -24,8 +24,8 @@ const SignUpForm = () => {
   function login(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
     const response = axios.post("http://localhost:3000/loginForm", {
-      userName: signUpDetails.username,
-      userPswrd: signUpDetails.password,
+      userName: userDetails.username,
+      userPswrd: userDetails.password,
     });
     console.log(response);
   }
@@ -60,19 +60,19 @@ const SignUpForm = () => {
                 name="username"
                 placeholder="Enter username"
                 id="nameField"
-                value={signUpDetails.username}
+                value={userDetails.username}
                 onChange={(e) => {
-                  setSignUpDetails({
-                    ...signUpDetails,
+                  setUserDetails({
+                    ...userDetails,
                     username: e.target.value,
                   });
                 }}
               />
               <input
                 type="text"
-                value={signUpDetails.email}
+                value={userDetails.email}
                 onChange={(e) => {
-                  setSignUpDetails({ ...signUpDetails, email: e.target.value });
+                  setUserDetails({ ...userDetails, email: e.target.value });
                 }}
                 name="email"
                 placeholder="Enter email"
@@ -81,10 +81,10 @@ const SignUpForm = () => {
 
               <input
                 type="text"
-                value={signUpDetails.password}
+                value={userDetails.password}
                 onChange={(e) => {
-                  setSignUpDetails({
-                    ...signUpDetails,
+                  setUserDetails({
+                    ...userDetails,
                     password: e.target.value,
                   });
                 }}
