@@ -1,0 +1,22 @@
+@use '../../scss/variables/mixins/mixins' as m;
+@use '../../scss/variables/variables' as v;
+
+
+
+.searched_list_header {
+    @include m.size(auto, 100vw);
+    @include m.flex(column, center, center);
+}
+
+.searched_list_item {
+    @include m.size(auto, 100vw);
+    @include m.flex(column, center, center);
+
+}
+
+.selected {
+    background-color: blue;
+    margin: auto;
+    width: 100px;
+    color: white;
+}

@@ -1,0 +1,22 @@
+@use '../../../scss/variables/mixins/mixins' as m;
+@use '../../../scss/variables/variables' as v;
+
+.stock {
+    @include m.flex(row,space-between,center);
+    border-bottom: 1px solid lightgrey;
+    padding: 1rem;
+
+    .stockCard {
+        
+        .percentage {
+            color: v.$positiveTextColor ;
+        }
+        .negativePercentage {
+            color: v.$negativeTextColor ;
+        }
+    }
+
+    p {
+        font-weight: bold;
+    }
+}
