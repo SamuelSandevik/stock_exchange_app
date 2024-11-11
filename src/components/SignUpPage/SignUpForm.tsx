@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./signUpScss/signUp.scss";
 import axios from "axios";
+import useAuth from "../../services/useAuth";
 
 const SignUpForm = () => {
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
 
   const [userDetails, setUserDetails] = useState<{
@@ -11,28 +13,47 @@ const SignUpForm = () => {
     email: string;
   }>({ username: "", password: "", email: "" });
 
-  function signUp(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  async function signUp(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
-    const response = axios.post("http://localhost:3000/signUpForm", {
+    const response = await axios.post("http://localhost:3000/signUpForm", {
       userName: userDetails.username,
       userPswrd: userDetails.password,
       email: userDetails.email,
     });
     console.log(response);
+
+    if (response.status === 201) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
   }
 
-  function login(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  async function login(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
-    const response = axios.post("http://localhost:3000/loginForm", {
+    const response = await axios.post("http://localhost:3000/loginForm", {
       userName: userDetails.username,
       userPswrd: userDetails.password,
     });
     console.log(response);
+
+    if (response.status === 200) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
   }
 
   const toggleForm = (): void => {
     setIsSignUp(!isSignUp);
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      //router.push("/")
+    }
+  }, [isLoggedIn]);
+
   return (
     <>
       <div className="form-container">
