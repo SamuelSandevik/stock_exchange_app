@@ -2,10 +2,18 @@ import React, { useEffect, useState } from "react";
 import "./signUpScss/signUp.scss";
 import axios from "axios";
 import useAuth from "../../services/useAuth";
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../services/AuthContext";
 
-const SignUpForm = () => {
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+interface SignUpFormProps {
+  onLogin: () => void; 
+}
+
+
+const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
+  const navigate = useNavigate();
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const [userDetails, setUserDetails] = useState<{
     username: string;
@@ -23,9 +31,8 @@ const SignUpForm = () => {
     console.log(response);
 
     if (response.status === 201) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
+      setIsLoggedIn(true); 
+      navigate("/signUpForm");
     }
   }
 
@@ -34,13 +41,12 @@ const SignUpForm = () => {
     const response = await axios.post("http://localhost:3000/loginForm", {
       userName: userDetails.username,
       userPswrd: userDetails.password,
-    });
+    }, { withCredentials: true });
     console.log(response);
 
     if (response.status === 200) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
+      onLogin(); // Uppdaterar autentiseringsstatus när inloggningen lyckas
+      navigate("/mainpage");
     }
   }
 
@@ -50,9 +56,9 @@ const SignUpForm = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      //router.push("/")
+      navigate("/check-auth"); 
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
   return (
     <>
@@ -66,16 +72,18 @@ const SignUpForm = () => {
                 : "Enter details to sign in"}
             </p>
           </div>
-          <form
-            // action={
-            //     isSignUp
-            //         ? "http://localhost:5173/signUpForm"
-            //         : "http://localhost:5173/signInForm"
-            // }
-            // method="POST"
-            className="form"
-          >
+          <form className="form">
             <div className="inputs">
+              <input
+                type="text"
+                value={userDetails.email}
+                onChange={(e) => {
+                  setUserDetails({ ...userDetails, email: e.target.value });
+                }}
+                name="email"
+                placeholder="Enter email"
+                className={`emailInput ${isSignUp ? "" : "hidden"}`}
+              />
               <input
                 type="text"
                 name="username"
@@ -88,16 +96,6 @@ const SignUpForm = () => {
                     username: e.target.value,
                   });
                 }}
-              />
-              <input
-                type="text"
-                value={userDetails.email}
-                onChange={(e) => {
-                  setUserDetails({ ...userDetails, email: e.target.value });
-                }}
-                name="email"
-                placeholder="Enter email"
-                className={`usernameInput ${isSignUp ? "" : "hidden"}`}
               />
 
               <input

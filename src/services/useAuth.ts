@@ -11,7 +11,6 @@ const useAuth = () => {
           method: "GET",
           credentials: "include",
         });
-
         if (response.ok) {
           console.log("Användare är inloggad.");
           setIsLoggedIn(true);
@@ -26,10 +25,21 @@ const useAuth = () => {
     };
 
     checkLoginStatus();
-  }, []); // Denna useEffect ska köras endast en gång när komponenten mountas, för att kontrollera loginstatus
+  }, []);
 
-  return { isLoggedIn, setIsLoggedIn };
+  const logout = async () => {
+    try {
+      await fetch("http://localhost:3000/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+      setIsLoggedIn(false);
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
+
+  return { isLoggedIn, setIsLoggedIn, logout };
 };
 
 export default useAuth;
-

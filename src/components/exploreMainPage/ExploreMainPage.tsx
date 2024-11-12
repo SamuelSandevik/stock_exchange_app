@@ -28,7 +28,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
         }
       } catch (error) {
         console.error("Authorization check failed:", error);
-        navigate("/");
+        navigate("/signUpForm");
       }
     };
 
