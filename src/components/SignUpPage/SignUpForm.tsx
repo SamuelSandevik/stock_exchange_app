@@ -97,6 +97,16 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
                   });
                 }}
               />
+              <input
+                type="text"
+                value={userDetails.email}
+                onChange={(e) => {
+                  setUserDetails({ ...userDetails, email: e.target.value });
+                }}
+                name="email"
+                placeholder="Enter email"
+                className={`emailInput ${isSignUp ? "" : "hidden"}`}
+              />
 
               <input
                 type="text"
