@@ -19,6 +19,7 @@ const StocksDisplay = () => {
     <div>
       <h1>Stock Information</h1>
       <div>{stocksElements}</div>
+
     </div>
   );
 };
