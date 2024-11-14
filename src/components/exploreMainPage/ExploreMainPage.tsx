@@ -6,6 +6,7 @@ import SavedStockDiv from "./exploreComponents/SavedStockDiv";
 import "./exploreScss/_explorePage.scss";
 import LogoutBtn from "./exploreComponents/LogoutBtn";
 import SearchStock from "./exploreComponents/SearchStock";
+import SearchedStockList from "../SearchedStockList/SearchedStockList";
 
 interface ExploreMainPageProps {
   handleLogout: () => void;

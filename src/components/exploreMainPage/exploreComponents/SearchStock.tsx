@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
 
 
 const SearchStock = () => {
+    const navigate = useNavigate();
 
     function searchStock(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
         e.preventDefault();
-        
+
+        navigate("/stockPage");
     }
 
 
