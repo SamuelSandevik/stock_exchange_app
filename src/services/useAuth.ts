@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 const useAuth = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const checkLoginStatus = async () => {
@@ -19,6 +20,8 @@ const useAuth = () => {
       } catch (error) {
         console.error("Login status check failed:", error);
         setIsLoggedIn(false);
+      } finally {
+        setLoading(false); // Stoppa laddning oavsett resultat
       }
     };
 
@@ -37,7 +40,7 @@ const useAuth = () => {
     }
   };
 
-  return { isLoggedIn, setIsLoggedIn, logout };
+  return { isLoggedIn, setIsLoggedIn, logout, loading };
 };
 
 export default useAuth;
