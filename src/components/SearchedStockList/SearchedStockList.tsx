@@ -3,7 +3,7 @@ import GetRelatedStockApi from "../StockSearch/GetRelatedStocks";
 import { IStock } from "./IStock";
 import "./_searchedStockList.scss";
 
-const SearchedStockList = () => {
+const SearchedStockList = (search: any) => {
   //   const stocksSuggested: IStock[] = [
   //     { ticker: "AAPL" },
   //     { ticker: "AMZN" },
@@ -14,11 +14,19 @@ const SearchedStockList = () => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   useEffect(() => {
-    (async () => {
-      setSuggestedStocks((await GetRelatedStockApi("AAPL")) as IStock[]);
-      console.log(suggestedStocks);
-    })();
-  }, []);
+    const delayDebounceFn = setTimeout(async () => {
+      if (search) {
+        const stocks = await GetRelatedStockApi(search);
+        console.log("API response:", stocks);
+        if (stocks == undefined) setSuggestedStocks([]);
+        else setSuggestedStocks(stocks as IStock[]);
+      } else {
+        setSuggestedStocks([]);
+      }
+    }, 300);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [search]);
 
   return (
     <>

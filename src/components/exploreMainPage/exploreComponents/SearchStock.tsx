@@ -1,26 +1,42 @@
 import { useNavigate } from "react-router-dom";
-
+import SearchedStockList from "../../SearchedStockList/SearchedStockList";
+import { useState } from "react";
 
 const SearchStock = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    function searchStock(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
-        e.preventDefault();
+  const [search, setSearch] = useState<string>("");
+  const [showSearchedList, setShowSearchedList] = useState<boolean>(false); // New state variable
 
-        navigate("/stockPage");
-    }
+  function handleSearch(newSearch: string): void {
+    setSearch(newSearch);
+    setShowSearchedList(newSearch.trim().length > 0);
+  }
 
+  function searchStock(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.preventDefault();
 
-    return (
-        <div className="search-container">
-            <form action="" className="search-form">
-                <input type="text" className="search-input"/>
-                <button onClick={searchStock}>
-                <i className="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-    );
-}
+    handleSearch(search);
+
+    // navigate("/stockPage");
+  }
+
+  return (
+    <div className="search-container">
+      <form action="" className="search-form">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => handleSearch(e.target.value)}
+          className="search-input"
+        />
+        <button onClick={searchStock}>
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      {showSearchedList && <SearchedStockList search={search} />}
+    </div>
+  );
+};
 
 export default SearchStock;
