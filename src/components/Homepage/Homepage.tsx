@@ -2,6 +2,11 @@ import { useNavigate } from "react-router-dom";
 import Chart from "./HomepageStockChart";
 import { useEffect, useState } from "react";
 import { generateChartData } from "../MockDataForAPI/Mockdata";
+import HeaderHomepage from "./HeaderHomepage";
+import LineChartHomepage from "./LineChart/LineChartHomepage";
+import { exampleData } from "./LineChart/exampleData";
+import HeaderPage from "../HeaderPage/HeaderPage";
+import SearchedStockList from "../SearchedStockList/SearchedStockList";
 
 interface StockData {
   ticker: string;
@@ -44,8 +49,9 @@ const Homepage = () => {
   
   return (
     <div>
+      <HeaderPage/>
       <div className="header-container">
-      <h1 className="header">Homepage</h1>
+      <LineChartHomepage exampleData={exampleData}/>
       </div>
       <p>{}</p>
       <div className="chart-super-container">
@@ -58,9 +64,6 @@ const Homepage = () => {
           />
         ))}
       </div>
-     
-      <button onClick={goToSignUp}>Go to Sign Up Page</button>
-
     </div>
   );
 };

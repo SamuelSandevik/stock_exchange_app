@@ -39,6 +39,13 @@
     }
   }
 
+  .nav-right-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15%;
+  }
+
   .nav-menu-btn {
     display: none;
     flex-direction: column;

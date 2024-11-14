@@ -12,10 +12,8 @@ const useAuth = () => {
           credentials: "include",
         });
         if (response.ok) {
-          console.log("Användare är inloggad.");
           setIsLoggedIn(true);
         } else {
-          console.log("Användare är INTE inloggad.");
           setIsLoggedIn(false);
         }
       } catch (error) {

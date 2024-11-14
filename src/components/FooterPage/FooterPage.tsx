@@ -2,7 +2,6 @@ import "./_footer.scss";
 
 const Footer = () => {
   return (
-    <>
       <div className="footer-container">
         <div className="footer-section">
           <h2>Stocks</h2>
@@ -19,7 +18,6 @@ const Footer = () => {
           <p>See FAQ here</p>
         </div>
       </div>
-    </>
   );
 };
 

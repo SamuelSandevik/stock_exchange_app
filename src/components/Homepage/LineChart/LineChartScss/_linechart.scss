@@ -1,0 +1,19 @@
+.linechart-container {
+    width: 100%;
+    height: 40svh;
+    margin: 0 auto; // Centrerar charten horisontellt
+  
+    // Om du vill ha en vit bakgrund med rundade hörn och en subtil skugga
+    background-color: #ffffff;
+  
+    display: flex;
+    align-items: center; // Vertikalt centrerad
+    justify-content: center; // Horisontellt centrerad
+  
+    .apexcharts-canvas {
+      width: 100% !important; // ApexChart fyller hela containern
+      height: 100% !important;
+    }
+  }
+
+  

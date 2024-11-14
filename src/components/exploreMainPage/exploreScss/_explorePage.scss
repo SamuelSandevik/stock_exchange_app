@@ -52,3 +52,17 @@
     margin-top: 20px;
   }
 }
+
+.search-container{
+
+  .search-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .search-input{
+      width: 20svw;
+      height: 4svh;
+      border-radius: 20px;
+    }
+  }
+}

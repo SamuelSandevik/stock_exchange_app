@@ -5,6 +5,7 @@ import DailyTopStockDiv from "./exploreComponents/DailyTopStockDiv";
 import SavedStockDiv from "./exploreComponents/SavedStockDiv";
 import "./exploreScss/_explorePage.scss";
 import LogoutBtn from "./exploreComponents/LogoutBtn";
+import SearchStock from "./exploreComponents/SearchStock";
 
 interface ExploreMainPageProps {
   handleLogout: () => void;
@@ -38,6 +39,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
   return authorized ? (
     <>
     <LogoutBtn onLogout={handleLogout} />
+      <SearchStock/>
       <DailyStockDiv />
       <div className="lowerExploreContainer">
         <DailyTopStockDiv />
