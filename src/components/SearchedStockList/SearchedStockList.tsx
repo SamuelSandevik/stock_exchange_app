@@ -16,6 +16,7 @@ const SearchedStockList = () => {
   useEffect(() => {
     (async () => {
       setSuggestedStocks((await GetRelatedStockApi("AAPL")) as IStock[]);
+      console.log(suggestedStocks);
     })();
   }, []);
 
