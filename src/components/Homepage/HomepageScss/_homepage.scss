@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #000000; 
+}
+.header-container{
+    height: 40svh;
+    width: 100svw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #000000;
+    .header{
+        font-size: 2em;
+        color: white;
+    }
+}
+
+.chart-super-container{
+    border-radius: 20px;
+}
+
+.chart-box {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+
+  .ticker {
+    width: 25%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .chart-container {
+    width: 50%;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .percent {
+    width: 25%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+  }
+  .positive {
+    color: green;
+  }
+  .negative{
+    color: red;
+  }
+}

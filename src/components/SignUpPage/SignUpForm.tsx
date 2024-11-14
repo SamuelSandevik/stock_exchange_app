@@ -3,7 +3,6 @@ import "./signUpScss/signUp.scss";
 import axios from "axios";
 import useAuth from "../../services/useAuth";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../services/AuthContext";
 
 interface SignUpFormProps {
   onLogin: () => void; 
@@ -28,7 +27,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
       userPswrd: userDetails.password,
       email: userDetails.email,
     });
-    console.log(response);
 
     if (response.status === 201) {
       setIsLoggedIn(true); 
@@ -42,7 +40,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
       userName: userDetails.username,
       userPswrd: userDetails.password,
     }, { withCredentials: true });
-    console.log(response);
 
     if (response.status === 200) {
       onLogin(); // Uppdaterar autentiseringsstatus när inloggningen lyckas
@@ -96,16 +93,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
                     username: e.target.value,
                   });
                 }}
-              />
-              <input
-                type="text"
-                value={userDetails.email}
-                onChange={(e) => {
-                  setUserDetails({ ...userDetails, email: e.target.value });
-                }}
-                name="email"
-                placeholder="Enter email"
-                className={`emailInput ${isSignUp ? "" : "hidden"}`}
               />
 
               <input

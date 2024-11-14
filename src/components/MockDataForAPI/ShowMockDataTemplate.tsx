@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { Aggregates, DailyOpenClose } from "./MockdataInterface";
+import { generateMockAggregatesData, generateMockDailyOpenCloseData } from "./Mockdata";
 
 
 

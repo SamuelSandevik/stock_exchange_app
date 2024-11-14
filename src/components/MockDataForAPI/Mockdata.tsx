@@ -37,6 +37,42 @@ export const generateMockDailyOpenCloseData = (count: number): DailyOpenClose[] 
   return data;
 };
 
+//Mock function for apex charts data
+const getRandomVariation = (min: number, max: number) => {
+  return (Math.random() * (max - min) + min);
+};
+
+// Funktion för att generera realistisk data och beräkna close-pris och procentförändring
+export const generateChartData = (count: number, startPrice: number = 100) => {
+  const data = [];
+  let currentPrice = startPrice;
+
+  for (let i = 0; i < count; i++) {
+    const date = new Date();
+    date.setDate(date.getDate() + i); // Skapa en ny dag för varje datapunkt
+
+    // Generera en liten förändring i priset från den senaste punkten
+    const dailyChange = getRandomVariation(-2, 2); // Små variationer
+    currentPrice += dailyChange;
+    if (currentPrice < 0) currentPrice = 0; // Pris ska aldrig gå under 0
+
+    data.push({
+      x: date.getTime(), // Tidsstämpel
+      y: parseFloat(currentPrice.toFixed(2)), // Pris avrundat till två decimaler
+    });
+  }
+
+  const closePrice = currentPrice; // Sista priset i sekvensen som "close"
+  const percentageChange = ((closePrice - startPrice) / startPrice) * 100;
+
+  return {
+    data,
+    closePrice: parseFloat(closePrice.toFixed(2)),
+    percentageChange: parseFloat(percentageChange.toFixed(2)),
+  };
+};
+
+
 // Mock function for Aggregates using specified parameters
 export const generateMockAggregatesData = (
   stocksTicker: string,
