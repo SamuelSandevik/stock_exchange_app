@@ -3,6 +3,7 @@ import GetRelatedStockApi from "../StockSearch/GetRelatedStocks";
 import { IStock } from "./IStock";
 import "./_searchedStockList.scss";
 import { SearchedStockListProps } from "./searchedStockListProps";
+import GetRelatedStockApiAlphaV from "../StockSearch/getRelatedStocksAlphaV";
 
 const SearchedStockList: React.FC<SearchedStockListProps> = ({
   search,
@@ -20,6 +21,7 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
       if (search) {
+        // const stocks = await GetRelatedStockApiAlphaV(search);
         const stocks = await GetRelatedStockApi(search);
         if (stocks == undefined) setSuggestedStocks([]);
         else {
@@ -59,7 +61,7 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({
                   handleItemClick(item.ticker, index);
                 }}
               >
-                {item.ticker}
+                {/* {item.name} |  */ item.ticker}
               </li>
             );
           })}

@@ -2,14 +2,14 @@
 @use '../../scss/variables/variables' as v;
 
 .searched_list_container {
-    @include m.size(auto, 200px);
+    @include m.size(auto, 500px);
     position: absolute;
     z-index: 11;
     padding: 5px 15px;
     background-color: white;
     border: grey 1px solid;
     margin-top: 5px;
-    margin-left: calc(50vw - 100px);
+    margin-left: calc(50vw - 250px);
     border-radius: 10px;
 
 
@@ -21,7 +21,7 @@
 
 
     .searched_list_item {
-        @include m.size(auto, 95px);
+        @include m.size(auto, auto);
         @include m.flex(column, flex-start, start);
 
         &:hover {
