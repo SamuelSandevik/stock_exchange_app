@@ -2,16 +2,16 @@ import { useNavigate } from "react-router-dom";
 import Chart from "./HomepageStockChart";
 import { useEffect, useState } from "react";
 import { generateChartData } from "../MockDataForAPI/Mockdata";
-import HeaderHomepage from "./HeaderHomepage";
 import LineChartHomepage from "./LineChart/LineChartHomepage";
 import { exampleData } from "./LineChart/exampleData";
 import HeaderPage from "../HeaderPage/HeaderPage";
-import SearchedStockList from "../SearchedStockList/SearchedStockList";
 
 interface StockData {
   ticker: string;
   data: { x: number; y: number }[];
   percentage: string;
+  closePrice: number;
+  changePrice: number;
 }
 
 
