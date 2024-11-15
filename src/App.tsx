@@ -11,7 +11,7 @@ import useAuth from "./services/useAuth";
 import StockPage from "./components/StockPage/StockPage";
 
 const App = () => {
-  const { isLoggedIn, setIsLoggedIn, logout } = useAuth();
+  const { isLoggedIn, setIsLoggedIn, logout} = useAuth();
   
   return (
       <BrowserRouter>
@@ -35,6 +35,12 @@ const App = () => {
               ) : (
                 <Navigate to="/signUpForm" />
               )
+            }
+          />
+          <Route
+            path="/check-auth"
+            element={
+              isLoggedIn ? <Navigate to="/mainpage" /> : <Navigate to="/signUpForm" />
             }
           />
           <Route path="/stockPage" element={<StockPage />} />

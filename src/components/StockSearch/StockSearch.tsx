@@ -7,8 +7,8 @@ interface SearchProps {
 const StockSearch = ({ onSearch }: SearchProps) => {
   const [inputValue, setInputValue] = useState<string>("");
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const upperCaseValue = event.target.value.toUpperCase();
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const upperCaseValue = e.target.value.toUpperCase();
     setInputValue(upperCaseValue);
   };
 
