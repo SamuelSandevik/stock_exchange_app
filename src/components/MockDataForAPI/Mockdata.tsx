@@ -64,11 +64,13 @@ export const generateChartData = (count: number, startPrice: number = 100) => {
 
   const closePrice = currentPrice; // Sista priset i sekvensen som "close"
   const percentageChange = ((closePrice - startPrice) / startPrice) * 100;
+  const changePrice = (closePrice - startPrice);
 
   return {
     data,
     closePrice: parseFloat(closePrice.toFixed(2)),
     percentageChange: parseFloat(percentageChange.toFixed(2)),
+    changePrice,
   };
 };
 

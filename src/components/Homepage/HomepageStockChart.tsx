@@ -7,9 +7,11 @@ interface ChartProps {
   data: { x: number; y: number }[];
   ticker: string;
   percentage: string;
+  closePrice: string;
+  changePrice: string;
 }
 
-const Chart: React.FC<ChartProps> = ({ data, ticker, percentage }) => {
+const Chart: React.FC<ChartProps> = ({ data, ticker, percentage, closePrice, changePrice }) => {
   const options: ApexOptions = {
     chart: {
       type: "line",
@@ -65,6 +67,10 @@ const Chart: React.FC<ChartProps> = ({ data, ticker, percentage }) => {
         />
       </div>
       <div className={percentageClass}>{percentage}</div>
+      <p>change price</p>
+      <div>{changePrice}</div>
+      <p>Close price</p>
+      <div>{closePrice}</div>
     </div>
   );
 };

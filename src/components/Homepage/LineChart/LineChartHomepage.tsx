@@ -4,6 +4,7 @@ import "./LineChartScss/_linechart.scss";
 
 interface ChartProps {
   exampleData: { x: number; y: number }[];
+  
 }
 
 const LineChartHomepage: React.FC<ChartProps> = ({ exampleData }) => {
