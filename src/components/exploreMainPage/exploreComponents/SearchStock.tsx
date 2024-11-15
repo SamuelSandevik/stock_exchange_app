@@ -28,7 +28,7 @@ const SearchStock = () => {
         <input
           type="text"
           value={search}
-          onChange={(e) => handleSearch(e.target.value)}
+          onChange={(e) => handleSearch(e.target.value.toUpperCase())}
           className="search-input"
         />
         <button onClick={searchStock}>

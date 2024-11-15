@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import GetRelatedStockApi from "../StockSearch/GetRelatedStocks";
 import { IStock } from "./IStock";
 import "./_searchedStockList.scss";
+import { SearchedStockListProps } from "./searchedStockListProps";
 
-const SearchedStockList = (search: any) => {
+const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
   //   const stocksSuggested: IStock[] = [
   //     { ticker: "AAPL" },
   //     { ticker: "AMZN" },
@@ -17,9 +18,11 @@ const SearchedStockList = (search: any) => {
     const delayDebounceFn = setTimeout(async () => {
       if (search) {
         const stocks = await GetRelatedStockApi(search);
-        console.log("API response:", stocks);
         if (stocks == undefined) setSuggestedStocks([]);
-        else setSuggestedStocks(stocks as IStock[]);
+        else {
+          stocks.unshift({ ticker: search });
+          setSuggestedStocks(stocks as IStock[]);
+        }
       } else {
         setSuggestedStocks([]);
       }
@@ -31,7 +34,7 @@ const SearchedStockList = (search: any) => {
   return (
     <>
       <h3 className="searched_list_header">
-        {suggestedStocks.length === 0 ? "No results found" : "Results"}
+        {suggestedStocks.length === 0 ? "No results found" : ""}
       </h3>
       <ul>
         {suggestedStocks.map((item, index) => {
