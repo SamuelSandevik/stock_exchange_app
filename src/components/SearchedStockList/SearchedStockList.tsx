@@ -33,28 +33,30 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
 
   return (
     <>
-      <h3 className="searched_list_header">
-        {suggestedStocks.length === 0 ? "No results found" : ""}
-      </h3>
-      <ul>
-        {suggestedStocks.map((item, index) => {
-          return (
-            <li
-              key={index}
-              className={
-                selectedIndex === index
-                  ? "searched_list_item selected"
-                  : "searched_list_item"
-              }
-              onClick={() => {
-                setSelectedIndex(index);
-              }}
-            >
-              {item.ticker}
-            </li>
-          );
-        })}
-      </ul>
+      <div className="searched_list_container">
+        <h3 className="searched_list_header">
+          {suggestedStocks.length === 0 ? "No results found" : ""}
+        </h3>
+        <ul className="">
+          {suggestedStocks.map((item, index) => {
+            return (
+              <li
+                key={index}
+                className={
+                  selectedIndex === index
+                    ? "searched_list_item selected"
+                    : "searched_list_item"
+                }
+                onClick={() => {
+                  setSelectedIndex(index);
+                }}
+              >
+                {item.ticker}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </>
   );
 };

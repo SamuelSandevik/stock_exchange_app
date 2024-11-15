@@ -1,22 +1,36 @@
 @use '../../scss/variables/mixins/mixins' as m;
 @use '../../scss/variables/variables' as v;
 
+.searched_list_container {
+    @include m.size(auto, 200px);
+    position: absolute;
+    z-index: 11;
+    padding: 5px 15px;
+    background-color: white;
+    border: grey 1px solid;
+    margin-top: 5px;
+    margin-left: calc(50vw - 100px);
+    border-radius: 10px;
 
 
-.searched_list_header {
-    @include m.size(auto, 100vw);
-    @include m.flex(column, center, center);
-}
+    .searched_list_header {
+        @include m.size(auto, auto);
+        @include m.flex(column, center, center);
+        margin: auto;
+    }
 
-.searched_list_item {
-    @include m.size(auto, 100vw);
-    @include m.flex(column, center, center);
 
-}
+    .searched_list_item {
+        @include m.size(auto, 95px);
+        @include m.flex(column, flex-start, start);
 
-.selected {
-    background-color: blue;
-    margin: auto;
-    width: 100px;
-    color: white;
+        &:hover {
+            background-color: rgb(184, 184, 184);
+        }
+    }
+
+    .selected {
+        background-color: blue;
+        color: white;
+    }
 }
