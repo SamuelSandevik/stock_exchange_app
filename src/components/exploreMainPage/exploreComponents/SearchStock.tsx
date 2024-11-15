@@ -17,6 +17,7 @@ const SearchStock = () => {
     e.preventDefault();
 
     handleSearch(search);
+    console.log(search);
 
     navigate("/stockPage", { state: { search } });
   }

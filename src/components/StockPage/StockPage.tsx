@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const StockPage = () => {
   const location = useLocation();
-  const searchTerm = location.state?.searchTerm;
+  const searchTerm = location.state?.search;
   const [chartData, setChartData] = useState<{ x: number; y: number }[]>([]);
 
   const fallbackData = [
