@@ -9,15 +9,33 @@ const StockPage = () => {
   const searchTerm = location.state?.searchTerm;
   const [chartData, setChartData] = useState<{ x: number; y: number }[]>([]);
 
+  const fallbackData = [
+    { x: new Date("2024-01-01").getTime(), y: 150 },
+    { x: new Date("2024-01-02").getTime(), y: 152 },
+    { x: new Date("2024-01-03").getTime(), y: 151 },
+    { x: new Date("2024-01-04").getTime(), y: 149 },
+    { x: new Date("2024-01-05").getTime(), y: 155 },
+    { x: new Date("2024-01-06").getTime(), y: 160 },
+    { x: new Date("2024-01-07").getTime(), y: 165 },
+  ];
+
   useEffect(() => {
     const fetchData = async () => {
       if (searchTerm) {
-        const response = await GetStockApi(searchTerm);
-        const transformedData = response.map((dataPoint: any) => ({
-          x: new Date(dataPoint.t).getTime(), 
-          y: dataPoint.c, 
-        }));
-        setChartData(transformedData);
+        try {
+          const response = await GetStockApi(searchTerm);
+          const transformedData = response.map((dataPoint: any) => ({
+            x: new Date(dataPoint.t).getTime(),
+            y: dataPoint.c,
+          }));
+          
+          setChartData(transformedData.length > 0 ? transformedData : fallbackData);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          setChartData(fallbackData); 
+        }
+      } else {
+        setChartData(fallbackData);
       }
     };
 
