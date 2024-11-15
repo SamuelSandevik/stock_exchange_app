@@ -4,7 +4,10 @@ import { IStock } from "./IStock";
 import "./_searchedStockList.scss";
 import { SearchedStockListProps } from "./searchedStockListProps";
 
-const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
+const SearchedStockList: React.FC<SearchedStockListProps> = ({
+  search,
+  onSelected,
+}) => {
   //   const stocksSuggested: IStock[] = [
   //     { ticker: "AAPL" },
   //     { ticker: "AMZN" },
@@ -31,6 +34,11 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
     return () => clearTimeout(delayDebounceFn);
   }, [search]);
 
+  const handleItemClick = (ticker: string, index: number) => {
+    setSelectedIndex(index);
+    onSelected(ticker);
+  };
+
   return (
     <>
       <div className="searched_list_container">
@@ -48,7 +56,7 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
                     : "searched_list_item"
                 }
                 onClick={() => {
-                  setSelectedIndex(index);
+                  handleItemClick(item.ticker, index);
                 }}
               >
                 {item.ticker}

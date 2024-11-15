@@ -6,7 +6,11 @@ const SearchStock = () => {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState<string>("");
-  const [showSearchedList, setShowSearchedList] = useState<boolean>(false); // New state variable
+  const [showSearchedList, setShowSearchedList] = useState<boolean>(false);
+
+  const handleTickerSelect = (ticker: string): void => {
+    setSearch(ticker);
+  };
 
   function handleSearch(newSearch: string): void {
     setSearch(newSearch);
@@ -26,6 +30,7 @@ const SearchStock = () => {
       <form action="" className="search-form">
         <input
           type="text"
+          placeholder="Ticker"
           value={search}
           onChange={(e) => handleSearch(e.target.value.toUpperCase())}
           className="search-input"
@@ -34,7 +39,9 @@ const SearchStock = () => {
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
-      {showSearchedList && <SearchedStockList search={search} />}
+      {showSearchedList && (
+        <SearchedStockList search={search} onSelected={handleTickerSelect} />
+      )}
     </div>
   );
 };
