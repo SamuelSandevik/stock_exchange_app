@@ -10,50 +10,55 @@ interface StockData {
   ticker: string;
   data: { x: number; y: number }[];
   percentage: string;
-  closePrice: number;
-  changePrice: number;
+  closePrice: string;
+  changePrice: string;
 }
 
-
 const Homepage = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [stocks, setStocks] = useState<StockData[]>([]);
 
   useEffect(() => {
     // Generera data för flera aktier
-    const generatedStocks = ["TSLA", "NVDA", "AMZN", "GOOG", "AAPL"].map((ticker) => {
-      const { data, percentageChange } = generateChartData(30, 100); 
-      
-      if(0 < percentageChange){
-        let newPercentage = "+" + percentageChange;
-        return {
-          ticker,
-          data,
-          percentage: newPercentage,
-        };
-      }else{
-        let newPercentage = "" + percentageChange;
-        return {
-          ticker,
-          data,
-          percentage: newPercentage,
-        };
+    const generatedStocks = ["TSLA", "NVDA", "AMZN", "GOOG", "AAPL"].map(
+      (ticker) => {
+        const { data, percentageChange, closePrice, changePrice } =
+          generateChartData(30, 100);
+
+        if (0 < percentageChange) {
+          let newPercentage = "+" + percentageChange;
+          return {
+            ticker,
+            data,
+            percentage: newPercentage,
+            closePrice: closePrice.toString(),
+            changePrice: changePrice.toString(),
+          };
+        } else {
+          let newPercentage = "" + percentageChange;
+          return {
+            ticker,
+            data,
+            percentage: newPercentage,
+            closePrice: closePrice.toString(),
+            changePrice: changePrice.toString(),
+          };
+        }
       }
-    });
+    );
 
     setStocks(generatedStocks);
   }, []);
-  const goToSignUp = () => {
-    navigate("/signUpForm");
-  };
-  
+  // const goToSignUp = () => {
+  //   navigate("/signUpForm");
+  // };
+
   return (
     <div>
-      <HeaderPage/>
+      <HeaderPage />
       <div className="header-container">
-      <LineChartHomepage exampleData={exampleData}/>
+        <LineChartHomepage exampleData={exampleData} />
       </div>
-      <p>{}</p>
       <div className="chart-super-container">
         {stocks.map((stock) => (
           <Chart
@@ -61,6 +66,8 @@ const Homepage = () => {
             data={stock.data}
             ticker={stock.ticker}
             percentage={`${stock.percentage}%`}
+            closePrice={stock.closePrice}
+            changePrice={stock.changePrice}
           />
         ))}
       </div>
