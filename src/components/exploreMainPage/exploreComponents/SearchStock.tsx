@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchedStockList from "../../SearchedStockList/SearchedStockList";
-import { useState } from "react";
 
 const SearchStock = () => {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState("");
 
   const [search, setSearch] = useState<string>("");
   const [showSearchedList, setShowSearchedList] = useState<boolean>(false); // New state variable
@@ -20,7 +18,7 @@ const SearchStock = () => {
 
     handleSearch(search);
 
-    // navigate("/stockPage", { state: { searchTerm } });
+    navigate("/stockPage", { state: { search } });
   }
 
   return (
@@ -31,8 +29,6 @@ const SearchStock = () => {
           value={search}
           onChange={(e) => handleSearch(e.target.value)}
           className="search-input"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button onClick={searchStock}>
           <i className="fa-solid fa-magnifying-glass"></i>
