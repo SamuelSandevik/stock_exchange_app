@@ -3,8 +3,12 @@ import GetRelatedStockApi from "../StockSearch/GetRelatedStocks";
 import { IStock } from "./IStock";
 import "./_searchedStockList.scss";
 import { SearchedStockListProps } from "./searchedStockListProps";
+import GetRelatedStockApiAlphaV from "../StockSearch/getRelatedStocksAlphaV";
 
-const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
+const SearchedStockList: React.FC<SearchedStockListProps> = ({
+  search,
+  onSelected,
+}) => {
   //   const stocksSuggested: IStock[] = [
   //     { ticker: "AAPL" },
   //     { ticker: "AMZN" },
@@ -17,6 +21,7 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
       if (search) {
+        // const stocks = await GetRelatedStockApiAlphaV(search);
         const stocks = await GetRelatedStockApi(search);
         if (stocks == undefined) setSuggestedStocks([]);
         else {
@@ -30,6 +35,11 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
 
     return () => clearTimeout(delayDebounceFn);
   }, [search]);
+
+  const handleItemClick = (ticker: string, index: number) => {
+    setSelectedIndex(index);
+    onSelected(ticker);
+  };
 
   return (
     <>
@@ -48,10 +58,10 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({ search }) => {
                     : "searched_list_item"
                 }
                 onClick={() => {
-                  setSelectedIndex(index);
+                  handleItemClick(item.ticker, index);
                 }}
               >
-                {item.ticker}
+                {/* {item.name} |  */ item.ticker}
               </li>
             );
           })}
