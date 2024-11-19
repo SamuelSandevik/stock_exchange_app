@@ -40,11 +40,11 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
     <>
     <LogoutBtn onLogout={handleLogout} />
       <SearchStock/>
-      <DailyStockDiv />
-      <div className="lowerExploreContainer">
+      
+      {/* <div className="lowerExploreContainer"> */}
         <DailyTopStockDiv />
         <SavedStockDiv />
-      </div>
+      {/* </div> */}
     </>
   ) : null;
 }
