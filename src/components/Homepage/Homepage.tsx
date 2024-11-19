@@ -49,9 +49,6 @@ const Homepage = () => {
 
     setStocks(generatedStocks);
   }, []);
-  // const goToSignUp = () => {
-  //   navigate("/signUpForm");
-  // };
 
   return (
     <div>
