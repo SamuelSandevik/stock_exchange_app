@@ -1,4 +1,4 @@
-import "../exploreScss/_explorePage.scss";
+import "../mainpageScss/_mainpagePage.scss"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { generateChartData } from "../../MockDataForAPI/Mockdata";
