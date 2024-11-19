@@ -1,5 +1,5 @@
 const GetRelatedStockApiAlphaV = async (ticker: string) => {
-  const API_KEY = "J6GO8J0TPZCB62V3"; // Replace with your API key
+  const API_KEY = "J6GO8J0TPZCB62V3";
 
   try {
     const response = await fetch(
