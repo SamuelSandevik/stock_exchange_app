@@ -62,21 +62,23 @@ const Chart: React.FC<ChartProps> = ({
       : "percent neutral";
 
   return (
-    <div className="chart-box">
-      <div className="ticker">{ticker}</div>
-      <div className="chart-container">
-        <ReactApexChart
-          options={options}
-          series={series}
-          type="line"
-          height="100%"
-        />
-      </div>
-      <div className="price-procentage-container">
-        <p className="close-price">${closePrice}</p>
-        <div className={`${percentageClass} price-change-container`}>
-          <p className="price-change">{parseFloat(changePrice).toFixed(2)}</p>
-          <p className="price-change">({percentage})</p>
+    <div className="chart-box-container">
+      <div className="chart-box">
+        <div className="ticker">{ticker}</div>
+        <div className="chart-container">
+          <ReactApexChart
+            options={options}
+            series={series}
+            type="line"
+            height="100%"
+          />
+        </div>
+        <div className="price-procentage-container">
+          <p className="close-price">${closePrice}</p>
+          <div className={`${percentageClass} price-change-container`}>
+            <p className="price-change">{parseFloat(changePrice).toFixed(2)}</p>
+            <p className="price-change">({percentage})</p>
+          </div>
         </div>
       </div>
     </div>

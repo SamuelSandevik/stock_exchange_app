@@ -9,7 +9,7 @@
     bottom: 0;
     .bottom-navbar {
         @include m.flex(row,space-between,center);
-        @include m.size(auto, 95%);
+        @include m.size(auto, 90%);
         @include m.border(top, 1px, v.$borderColor, solid);
         
         padding: 1rem 2rem;
