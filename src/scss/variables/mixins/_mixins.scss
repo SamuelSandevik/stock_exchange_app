@@ -23,3 +23,19 @@
 @mixin boxShadow() {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+@mixin border($direction: all, $width: 1px, $color: black, $style: solid) {
+  @if $direction == all {
+    border: $width $style $color;
+  } @else if $direction == top {
+    border-top: $width $style $color;
+  } @else if $direction == bottom {
+    border-bottom: $width $style $color;
+  } @else if $direction == left {
+    border-left: $width $style $color;
+  } @else if $direction == right {
+    border-right: $width $style $color;
+  } @else {
+    @warn "Ogiltig riktning: #{$direction}. Använd 'all', 'top', 'bottom', 'left' eller 'right'.";
+  }
+}

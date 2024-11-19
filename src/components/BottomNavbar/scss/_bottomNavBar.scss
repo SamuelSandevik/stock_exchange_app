@@ -1,0 +1,18 @@
+@use '../../../scss/variables/mixins/mixins' as m;
+@use '../../../scss/variables/variables' as v;
+
+.container {
+    @include m.flex(column,center,center);
+    @include m.size(auto,100%);
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    .bottom-navbar {
+        @include m.flex(row,space-between,center);
+        @include m.size(auto, 95%);
+        @include m.border(top, 1px, v.$borderColor, solid);
+        
+        padding: 1rem 2rem;
+        
+    }
+}
