@@ -7,13 +7,14 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Homepage from "./components/Homepage/Homepage";
 import useAuth from "./services/useAuth";
 import StockPage from "./components/StockPage/StockPage";
+import BottomNavbar from "./components/BottomNavbar/BottomNavBar";
 
 const App = () => {
-  const { isLoggedIn, setIsLoggedIn, logout} = useAuth();
-  
+  const { isLoggedIn, setIsLoggedIn, logout } = useAuth();
+
   return (
-      <BrowserRouter>
-        <div>
+    <BrowserRouter>
+      <div>
         <Routes>
           {/* Startsida */}
           <Route path="/" element={<Homepage />} />
@@ -38,14 +39,18 @@ const App = () => {
           <Route
             path="/check-auth"
             element={
-              isLoggedIn ? <Navigate to="/mainpage" /> : <Navigate to="/signUpForm" />
+              isLoggedIn ? (
+                <Navigate to="/mainpage" />
+              ) : (
+                <Navigate to="/signUpForm" />
+              )
             }
           />
           <Route path="/stockPage" element={<StockPage />} />
         </Routes>
-      <Footer />
+        <BottomNavbar />
       </div>
-      </BrowserRouter>
-  )
-}
+    </BrowserRouter>
+  );
+};
 export default App;

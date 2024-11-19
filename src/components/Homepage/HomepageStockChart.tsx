@@ -1,7 +1,7 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import "./HomepageScss/_homepage.scss";
+import "./scss/_homepage.scss";
 
 interface ChartProps {
   data: { x: number; y: number }[];
@@ -11,7 +11,13 @@ interface ChartProps {
   changePrice: string;
 }
 
-const Chart: React.FC<ChartProps> = ({ data, ticker, percentage, closePrice, changePrice }) => {
+const Chart: React.FC<ChartProps> = ({
+  data,
+  ticker,
+  percentage,
+  closePrice,
+  changePrice,
+}) => {
   const options: ApexOptions = {
     chart: {
       type: "line",
@@ -66,11 +72,13 @@ const Chart: React.FC<ChartProps> = ({ data, ticker, percentage, closePrice, cha
           height="100%"
         />
       </div>
-      <div className={percentageClass}>{percentage}</div>
-      <p>change price</p>
-      <div>{changePrice}</div>
-      <p>Close price</p>
-      <div>{closePrice}</div>
+      <div className="price-procentage-container">
+        <p className="close-price">${closePrice}</p>
+        <div className={`${percentageClass} price-change-container`}>
+          <p className="price-change">{parseFloat(changePrice).toFixed(2)}</p>
+          <p className="price-change">({percentage})</p>
+        </div>
+      </div>
     </div>
   );
 };
