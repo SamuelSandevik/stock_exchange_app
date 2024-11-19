@@ -14,6 +14,9 @@ const NewsList: React.FC<{ ticker: string }> = ({ ticker }) => {
         setLoading(true);
         const newsData = (await GetNewsStockApiAlphaV("mock")) as NewsItem[];
         console.log(newsData);
+        newsData.forEach((item) => {
+          console.log("time_published:", item.timePublished); // Här loggar vi tidstämpeln
+        });
         setNews(newsData);
       } catch (error) {
         setError("Failed to fetch news data");
