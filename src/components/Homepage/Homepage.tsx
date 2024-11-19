@@ -5,6 +5,7 @@ import { generateChartData } from "../MockDataForAPI/Mockdata";
 import LineChartHomepage from "./LineChart/LineChartHomepage";
 import { exampleData } from "./LineChart/exampleData";
 import HeaderPage from "../HeaderPage/HeaderPage";
+import StockNews from "./News/News";
 
 interface StockData {
   ticker: string;
@@ -50,25 +51,86 @@ const Homepage = () => {
     setStocks(generatedStocks);
   }, []);
 
+
+  const [view, setView] = useState<"top" | "trending">("top");
+  const topButtonHeight = view === "top" ? "30px" : "20px";
+  const trendingButtonHeight = view === "trending" ? "30px" : "20px";
+
+  // const goToSignUp = () => {
+  //   navigate("/signUpForm");
+  // };
+
   return (
     <div>
       <HeaderPage />
-      <div className="header-container">
+
+      {/* <div className="header-container">
         <LineChartHomepage exampleData={exampleData} />
+      </div> */}
+      <div className="homePageText">
+        <p>Welcome
+          browser through
+          all the us stocks</p>
       </div>
-      <div className="chart-super-container">
-        {stocks.map((stock) => (
-          <Chart
-            key={stock.ticker}
-            data={stock.data}
-            ticker={stock.ticker}
-            percentage={`${stock.percentage}%`}
-            closePrice={stock.closePrice}
-            changePrice={stock.changePrice}
-          />
-        ))}
+      <div>
+        {/* Buttons to switch views */}
+        <div className="chart-super-container">
+          <div className="chartSwitchBtns">
+            <button onClick={() => setView("top")} className="switchBtn" style={{ height: topButtonHeight }}>Top</button>
+            <button onClick={() => setView("trending")} className="switchBtn" style={{ height: trendingButtonHeight }}>Trending</button>
+          </div>
+
+          {/* Conditional rendering based on state */}
+          {view === "top" &&
+            <div className="chartDivContainer">
+              <div className="tableheader">
+                <p className="name">Company</p>
+                <p className="date">Today</p>
+              </div>
+              {stocks.map((stock) => (
+                <Chart
+                  key={stock.ticker}
+                  data={stock.data}
+                  ticker={stock.ticker}
+                  percentage={`${stock.percentage}%`}
+                  closePrice={stock.closePrice}
+                  changePrice={stock.changePrice}
+                />
+              ))}</div>
+          }
+          {view === "trending" &&
+            <div className="chartDivContainer">
+              <div className="tableheader">
+                <p className="name">Company</p>
+                <p className="date">Today</p>
+              </div>
+              {stocks.slice().reverse().map((stock) => (
+                <Chart
+                  key={stock.ticker}
+                  data={stock.data}
+                  ticker={stock.ticker}
+                  percentage={`${stock.percentage}%`}
+                  closePrice={stock.closePrice}
+                  changePrice={stock.changePrice}
+                />
+              ))}</div>}
+        </div>
+
+        <StockNews />
+        {/*  {stocks.map((stock) => (
+            <Chart
+              key={stock.ticker}
+              data={stock.data}
+              ticker={stock.ticker}
+              percentage={`${stock.percentage}%`}
+              closePrice={stock.closePrice}
+              changePrice={stock.changePrice}
+            />
+          ))} */}
+
       </div>
     </div>
+
   );
 };
 
