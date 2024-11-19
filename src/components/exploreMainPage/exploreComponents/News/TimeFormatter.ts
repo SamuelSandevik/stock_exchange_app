@@ -1,5 +1,4 @@
 export const formatTime = (timeString: string): string => {
-  console.log(timeString);
   if (!timeString || timeString.length !== 15) {
     return "Invalid time format";
   }
