@@ -61,7 +61,10 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({
                   handleItemClick(item.ticker, index);
                 }}
               >
-                {item.name + ` | ` + item.ticker}
+                {item.name}
+                <span style={{ float: "right", color: "grey" }}>
+                  {item.ticker}
+                </span>
               </li>
             );
           })}
