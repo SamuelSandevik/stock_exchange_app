@@ -1,6 +1,16 @@
+@use "sass:math";
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: black;
+}
+
+#root {
+  min-height: fit-content; // Adjusts to content height
+  padding-bottom: 200px; // Adds 20px extra space
 }

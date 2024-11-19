@@ -4,7 +4,7 @@ import "./LineChartScss/_linechart.scss";
 
 interface ChartProps {
   exampleData: { x: number; y: number }[];
-  
+
 }
 
 const LineChartHomepage: React.FC<ChartProps> = ({ exampleData }) => {
@@ -14,9 +14,10 @@ const LineChartHomepage: React.FC<ChartProps> = ({ exampleData }) => {
       toolbar: { show: false },
       zoom: { enabled: false },
       animations: { enabled: true },
+
     },
     stroke: {
-      colors: ["#000"], // Svart linje
+      colors: ["#fff"], // Svart linje
       width: 2,
     },
     yaxis: {
@@ -29,6 +30,7 @@ const LineChartHomepage: React.FC<ChartProps> = ({ exampleData }) => {
       labels: { show: true }, // Dölj x-axelns etiketter
       axisBorder: { show: true }, // Dölj x-axelns gräns
       axisTicks: { show: false }, // Dölj tickmarks på x-axeln
+
     },
     grid: {
       show: false, // Dölj bakgrundslinjer

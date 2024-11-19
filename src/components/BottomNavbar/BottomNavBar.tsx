@@ -34,6 +34,7 @@ const BottomNavbar = function () {
               style={{
                 fontSize: "32px",
                 opacity: location.pathname === route ? 1 : 0.25,
+                color: "white",
               }}
               onClick={() => navigate(route)} // Dynamisk navigation
             />

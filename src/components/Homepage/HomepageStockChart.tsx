@@ -26,7 +26,7 @@ const Chart: React.FC<ChartProps> = ({
       animations: { enabled: true },
     },
     stroke: {
-      colors: ["#000"], // Svart linje
+      colors: ["#fff"], // Svart linje
       width: 2,
     },
     yaxis: {
@@ -58,8 +58,8 @@ const Chart: React.FC<ChartProps> = ({
     percentageValue > 0
       ? "percent positive"
       : percentageValue < 0
-      ? "percent negative"
-      : "percent neutral";
+        ? "percent negative"
+        : "percent neutral";
 
   return (
     <div className="chart-box">
