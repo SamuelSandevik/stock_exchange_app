@@ -1,3 +1,5 @@
+import sendTicker from "./SaveTicker";
+
 interface StockPageHeaderProps {
   high: number;
   low: number;
@@ -34,6 +36,9 @@ const StockPageHeader: React.FC<StockPageHeaderProps> = ({
         <button onClick={() => onChangeChartType("candlestick")}>
           Candlestick Chart
         </button>
+      </div>
+      <div className="save-stock-container">
+        <button onClick={() => sendTicker(ticker)}>Save Stock</button>
       </div>
     </div>
   );
