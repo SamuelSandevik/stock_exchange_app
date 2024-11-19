@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import DailyStockDiv from "./exploreComponents/DailyStockDiv";
 import DailyTopStockDiv from "./exploreComponents/DailyTopStockDiv";
 import SavedStockDiv from "./exploreComponents/SavedStockDiv";
-import "./exploreScss/_explorePage.scss";
+import "./mainpageScss/_mainpagePage.scss";
 import LogoutBtn from "./exploreComponents/LogoutBtn";
 import SearchStock from "./exploreComponents/SearchStock";
 import NewsList from "./exploreComponents/News/NewsList";

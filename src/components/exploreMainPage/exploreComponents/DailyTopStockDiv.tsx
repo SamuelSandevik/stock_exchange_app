@@ -1,8 +1,7 @@
 import Chart from "../../Homepage/HomepageStockChart";
 import { generateChartData } from "../../MockDataForAPI/Mockdata";
-import "../exploreScss/_explorePage.scss";
+import "../mainpageScss/_mainpagePage.scss";
 import { useEffect, useState } from "react";
-
 
 interface StockData {
   ticker: string;

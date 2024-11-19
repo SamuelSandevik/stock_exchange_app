@@ -1,9 +1,8 @@
-import "../exploreScss/_explorePage.scss";
+import "../mainpageScss/_mainpagePage.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { generateChartData } from "../../MockDataForAPI/Mockdata";
 import Chart from "../../Homepage/HomepageStockChart";
-
 
 interface StockData {
   ticker: string;
