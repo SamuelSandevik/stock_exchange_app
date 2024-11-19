@@ -21,8 +21,8 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
       if (search) {
-        // const stocks = await GetRelatedStockApiAlphaV(search);
-        const stocks = await GetRelatedStockApi(search);
+        const stocks = await GetRelatedStockApiAlphaV(search);
+        // const stocks = await GetRelatedStockApi(search);
         if (stocks == undefined) setSuggestedStocks([]);
         else {
           stocks.unshift({ ticker: search });
@@ -31,7 +31,7 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({
       } else {
         setSuggestedStocks([]);
       }
-    }, 300);
+    }, 1000);
 
     return () => clearTimeout(delayDebounceFn);
   }, [search]);
@@ -61,7 +61,7 @@ const SearchedStockList: React.FC<SearchedStockListProps> = ({
                   handleItemClick(item.ticker, index);
                 }}
               >
-                {/* {item.name} |  */ item.ticker}
+                {item.name + ` | ` + item.ticker}
               </li>
             );
           })}
