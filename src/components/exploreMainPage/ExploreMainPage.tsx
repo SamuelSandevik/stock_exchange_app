@@ -6,7 +6,6 @@ import SavedStockDiv from "./exploreComponents/SavedStockDiv";
 import "./exploreScss/_explorePage.scss";
 import LogoutBtn from "./exploreComponents/LogoutBtn";
 import SearchStock from "./exploreComponents/SearchStock";
-import SearchedStockList from "../SearchedStockList/SearchedStockList";
 
 interface ExploreMainPageProps {
   handleLogout: () => void;
@@ -41,11 +40,11 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
     <>
     <LogoutBtn onLogout={handleLogout} />
       <SearchStock/>
-      <DailyStockDiv />
-      <div className="lowerExploreContainer">
+      
+      {/* <div className="lowerExploreContainer"> */}
         <DailyTopStockDiv />
         <SavedStockDiv />
-      </div>
+      {/* </div> */}
     </>
   ) : null;
 }

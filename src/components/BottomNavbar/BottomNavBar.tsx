@@ -21,7 +21,7 @@ const BottomNavbar = function () {
   const navIcons = [
     { id: "home", route: "/", icon: homeOutline },
     { id: "explore", route: "/signUpForm", icon: trendingUpOutline },
-    { id: "search", route: "/signup", icon: searchOutline },
+    { id: "search", route: "/signUpForm", icon: searchOutline },
   ];
 
   return (
