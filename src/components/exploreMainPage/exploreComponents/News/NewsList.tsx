@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import GetNewsStockApiAlphaV from "../../../StockSearch/NewsStockApi";
 import { NewsItem } from "./NewsItem";
 import { formatTime } from "./TimeFormatter";
+import "../../../Homepage/scss/_news.scss";
 
 const NewsList: React.FC<{ ticker: string }> = ({ ticker }) => {
   const [news, setNews] = useState<NewsItem[]>([]);
@@ -29,27 +30,31 @@ const NewsList: React.FC<{ ticker: string }> = ({ ticker }) => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="news-list">
-      <h3>News</h3>
+    <div className="news">
+      <h3 className="title">News</h3>
       {news.length === 0 ? (
         <p>No news available.</p>
       ) : (
-        <ul>
+        <div className="newsSuperContainer">
           {news.map((item, index) => (
-            <li key={index} className="news-item">
-              <div>
-                <div>
-                  {item.source} | {formatTime(item.timePublished)}
-                </div>
-                <h4>{item.title}</h4>
-                <p>{item.summary}</p>
-                <a href={item.url} target="_blank" rel="noopener noreferrer">
-                  Article link
-                </a>
+            <div key={index} className="newsContainer">
+              <h2 className="newsTitle">{item.title}</h2>
+              <p className="newsBody">{item.summary}</p>
+              <div className="date">
+                {item.source} | {formatTime(item.timePublished)}
               </div>
-            </li>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="articleLink"
+              >
+                Article link
+              </a>
+              <div className="line"></div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
