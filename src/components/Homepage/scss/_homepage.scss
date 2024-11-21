@@ -91,45 +91,46 @@
     margin-right: 35px;
   }
 }
-
+.chart-box-container {
+  width: 90%;
+}
 .chart-box:first-child {
   @include m.border(top, 1px, v.$borderColor, solid);
   @include m.border(bottom, 1px, v.$borderColor, solid);
 }
 .chart-box {
   @include m.flex(row, space-between, center);
-  @include m.size(5rem, 90%);
+  @include m.size(5rem, 95%);
   @include m.border(bottom, 1px, v.$borderColor, solid);
   padding: 1rem;
-
-    .ticker {
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 1.25em;
-      font-weight: 600;
-      color: v.$primaryTextColor;
-    }
+  color: v.$primaryTextColor;
+  .ticker {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: v.$primaryTextColor;
+  }
 
   .chart-container {
     @include m.size(5rem, 30%);
   }
 
   .price-procentage-container {
-    @include m.size(auto,auto); 
+    @include m.size(auto, auto);
     text-align: center;
     .close-price {
       font-weight: 600;
     }
 
     .price-change-container {
-      @include m.flex(row,space-evenly,center);
+      @include m.flex(row, space-evenly, center);
       .price-change {
         font-weight: 600;
         font-size: 0.75rem;
         margin-left: 0.25rem;
-
       }
-    } 
+    }
   }
   .positive {
     color: green;
