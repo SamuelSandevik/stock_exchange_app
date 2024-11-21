@@ -1,5 +1,5 @@
 import Footer from "./components/FooterPage/FooterPage";
-import ExploreMainPage from "./components/exploreMainPage/ExploreMainPage";
+import ExploreMainPage from "./components/exploreMainPage/MainPage";
 import SignUpForm from "./components/SignUpPage/SignUpForm";
 import "./style.scss";
 

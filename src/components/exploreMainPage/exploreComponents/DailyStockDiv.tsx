@@ -1,5 +1,5 @@
 import ApexCharts from "apexcharts";
-import "../exploreScss/_explorePage.scss";
+import "../mainpageScss/_mainpagePage.scss";
 import  { useEffect, useRef } from "react";
 import ParentComponent from "../../CandleStickChart/ParentComponent";
 

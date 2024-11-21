@@ -1,0 +1,56 @@
+@use "../../../scss/variables/variables" as v;
+@use "../../../scss/variables/mixins/mixins" as m;
+
+.news {
+  @include m.flex(column, center, center);
+  width: 100%;
+  margin-top: 50px;
+  padding: 0 1rem;
+
+  .title {
+    color: v.$primaryTextColor;
+    margin-bottom: 30px;
+  }
+
+  .newsSuperContainer {
+    @include m.flex(column, center, center);
+    color: v.$primaryTextColor;
+
+    .newsContainer {
+      @include m.flex(column, center, center);
+
+      .newsTitle {
+        margin: 0 10px;
+      }
+
+      .newsBody {
+        margin: 10px;
+      }
+
+      .date {
+        width: 95%;
+        text-align: left;
+      }
+
+      .articleLink {
+        width: 95%;
+        margin-top: 1rem;
+        text-decoration: none;
+        color: limegreen;
+        cursor: pointer;
+
+        &:visited {
+          color: green;
+        }
+
+      }
+
+      .line {
+        height: 1px;
+        width: 96.5%;
+        background-color: v.$borderColor;
+        margin: 20px 0;
+      }
+    }
+  }
+}

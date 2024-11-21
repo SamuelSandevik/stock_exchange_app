@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import DailyStockDiv from "./exploreComponents/DailyStockDiv";
 import DailyTopStockDiv from "./exploreComponents/DailyTopStockDiv";
 import SavedStockDiv from "./exploreComponents/SavedStockDiv";
-import "./exploreScss/_explorePage.scss";
+import "./mainpageScss/_mainpagePage.scss";
 import LogoutBtn from "./exploreComponents/LogoutBtn";
 import SearchStock from "./exploreComponents/SearchStock";
+import NewsList from "./exploreComponents/News/NewsList";
 
 interface ExploreMainPageProps {
   handleLogout: () => void;
@@ -38,15 +39,17 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
 
   return authorized ? (
     <>
-    <LogoutBtn onLogout={handleLogout} />
-      <SearchStock/>
-      
+      <LogoutBtn onLogout={handleLogout} />
+      <SearchStock />
+
       {/* <div className="lowerExploreContainer"> */}
-        <DailyTopStockDiv />
-        <SavedStockDiv />
+      <DailyTopStockDiv />
+      <SavedStockDiv />
       {/* </div> */}
+
+      <NewsList ticker="mock" />
     </>
   ) : null;
-}
+};
 
 export default ExploreMainPage;
