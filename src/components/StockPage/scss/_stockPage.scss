@@ -3,6 +3,7 @@
 
 .stock-page-header {
     padding: 1rem;
+    color: v.$primaryTextColor ;
 
     .market-container {
         @include m.flex(row,flex-start,center);
@@ -12,6 +13,7 @@
         }
 
         p {
+            color: v.$primaryTextColor ;
             font-size: 0.75rem;
             margin-left: 0.5rem;
         }
@@ -19,6 +21,7 @@
 
     .price-company-container {
         @include m.flex(row,space-between,center);
+        color: v.$primaryTextColor ;
 
         .price-change {
             text-align: end;
@@ -39,6 +42,7 @@
     }
     
     .company-container {
+        color: v.$primaryTextColor ;
         text-align: start;
         .company {
             font-size: 1.25rem;
@@ -55,11 +59,71 @@
 
 
 .stock-page-body {
-
+    color: v.$primaryTextColor;
+    margin-top: 2rem;
+    padding: 1rem;
     .selection-menu {
         @include m.flex(row,space-evenly, center);
         p {
+            color: v.$primaryTextColor;
             font-weight: 600;
+        }
+        
+    }
+
+    .render-content-container {
+        padding: 1rem 0;
+
+        .header {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 1rem;
+        }
+
+        .about-comp {
+            @include m.border(all, 1px, solid, v.$borderColor);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            .stock-sumary {
+                font-size: 0.75rem;
+                font-weight: 300;
+            }
+        }
+
+        .key-numbers {
+            @include m.flex(row,space-between,center);
+            @include m.border(all, 1px, solid, v.$borderColor);
+            padding: 1rem;
+            border-radius: 0.5rem;
+
+            .left {
+                @include m.border(right, 1px, solid, v.$borderColor);
+                @include m.flex(row,space-evenly,center);
+                width: 50%;
+                font-size: 0.75rem;
+
+                .text {
+                    font-weight: 400;
+                }
+
+                .numbers {
+                    font-weight: 600;
+                }
+            }
+
+            .right {
+                @include m.flex(row,space-evenly,center);
+                width: 50%;
+                font-size: 0.75rem;
+
+                .text {
+                    font-weight: 400;
+                }
+
+                .numbers {
+                    font-weight: 600;
+                }
+            }
         }
     }
 }
