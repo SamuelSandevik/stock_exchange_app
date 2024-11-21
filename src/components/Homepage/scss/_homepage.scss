@@ -14,15 +14,17 @@
   width: 100%;
   height: 20svh;
   background: #000000;
-  .silly-logo{
+  .silly-logo {
     width: 20svw;
     color: white;
   }
+
   .right-container {
     align-items: center;
     justify-content: space-evenly;
     display: flex;
     width: 30svw;
+
     .fa-solid {
       color: #ffffff;
     }
@@ -30,33 +32,86 @@
 }
 
 .header-container {
-  @include m.flex(column,center,center);
-  @include m.size(40svh,100%);
+  @include m.flex(column, center, center);
+  @include m.size(40svh, 100%);
   .header {
     font-size: 2em;
     color: white;
   }
 }
 
+.homePageText {
+  width: 100%;
+  @include m.flex(row, center, center);
+  p {
+    width: 60%;
+    text-align: center;
+    color: v.$primaryTextColor;
+    font-size: 2em;
+    margin: 50px 0;
+  }
+}
+.chart-super-container {
+  @include m.flex(column, flex-start, flex-start);
+  width: 100%;
+}
+.chartSwitchBtns {
+  margin-left: 2%;
+  height: 70px;
+  @include m.flex(row, flex-start, flex-end);
+  .switchBtn {
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100px;
+    margin-left: 15px;
+    color: v.$primaryTextColor;
+    background-color: v.$mainColorBtns;
+  }
+}
+.chartDivContainer {
+  width: 100%;
+  @include m.flex(column, center, center);
+}
 
+.tableheader {
+  color: v.$primaryTextColor;
+  padding: 10px 0;
+  @include m.flex(row, space-between, center);
+  //  @include m.border(top, 1px, v.$borderColor, solid);
+  @include m.border(bottom, 1px, v.$borderColor, solid);
+  width: 90%;
+  p {
+    color: v.$primaryTextColor;
+  }
+  .name {
+    margin-left: 5px;
+  }
+  .date {
+    margin-right: 35px;
+  }
+}
 
+.chart-box:first-child {
+  @include m.border(top, 1px, v.$borderColor, solid);
+  @include m.border(bottom, 1px, v.$borderColor, solid);
+}
 .chart-box {
-  @include m.flex(row,space-between,center);
-  @include m.size(5rem, auto);
+  @include m.flex(row, space-between, center);
+  @include m.size(5rem, 90%);
   @include m.border(bottom, 1px, v.$borderColor, solid);
   padding: 1rem;
 
-  .ticker {
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 1.25em;
-    font-weight: 600;
-    color: v.$primaryTextColor;
-  }
+    .ticker {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1.25em;
+      font-weight: 600;
+      color: v.$primaryTextColor;
+    }
 
   .chart-container {
     @include m.size(5rem, 30%);
-
   }
 
   .price-procentage-container {

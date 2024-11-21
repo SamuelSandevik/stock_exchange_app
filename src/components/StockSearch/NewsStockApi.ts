@@ -2,7 +2,6 @@ import { mockNewsData } from "./mockNews";
 
 const GetNewsStockApiAlphaV = async (ticker: string) => {
   if (ticker === "mock") {
-    console.log("Using mock data for API response");
     return mockNewsData.feed.map((item: any) => ({
       title: item.title,
       url: item.url,

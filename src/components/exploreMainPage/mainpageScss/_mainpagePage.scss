@@ -1,4 +1,5 @@
 @use "../../../scss/variables/variables" as v;
+
 #dailyShowStock {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
 
   border-radius: 10px;
   background-color: #f4f4f4;
+
   #dailyShowStockName {
     background-color: v.$mainColor;
     margin: 10px;
@@ -14,12 +16,14 @@
     width: 140px;
     text-align: center;
     margin-top: 15px;
+
     p {
       font-size: 1rem;
       padding: 5px;
     }
   }
 }
+
 .lowerExploreContainer {
   display: flex;
   justify-content: space-around;
@@ -30,16 +34,19 @@
     width: 175px;
     height: 260px;
     background-color: #f4f4f4;
+
     .stockDivTitle {
       background-color: v.$mainColor;
       border-radius: 10px;
       width: fit-content;
       margin: 10px;
+
       p {
         font-size: 1rem;
         padding: 5px;
       }
     }
+
     .stocks {
       background-color: #80b7ff;
       height: 30px;
@@ -48,18 +55,20 @@
       margin: 11px auto;
     }
   }
+
   .stocks:nth-child(2) {
     margin-top: 20px;
   }
 }
 
-.search-container{
+.search-container {
 
-  .search-form{
+  .search-form {
     display: flex;
     justify-content: center;
     align-items: center;
-    .search-input{
+
+    .search-input {
       width: 20svw;
       height: 4svh;
       border-radius: 20px;

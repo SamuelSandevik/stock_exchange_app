@@ -2,8 +2,11 @@ import { useLocation } from "react-router-dom";
 import GetStockApi from "../StockSearch/GetStockApi";
 import { useEffect, useState } from "react";
 import StockPageHeader from "./components/StockPageHeader";
-import FormatStock, { CandlestickData } from "../CandleStickChart/FormatCandleStick";
+import FormatStock, {
+  CandlestickData,
+} from "../CandleStickChart/FormatCandleStick";
 import ChartSwitcher from "./components/ChartSwitcher";
+import StockPageBody from "./components/StockPageBody";
 
 const StockPage = () => {
   const location = useLocation();
@@ -26,8 +29,12 @@ const StockPage = () => {
 
         const candleData = FormatStock(response);
 
-        const highValue = Math.max(...response.map((dataPoint: any) => dataPoint.h));
-        const lowValue = Math.min(...response.map((dataPoint: any) => dataPoint.l));
+        const highValue = Math.max(
+          ...response.map((dataPoint: any) => dataPoint.h)
+        );
+        const lowValue = Math.min(
+          ...response.map((dataPoint: any) => dataPoint.l)
+        );
 
         setChartData(lineData);
         setCandleData(candleData);
@@ -51,6 +58,12 @@ const StockPage = () => {
         chartType={chartType}
         lineData={chartData}
         candleData={candleData}
+      />
+      <StockPageBody
+        high={high}
+        low={low}
+        ticker={searchTerm}
+        onChangeChartType={setChartType}
       />
     </div>
   );
