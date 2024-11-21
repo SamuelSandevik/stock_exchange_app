@@ -1,0 +1,156 @@
+.categories-container {
+  display: flex; /* Gör så att barnen visas horisontellt */
+  gap: 16px; /* Mellanrum mellan bilderna */
+  overflow-x: auto; /* Lägg till horisontell scroll */
+  overflow-y: hidden; /* Dölj vertikal scroll */
+  scrollbar-width: thin; /* Anpassa skrollbarens storlek (Firefox-stöd) */
+  scrollbar-color: #ccc transparent; /* Anpassa skrollbarens färg (Firefox-stöd) */
+  padding: 8px; /* Lägg till lite padding för estetik */
+  transition: all 0.3s ease; /* Smidig övergång vid hover */
+
+  div {
+    flex-shrink: 0; /* Gör så att bilder inte krymper */
+    img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover; /* Ser till att bilder fyller sina boxar proportionellt */
+      border-radius: 8px; /* Lägg till rundade hörn */
+    }
+  }
+
+  &:hover {
+    overflow-x: auto; /* Aktivera horisontell scroll på hover */
+  }
+}
+
+/* Valfritt: Anpassa skrollbarens utseende */
+.categories-container::-webkit-scrollbar {
+  height: 8px; /* Höjd på skrollbaren */
+}
+
+.categories-container::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Färg på skrollbargreppet */
+  border-radius: 4px; /* Rundade hörn */
+}
+
+.categories-container::-webkit-scrollbar-track {
+  background: transparent; /* Färg på skrollbarens "bakgrund" */
+}
+
+.markets-container {
+  display: flex; /* Gör så att flaggorna visas horisontellt */
+  gap: 16px; /* Mellanrum mellan flaggorna */
+  overflow-x: auto; /* Lägg till horisontell scroll */
+  overflow-y: hidden; /* Dölj vertikal scroll */
+  scrollbar-width: thin; /* Anpassa skrollbarens storlek (Firefox-stöd) */
+  scrollbar-color: #ccc transparent; /* Anpassa skrollbarens färg (Firefox-stöd) */
+  padding: 8px; /* Lägg till lite padding för estetik */
+  transition: all 0.3s ease; /* Smidig övergång vid hover */
+
+  div {
+    flex-shrink: 0; /* Gör så att flaggorna inte krymper */
+    .flag-icon {
+      height: 150px; /* Anpassa höjden */
+      width: auto; /* Behåll proportionerna */
+      border-radius: 8px; /* Rundade hörn */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+    }
+  }
+
+  &:hover {
+    overflow-x: auto; /* Aktivera horisontell scroll på hover */
+  }
+}
+
+/* Anpassa skrollbarens utseende */
+.markets-container::-webkit-scrollbar {
+  height: 8px; /* Höjd på skrollbaren */
+}
+
+.markets-container::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Färg på skrollbargreppet */
+  border-radius: 4px; /* Rundade hörn */
+}
+
+.markets-container::-webkit-scrollbar-track {
+  background: transparent; /* Färg på skrollbarens "bakgrund" */
+}
+
+.country-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.back-button {
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.country-name {
+  //   margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  align-items: flex-start;
+  height: 10svh;
+}
+
+.symbol {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.last-refreshed {
+  font-size: 14px;
+  color: #666;
+}
+
+.key-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.key-stats > div {
+  text-align: center;
+}
+
+.label {
+  font-size: 12px;
+  color: #666;
+}
+
+.change-value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.change-value.positive {
+  color: green;
+}
+
+.change-value.negative {
+  color: red;
+}
+
+.volume-value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.time-series {
+  margin-top: 20px;
+}
+
+.time-series p {
+  margin: 5px 0;
+}
