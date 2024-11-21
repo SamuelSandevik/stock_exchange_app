@@ -1,6 +1,6 @@
 import "../scss/_stockPage.scss";
 import sendTicker from "./SaveTicker";
-import React from "react";
+import React, { useState } from "react";
 
 interface StockPageProps {
   high: number;
