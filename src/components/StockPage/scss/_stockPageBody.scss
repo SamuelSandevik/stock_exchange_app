@@ -3,7 +3,6 @@
 
 .stock-page-body {
     color: v.$primaryTextColor;
-    margin-top: 2rem;
     padding: 1rem;
 
     .selection-menu {
@@ -28,7 +27,7 @@
             position: absolute;
             bottom: 0;
             height: 3px;
-            background-color: tomato; // Färg på slidern
+            background-color: v.$negativeTextColor; // Färg på slidern
             border-radius: 2px;
             transition: left 0.3s ease, width 0.3s ease; // Gör animationen mjuk
         }

@@ -7,6 +7,7 @@ import FormatStock, {
 } from "../CandleStickChart/FormatCandleStick";
 import ChartSwitcher from "./components/ChartSwitcher";
 import StockPageBody from "./components/StockPageBody";
+import AAPLStockChart from "./components/HighChartTest";
 
 const StockPage = () => {
   const location = useLocation();
@@ -54,11 +55,12 @@ const StockPage = () => {
         ticker={searchTerm}
         onChangeChartType={setChartType}
       />
-      <ChartSwitcher
+      <AAPLStockChart />
+      {/* <ChartSwitcher
         chartType={chartType}
         lineData={chartData}
         candleData={candleData}
-      />
+      /> */}
       <StockPageBody
         high={high}
         low={low}

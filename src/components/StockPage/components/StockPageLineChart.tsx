@@ -14,11 +14,11 @@ const StockPageLineChart: React.FC<ChartProps> = ({ exampleData }) => {
       animations: { enabled: true },
     },
     stroke: {
-      colors: ["#000"], // Svart linje
+      colors: ["#FFF"], // Svart linje
       width: 2,
     },
     yaxis: {
-      show: true, // Dölj y-axeln
+      show: false, // Dölj y-axeln
       labels: { show: true }, // Dölj y-axelns etiketter
       axisTicks: { show: false }, // Dölj tickmarks
     },
@@ -47,7 +47,7 @@ const StockPageLineChart: React.FC<ChartProps> = ({ exampleData }) => {
         options={options}
         series={series}
         type="line"
-        height="100%"
+        height="400px"
       />
     </div>
   );
