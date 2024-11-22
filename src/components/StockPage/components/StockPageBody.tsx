@@ -1,6 +1,5 @@
-import "../scss/_stockPage.scss";
-import sendTicker from "./SaveTicker";
-import React, { useState } from "react";
+import "../scss/_stockPageBody.scss";
+import React, { useState, useEffect, useRef } from "react";
 
 interface StockPageProps {
   high: number;
@@ -21,19 +20,40 @@ const stockPageBody: React.FC<StockPageProps> = ({
     { text: "Related" },
   ];
 
-  // State för att hålla reda på vilket menyval som är aktivt
   const [activeMenu, setActiveMenu] = useState<string>("Overview");
+  const [sliderStyle, setSliderStyle] = useState({ left: "0px", width: "0px" });
 
-  // Innehåll för varje menyval
+  const menuRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+
+  const updateSliderPosition = (index: number) => {
+    const target = menuRefs.current[index];
+    if (target) {
+      const { offsetLeft, offsetWidth } = target;
+      setSliderStyle({ left: `${offsetLeft}px`, width: `${offsetWidth}px` });
+    }
+  };
+
+  useEffect(() => {
+    // Ställ in sliderns position vid första renderingen
+    const initialIndex = selectionMenu.findIndex(
+      (item) => item.text === activeMenu
+    );
+    updateSliderPosition(initialIndex);
+  }, [activeMenu]);
+
+  const handleMenuClick = (text: string, index: number) => {
+    setActiveMenu(text);
+    updateSliderPosition(index);
+  };
+
   const renderContent = () => {
     switch (activeMenu) {
       case "Overview":
         return (
-          <div className="overview-container ">
+          <div className="overview-container">
             <p className="header">About the company</p>
-
             <div className="about-comp">
-              <p className="stock-sumary">
+              <p className="stock-summary">
                 Tesla är en amerikansk fordonstillverkare. Bolaget är
                 specialiserat på tillverkning av batteridrivna fordon som säljs
                 under eget varumärke och i olika modeller. <br />
@@ -42,9 +62,7 @@ const stockPageBody: React.FC<StockPageProps> = ({
                 huvudkontor beläget i Austin, Texas
               </p>
             </div>
-
             <p className="header">Key Numbers</p>
-
             <div className="key-numbers">
               <div className="left">
                 <div className="text">
@@ -52,21 +70,18 @@ const stockPageBody: React.FC<StockPageProps> = ({
                   <p>High</p>
                   <p>Low</p>
                 </div>
-
                 <div className="numbers">
                   <p>{high}</p>
                   <p>{high}</p>
                   <p>{low}</p>
                 </div>
               </div>
-
               <div className="right">
                 <div className="text">
                   <p>Vol</p>
                   <p>Pe</p>
                   <p>Mrkt cap</p>
                 </div>
-
                 <div className="numbers">
                   <p>7.459 M</p>
                   <p>32.89</p>
@@ -74,14 +89,19 @@ const stockPageBody: React.FC<StockPageProps> = ({
                 </div>
               </div>
             </div>
+            <div className="Investment-disclaimer">
+              <p>
+                Investing in securities has historically delivered strong
+                returns, but there are no guarantees for the future, you could
+                lose parts or your whole invested capital.
+              </p>
+            </div>
           </div>
         );
       case "News":
-        return <div className="news-container balle">News content here</div>;
+        return <div className="news-container">News content here</div>;
       case "Related":
-        return (
-          <div className="related-container balle">Related content here</div>
-        );
+        return <div className="related-container">Related content here</div>;
       default:
         return <div>Invalid option</div>;
     }
@@ -89,27 +109,18 @@ const stockPageBody: React.FC<StockPageProps> = ({
 
   return (
     <div className="stock-page-body">
-      {/* <div className="change-chart-container">
-        <button onClick={() => onChangeChartType("line")}>Line Chart</button>
-        <button onClick={() => onChangeChartType("candlestick")}>
-          Candlestick Chart
-        </button>
-      </div>
-
-      <div className="save-stock-container">
-        <button onClick={() => sendTicker(ticker)}>Save Stock</button>
-      </div> */}
-
       <div className="selection-menu">
         {selectionMenu.map((item, index) => (
           <p
             key={index}
+            ref={(el) => (menuRefs.current[index] = el)}
             className={activeMenu === item.text ? "active" : ""}
-            onClick={() => setActiveMenu(item.text)}
+            onClick={() => handleMenuClick(item.text, index)}
           >
             {item.text}
           </p>
         ))}
+        <div className="slider" style={sliderStyle}></div>
       </div>
 
       <div className="render-content-container">{renderContent()}</div>

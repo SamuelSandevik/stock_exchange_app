@@ -1,5 +1,5 @@
 import sendTicker from "./SaveTicker";
-import "../scss/_stockPage.scss";
+import "../scss/_stockPageHeader.scss";
 import { US } from "country-flag-icons/react/3x2";
 
 interface StockPageProps {
