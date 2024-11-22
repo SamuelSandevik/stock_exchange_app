@@ -1,0 +1,94 @@
+@use "../../../scss/variables/variables" as v;
+@use "../../../scss/variables/mixins/mixins" as m;
+
+.stock-page-body {
+    color: v.$primaryTextColor;
+    margin-top: 2rem;
+    padding: 1rem;
+
+    .selection-menu {
+        @include m.flex(row, space-evenly, center);
+        position: relative;
+
+        p {
+            position: relative;
+            font-size: 1rem;
+            color: v.$primaryTextColor;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            transition: color 0.3s ease;
+
+            &.active {
+                font-weight: bold;
+            }
+        }
+
+        .slider {
+            position: absolute;
+            bottom: 0;
+            height: 3px;
+            background-color: tomato; // Färg på slidern
+            border-radius: 2px;
+            transition: left 0.3s ease, width 0.3s ease; // Gör animationen mjuk
+        }
+    }
+
+    .render-content-container {
+        padding: 1rem 0;
+
+        .header {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 1rem;
+        }
+
+        .about-comp {
+            @include m.border(all, 1px, solid, v.$borderColor);
+            padding: 1rem;
+            border-radius: 0.5rem;
+
+            .stock-sumary {
+                font-size: 0.75rem;
+                font-weight: 400;
+            }
+        }
+
+        .key-numbers {
+            @include m.flex(row, space-between, center);
+            @include m.border(all, 1px, solid, v.$borderColor);
+            padding: 1rem;
+            border-radius: 0.5rem;
+
+            .left {
+                @include m.border(right, 1px, solid, v.$borderColor);
+                @include m.flex(row, space-evenly, center);
+                @include m.size(auto, 50%);
+            }
+
+            .right {
+                @include m.flex(row, space-evenly, center);
+                @include m.size(auto, 50%);
+            }
+
+            div {
+                font-size: 0.75rem;
+
+                .text {
+                    font-weight: 400;
+                }
+
+                .numbers {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .Investment-disclaimer {
+        margin-top: 2rem;
+        color: darkgray;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+}
