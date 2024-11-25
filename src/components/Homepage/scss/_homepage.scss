@@ -84,12 +84,6 @@
   p {
     color: v.$primaryTextColor;
   }
-  .name {
-    margin-left: 5px;
-  }
-  .date {
-    margin-right: 35px;
-  }
 }
 .chart-box-container {
   width: 90%;
@@ -118,7 +112,7 @@
 
   .price-procentage-container {
     @include m.size(auto, auto);
-    text-align: center;
+    text-align: right;
     .close-price {
       font-weight: 600;
     }

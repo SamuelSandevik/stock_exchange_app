@@ -62,7 +62,7 @@ const Chart: React.FC<ChartProps> = ({
         : "percent neutral";
 
   return (
-    <div className="chart-box-container">
+    <>
       <div className="chart-box">
         <div className="ticker">{ticker}</div>
         <div className="chart-container">
@@ -81,7 +81,7 @@ const Chart: React.FC<ChartProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
