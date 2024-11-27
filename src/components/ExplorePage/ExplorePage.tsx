@@ -6,7 +6,7 @@ import "./ExploreScss/_explore.scss";
 const ExplorePage = () => {
     return (
         <>
-        <div>Explore Page</div>
+        <div className="explore-header">Explore Page</div>
         <CategoriesExplore/>
         <MarketsExplore/>
         </>

@@ -10,6 +10,7 @@ import StockPage from "./components/StockPage/StockPage";
 import BottomNavbar from "./components/BottomNavbar/BottomNavBar";
 import ExplorePage from "./components/ExplorePage/ExplorePage";
 import CountryMarketPage from "./components/ExplorePage/ExplorePageComponents/CountryMarketData";
+import CategoryPage from "./components/ExplorePage/ExplorePageComponents/CategoriesPage";
 
 const App = () => {
   const { isLoggedIn, setIsLoggedIn, logout } = useAuth();
@@ -50,7 +51,8 @@ const App = () => {
           />
           <Route path="/stockPage" element={<StockPage />} />
           <Route path="/explore" element={<ExplorePage/>} />
-          <Route path="/explore/:country" element={<CountryMarketPage />} />
+          <Route path="/explore/country/:country" element={<CountryMarketPage />} />
+          <Route path="/explore/category/:category" element={<CategoryPage />} />
         </Routes>
         <BottomNavbar />
       </div>

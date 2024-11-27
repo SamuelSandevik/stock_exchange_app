@@ -7,24 +7,24 @@ const Markets = () => {
   
     return (
       <div className="explore-container">
-        <h1>Explore Markets</h1>
+        <h1 className="white-header">Markets</h1>
         <div className="markets-container">
-          <div className="market" onClick={() => navigate("/explore/usa")}>
+          <div className="market" onClick={() => navigate("/explore/country/usa")}>
             <US title="United States" className="flag-icon" />
           </div>
-          <div className="market" onClick={() => navigate("/explore/canada")}>
+          <div className="market" onClick={() => navigate("/explore/country/canada")}>
             <CA title="Canada" className="flag-icon" />
           </div>
-          <div className="market" onClick={() => navigate("/explore/uk")}>
+          <div className="market" onClick={() => navigate("/explore/country/uk")}>
             <GB title="United Kingdom" className="flag-icon" />
           </div>
-          <div className="market" onClick={() => navigate("/explore/china")}>
+          <div className="market" onClick={() => navigate("/explore/country/china")}>
             <CN title="China" className="flag-icon" />
           </div>
-          <div className="market" onClick={() => navigate("/explore/germany")}>
+          <div className="market" onClick={() => navigate("/explore/country/germany")}>
             <DE title="Germany" className="flag-icon" />
           </div>
-          <div className="market" onClick={() => navigate("/explore/india")}>
+          <div className="market" onClick={() => navigate("/explore/country/india")}>
             <IN title="India" className="flag-icon" />
           </div>
         </div>
