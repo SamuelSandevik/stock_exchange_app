@@ -109,6 +109,16 @@ const stockPageBody: React.FC<StockPageProps> = ({
 
   return (
     <div className="stock-page-body">
+      {/* <div className="change-chart-container">
+        <button onClick={() => onChangeChartType("line")}>Line Chart</button>
+        <button onClick={() => onChangeChartType("candlestick")}>
+          Candlestick Chart
+        </button>
+      </div>
+
+      <div className="save-stock-container">
+        <button onClick={() => sendTicker(ticker)}>Save Stock</button>
+      </div> */}
       <div className="selection-menu">
         {selectionMenu.map((item, index) => (
           <p

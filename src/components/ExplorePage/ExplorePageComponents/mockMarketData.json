@@ -1,0 +1,229 @@
+{
+  "USA": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "AAPL",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "US/Eastern"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "211.0000",
+        "2. high": "214.9600",
+        "3. low": "209.7725",
+        "4. close": "214.6000",
+        "5. volume": "4562901"
+      },
+      "2024-11-19": {
+        "1. open": "208.0000",
+        "2. high": "210.0000",
+        "3. low": "207.5000",
+        "4. close": "209.0000",
+        "5. volume": "3401200"
+      },
+      "2024-11-18": {
+        "1. open": "210.0000",
+        "2. high": "212.0000",
+        "3. low": "208.5000",
+        "4. close": "208.5000",
+        "5. volume": "2901100"
+      },
+      "2024-11-13": {
+        "1. open": "205.0000",
+        "2. high": "208.0000",
+        "3. low": "204.5000",
+        "4. close": "206.0000",
+        "5. volume": "4103200"
+      }
+    }
+  },
+  "UK": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "BP",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "UK/Europe"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "100.0000",
+        "2. high": "105.0000",
+        "3. low": "98.5000",
+        "4. close": "104.7500",
+        "5. volume": "3542301"
+      },
+      "2024-11-19": {
+        "1. open": "102.0000",
+        "2. high": "104.0000",
+        "3. low": "101.0000",
+        "4. close": "103.0000",
+        "5. volume": "2901200"
+      },
+      "2024-11-13": {
+        "1. open": "95.0000",
+        "2. high": "97.5000",
+        "3. low": "94.0000",
+        "4. close": "96.0000",
+        "5. volume": "3801100"
+      }
+    }
+  },
+  "CANADA": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "SHOP",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Canada/Eastern"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "1400.0000",
+        "2. high": "1450.0000",
+        "3. low": "1390.0000",
+        "4. close": "1440.0000",
+        "5. volume": "1402300"
+      },
+      "2024-11-19": {
+        "1. open": "1380.0000",
+        "2. high": "1420.0000",
+        "3. low": "1370.0000",
+        "4. close": "1400.0000",
+        "5. volume": "1289000"
+      },
+      "2024-11-18": {
+        "1. open": "1360.0000",
+        "2. high": "1390.0000",
+        "3. low": "1350.0000",
+        "4. close": "1380.0000",
+        "5. volume": "1350000"
+      },
+      "2024-11-13": {
+        "1. open": "1300.0000",
+        "2. high": "1350.0000",
+        "3. low": "1290.0000",
+        "4. close": "1320.0000",
+        "5. volume": "1200000"
+      }
+    }
+  },
+  "CHINA": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "BABA",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Asia/Shanghai"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "80.0000",
+        "2. high": "82.0000",
+        "3. low": "78.5000",
+        "4. close": "81.7500",
+        "5. volume": "5348900"
+      },
+      "2024-11-19": {
+        "1. open": "78.0000",
+        "2. high": "80.0000",
+        "3. low": "77.0000",
+        "4. close": "79.5000",
+        "5. volume": "5000000"
+      },
+      "2024-11-18": {
+        "1. open": "77.0000",
+        "2. high": "78.5000",
+        "3. low": "76.5000",
+        "4. close": "77.8000",
+        "5. volume": "4800000"
+      },
+      "2024-11-13": {
+        "1. open": "75.0000",
+        "2. high": "77.0000",
+        "3. low": "74.5000",
+        "4. close": "76.5000",
+        "5. volume": "4700000"
+      }
+    }
+  },
+  "GERMANY": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "SAP",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Europe/Berlin"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "115.0000",
+        "2. high": "117.0000",
+        "3. low": "113.5000",
+        "4. close": "116.5000",
+        "5. volume": "2328900"
+      },
+      "2024-11-19": {
+        "1. open": "114.0000",
+        "2. high": "116.0000",
+        "3. low": "112.5000",
+        "4. close": "115.0000",
+        "5. volume": "2200000"
+      },
+      "2024-11-18": {
+        "1. open": "113.0000",
+        "2. high": "114.5000",
+        "3. low": "112.0000",
+        "4. close": "113.8000",
+        "5. volume": "2100000"
+      },
+      "2024-11-13": {
+        "1. open": "110.0000",
+        "2. high": "112.0000",
+        "3. low": "109.0000",
+        "4. close": "111.0000",
+        "5. volume": "2000000"
+      }
+    }
+  },
+  "INDIA": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "INFY",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Asia/Kolkata"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "1450.0000",
+        "2. high": "1475.0000",
+        "3. low": "1440.0000",
+        "4. close": "1465.0000",
+        "5. volume": "1582300"
+      },
+      "2024-11-19": {
+        "1. open": "1440.0000",
+        "2. high": "1460.0000",
+        "3. low": "1430.0000",
+        "4. close": "1450.0000",
+        "5. volume": "1400000"
+      },
+      "2024-11-18": {
+        "1. open": "1420.0000",
+        "2. high": "1440.0000",
+        "3. low": "1410.0000",
+        "4. close": "1435.0000",
+        "5. volume": "1300000"
+      },
+      "2024-11-13": {
+        "1. open": "1400.0000",
+        "2. high": "1420.0000",
+        "3. low": "1390.0000",
+        "4. close": "1410.0000",
+        "5. volume": "1250000"
+      }
+    }
+  }
+}
