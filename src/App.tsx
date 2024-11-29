@@ -28,9 +28,9 @@ const App = () => {
             element={<SignUpForm onLogin={() => setIsLoggedIn(true)} />}
           />
 
-          {/* Skyddad Mainpage */}
+          {/* Skyddad Foryoupage */}
           <Route
-            path="/mainpage"
+            path="/foryou"
             element={
               isLoggedIn ? (
                 <ExploreMainPage handleLogout={logout} />
@@ -43,7 +43,7 @@ const App = () => {
             path="/check-auth"
             element={
               isLoggedIn ? (
-                <Navigate to="/mainpage" />
+                <Navigate to="/foryou" />
               ) : (
                 <Navigate to="/signUpForm" />
               )
