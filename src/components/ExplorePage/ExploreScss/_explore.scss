@@ -9,7 +9,7 @@
   overflow-x: auto; /* Lägg till horisontell scroll */
   overflow-y: hidden; /* Dölj vertikal scroll */
   scrollbar-width: thin; /* Anpassa skrollbarens storlek (Firefox-stöd) */
-  scrollbar-color: #ccc transparent; /* Anpassa skrollbarens färg (Firefox-stöd) */
+  scrollbar-color: black transparent; /* Anpassa skrollbarens färg (Firefox-stöd) */
   padding: 8px; /* Lägg till lite padding för estetik */
   transition: all 0.3s ease; /* Smidig övergång vid hover */
 
@@ -31,15 +31,17 @@
 /* Valfritt: Anpassa skrollbarens utseende */
 .categories-container::-webkit-scrollbar {
   height: 8px; /* Höjd på skrollbaren */
+  background-color: black;
 }
 
 .categories-container::-webkit-scrollbar-thumb {
-  background-color: #ccc; /* Färg på skrollbargreppet */
+  background-color: black; /* Färg på skrollbargreppet */
   border-radius: 4px; /* Rundade hörn */
 }
 
 .categories-container::-webkit-scrollbar-track {
   background: transparent; /* Färg på skrollbarens "bakgrund" */
+  color: black;
 }
 
 .markets-container {
@@ -48,7 +50,7 @@
   overflow-x: auto; /* Lägg till horisontell scroll */
   overflow-y: hidden; /* Dölj vertikal scroll */
   scrollbar-width: thin; /* Anpassa skrollbarens storlek (Firefox-stöd) */
-  scrollbar-color: #ccc transparent; /* Anpassa skrollbarens färg (Firefox-stöd) */
+  scrollbar-color: black transparent; /* Anpassa skrollbarens färg (Firefox-stöd) */
   padding: 8px; /* Lägg till lite padding för estetik */
   transition: all 0.3s ease; /* Smidig övergång vid hover */
 
@@ -65,20 +67,6 @@
   &:hover {
     overflow-x: auto; /* Aktivera horisontell scroll på hover */
   }
-}
-
-/* Anpassa skrollbarens utseende */
-.markets-container::-webkit-scrollbar {
-  height: 8px; /* Höjd på skrollbaren */
-}
-
-.markets-container::-webkit-scrollbar-thumb {
-  background-color: #ccc; /* Färg på skrollbargreppet */
-  border-radius: 4px; /* Rundade hörn */
-}
-
-.markets-container::-webkit-scrollbar-track {
-  background: transparent; /* Färg på skrollbarens "bakgrund" */
 }
 
 .country-container {

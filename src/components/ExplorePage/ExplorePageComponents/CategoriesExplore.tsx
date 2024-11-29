@@ -1,4 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import consumer from "../../../assets/images/consumer2.png";
+import tech from "../../../assets/images/tech.jpg";
+import health from "../../../assets/images/healthcare.jpg";
+import finance from "../../../assets/images/finance2.png";
+import industry from "../../../assets/images/industry.jpg";
+
 
 const CategoriesExplore = () => {
   const navigate = useNavigate();
@@ -11,7 +17,7 @@ const CategoriesExplore = () => {
           onClick={() => navigate("/explore/category/consumer-discretionary")}
         >
           <img
-            src="https://th.bing.com/th/id/R.bd96cacd649cf71240d8f485f4abbf3f?rik=JqzEVQ%2fstLRvvw&riu=http%3a%2f%2fimages.fanpop.com%2fimages%2fimage_uploads%2fLightning-McQueen-disney-pixar-cars-772510_1700_1100.jpg&ehk=wbGxU5%2foNHCag9OPVQrMzxoNLiXeDv8%2b3fLs9sNIvn4%3d&risl=&pid=ImgRaw&r=0"
+            src={consumer}
             alt="Consumer Discretionary"
           />
         </div>
@@ -20,7 +26,7 @@ const CategoriesExplore = () => {
           onClick={() => navigate("/explore/category/finance")}
         >
           <img
-            src="https://wallpaperaccess.com/full/1104816.jpg"
+            src={finance}
             alt="Finance"
           />
         </div>
@@ -29,7 +35,7 @@ const CategoriesExplore = () => {
           onClick={() => navigate("/explore/category/tech")}
         >
           <img
-            src="https://th.bing.com/th/id/R.72c461caf073d0e6a2a1e1d2ea85d233?rik=d%2b75R3kfp0N9Vg&pid=ImgRaw&r=0"
+            src={tech}
             alt="Tech"
           />
         </div>
@@ -38,7 +44,7 @@ const CategoriesExplore = () => {
           onClick={() => navigate("/explore/category/industry")}
         >
           <img
-            src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?cs=srgb&dl=architecture-buildings-factory-247763.jpg&fm=jpg"
+            src={industry}
             alt="Industry"
           />
         </div>
@@ -47,7 +53,7 @@ const CategoriesExplore = () => {
           onClick={() => navigate("/explore/category/healthcare")}
         >
           <img
-            src="https://th.bing.com/th/id/OIP.7-Bxb2Fcjf5EXApy5RCUGAHaEK?rs=1&pid=ImgDetMain"
+            src={health}
             alt="Healthcare"
           />
         </div>
