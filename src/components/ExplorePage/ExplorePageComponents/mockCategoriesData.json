@@ -1,0 +1,197 @@
+{
+  "consumer-discretionary": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "AMZN",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "US/Eastern"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "151.0000",
+        "2. high": "155.0000",
+        "3. low": "150.0000",
+        "4. close": "153.5000",
+        "5. volume": "4000000"
+      },
+      "2024-11-19": {
+        "1. open": "148.0000",
+        "2. high": "151.0000",
+        "3. low": "145.5000",
+        "4. close": "150.0000",
+        "5. volume": "3500000"
+      },
+      "2024-11-18": {
+        "1. open": "146.0000",
+        "2. high": "149.0000",
+        "3. low": "145.0000",
+        "4. close": "147.0000",
+        "5. volume": "3000000"
+      },
+      "2024-11-13": {
+        "1. open": "142.0000",
+        "2. high": "146.0000",
+        "3. low": "141.0000",
+        "4. close": "144.5000",
+        "5. volume": "3200000"
+      }
+    }
+  },
+  "finance": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "JPM",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "US/Eastern"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "160.0000",
+        "2. high": "163.0000",
+        "3. low": "159.5000",
+        "4. close": "162.0000",
+        "5. volume": "5000000"
+      },
+      "2024-11-19": {
+        "1. open": "158.0000",
+        "2. high": "161.0000",
+        "3. low": "157.0000",
+        "4. close": "160.0000",
+        "5. volume": "4500000"
+      },
+      "2024-11-18": {
+        "1. open": "157.5000",
+        "2. high": "160.5000",
+        "3. low": "156.0000",
+        "4. close": "158.5000",
+        "5. volume": "4200000"
+      },
+      "2024-11-13": {
+        "1. open": "155.0000",
+        "2. high": "157.5000",
+        "3. low": "153.5000",
+        "4. close": "156.0000",
+        "5. volume": "4600000"
+      }
+    }
+  },
+  "tech": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "GOOGL",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "US/Pacific"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "2500.0000",
+        "2. high": "2550.0000",
+        "3. low": "2490.0000",
+        "4. close": "2525.0000",
+        "5. volume": "6000000"
+      },
+      "2024-11-19": {
+        "1. open": "2480.0000",
+        "2. high": "2520.0000",
+        "3. low": "2460.0000",
+        "4. close": "2500.0000",
+        "5. volume": "5500000"
+      },
+      "2024-11-18": {
+        "1. open": "2460.0000",
+        "2. high": "2490.0000",
+        "3. low": "2450.0000",
+        "4. close": "2475.0000",
+        "5. volume": "5300000"
+      },
+      "2024-11-13": {
+        "1. open": "2450.0000",
+        "2. high": "2480.0000",
+        "3. low": "2440.0000",
+        "4. close": "2460.0000",
+        "5. volume": "5200000"
+      }
+    }
+  },
+  "industry": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "GE",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "US/Eastern"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "100.0000",
+        "2. high": "102.5000",
+        "3. low": "98.0000",
+        "4. close": "101.0000",
+        "5. volume": "3200000"
+      },
+      "2024-11-19": {
+        "1. open": "99.0000",
+        "2. high": "101.0000",
+        "3. low": "97.0000",
+        "4. close": "100.0000",
+        "5. volume": "3100000"
+      },
+      "2024-11-18": {
+        "1. open": "98.0000",
+        "2. high": "100.0000",
+        "3. low": "97.5000",
+        "4. close": "99.0000",
+        "5. volume": "3000000"
+      },
+      "2024-11-13": {
+        "1. open": "97.0000",
+        "2. high": "98.5000",
+        "3. low": "95.0000",
+        "4. close": "96.5000",
+        "5. volume": "2900000"
+      }
+    }
+  },
+  "healthcare": {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "PFE",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "US/Eastern"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "45.0000",
+        "2. high": "46.0000",
+        "3. low": "44.5000",
+        "4. close": "45.5000",
+        "5. volume": "2100000"
+      },
+      "2024-11-19": {
+        "1. open": "44.0000",
+        "2. high": "45.0000",
+        "3. low": "43.0000",
+        "4. close": "44.5000",
+        "5. volume": "2000000"
+      },
+      "2024-11-18": {
+        "1. open": "43.0000",
+        "2. high": "44.0000",
+        "3. low": "42.5000",
+        "4. close": "43.0000",
+        "5. volume": "1900000"
+      },
+      "2024-11-13": {
+        "1. open": "42.0000",
+        "2. high": "43.0000",
+        "3. low": "41.5000",
+        "4. close": "42.0000",
+        "5. volume": "1800000"
+      }
+    }
+  }
+}
