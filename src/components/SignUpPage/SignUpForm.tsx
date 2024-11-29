@@ -43,7 +43,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
 
     if (response.status === 200) {
       onLogin(); // Uppdaterar autentiseringsstatus när inloggningen lyckas
-      navigate("/mainpage");
+      navigate("/foryou");
     }
   }
 

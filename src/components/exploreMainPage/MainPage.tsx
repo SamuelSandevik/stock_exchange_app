@@ -40,7 +40,6 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
   return authorized ? (
     <>
       <LogoutBtn onLogout={handleLogout} />
-      <SearchStock />
 
       {/* <div className="lowerExploreContainer"> */}
       <DailyTopStockDiv />

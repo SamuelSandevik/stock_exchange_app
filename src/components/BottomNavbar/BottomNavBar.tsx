@@ -1,27 +1,20 @@
-import React from "react";
 import { IonIcon } from "@ionic/react"; // Importera från @ionic/react
 import {
   homeOutline,
   trendingUpOutline,
   searchOutline,
-  navigate,
 } from "ionicons/icons";
 import "./scss/_bottomNavbar.scss";
 import {
-  BrowserRouter,
-  Navigate,
-  Routes,
-  useLocation,
   useNavigate,
 } from "react-router-dom";
 const BottomNavbar = function () {
   const navigate = useNavigate();
-  const currentLocation = useLocation();
 
   const navIcons = [
     { id: "home", route: "/", icon: homeOutline },
-    { id: "explore", route: "/signUpForm", icon: trendingUpOutline },
-    { id: "search", route: "/signUpForm", icon: searchOutline },
+    { id: "explore", route: "/foryou", icon: trendingUpOutline },
+    { id: "search", route: "/explore", icon: searchOutline },
   ];
 
   return (
