@@ -21,6 +21,10 @@ function HeaderPage() {
     navigate("/signUpForm");
   };
 
+  const goToProfile = () => {
+    navigate('/profile');
+  };
+
   return (
     <div className="Nav-container">
       <div className="logo">
@@ -28,7 +32,7 @@ function HeaderPage() {
       </div>
 
       {isMobile ? (
-        <div className="profileIconContainer">
+        <div className="profileIconContainer" onClick={goToProfile}>
           <IonIcon icon={person} style={{ fontSize: '35px', color: 'white' }}></IonIcon>
         </div>
       ) : (
