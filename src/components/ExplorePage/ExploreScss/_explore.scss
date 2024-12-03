@@ -16,8 +16,8 @@
   div {
     flex-shrink: 0; /* Gör så att bilder inte krymper */
     img {
-      height: 200px;
-      width: 200px;
+      height: 250px;
+      width: 150px;
       object-fit: cover; /* Ser till att bilder fyller sina boxar proportionellt */
       border-radius: 8px; /* Lägg till rundade hörn */
     }
@@ -57,7 +57,7 @@
   div {
     flex-shrink: 0; /* Gör så att flaggorna inte krymper */
     .flag-icon {
-      height: 150px; /* Anpassa höjden */
+      height: 80px; /* Anpassa höjden */
       width: auto; /* Behåll proportionerna */
       border-radius: 8px; /* Rundade hörn */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lätt skugga */

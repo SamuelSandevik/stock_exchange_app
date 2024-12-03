@@ -10,7 +10,7 @@ const CategoriesExplore = () => {
   const navigate = useNavigate();
   return (
     <>
-      <p className="white-header">Categories</p>
+      <h2 className="white-header">Categories</h2>
       <div className="categories-container">
         <div
           className="consumer-discretionary-companies"

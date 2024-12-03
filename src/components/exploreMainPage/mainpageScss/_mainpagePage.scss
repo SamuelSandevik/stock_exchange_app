@@ -62,16 +62,24 @@
 }
 
 .search-container {
-
   .search-form {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin: 10px;
     .search-input {
-      width: 20svw;
+      width: 40svw;
       height: 4svh;
       border-radius: 20px;
+    }
+    button {
+      border: none;
+      background-color: black;
+      color: white;
+      margin-left: 10px;
+    }
+    button:hover {
+      color: rgba(255, 255, 255, 0.7);
     }
   }
 }
