@@ -73,7 +73,7 @@ const Homepage = () => {
           browser through
           all the us stocks</p>
       </div>
-      <AAPLNeonChart />
+
       <div>
         {/* Buttons to switch views */}
         <div className="chart-super-container">
