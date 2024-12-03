@@ -2,14 +2,14 @@
 @use '../../scss/variables/variables' as v;
 
 .searched_list_container {
-    @include m.size(auto, 500px);
+    @include m.size(auto, auto);
     position: absolute;
     z-index: 11;
     padding: 5px 15px;
     background-color: white;
     border: grey 1px solid;
     margin-top: 5px;
-    margin-left: calc(50vw - 250px);
+    margin: auto;
     border-radius: 10px;
 
 
