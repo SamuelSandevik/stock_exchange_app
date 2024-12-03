@@ -6,6 +6,7 @@ import LineChartHomepage from "./LineChart/LineChartHomepage";
 import { exampleData } from "./LineChart/exampleData";
 import HeaderPage from "../HeaderPage/HeaderPage";
 import StockNews from "./News/News";
+import AAPLNeonChart from "./TestChart";
 
 interface StockData {
   ticker: string;
@@ -72,6 +73,7 @@ const Homepage = () => {
           browser through
           all the us stocks</p>
       </div>
+
       <div>
         {/* Buttons to switch views */}
         <div className="chart-super-container">
