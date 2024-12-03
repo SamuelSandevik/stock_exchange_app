@@ -7,6 +7,7 @@ import "./mainpageScss/_mainpagePage.scss";
 import LogoutBtn from "./exploreComponents/LogoutBtn";
 import SearchStock from "./exploreComponents/SearchStock";
 import NewsList from "./exploreComponents/News/NewsList";
+import HeaderPage from "../HeaderPage/HeaderPage";
 
 interface ExploreMainPageProps {
   handleLogout: () => void;
@@ -39,6 +40,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
 
   return authorized ? (
     <>
+      <HeaderPage/>
       <LogoutBtn onLogout={handleLogout} />
 
       {/* <div className="lowerExploreContainer"> */}
