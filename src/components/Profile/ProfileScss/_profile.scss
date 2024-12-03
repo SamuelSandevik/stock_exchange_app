@@ -1,3 +1,66 @@
-p{
-    color: white;
+@use "../../../scss/variables/mixins/mixins" as m;
+@use "../../../scss/variables/variables" as v;
+
+.profileContainer {
+  padding-top: 50px;
+  height: 700px;
+  color: v.$primaryTextColor;
+  @include m.flex(column, space-between, center);
+  .topProfile {
+    @include m.flex(column, center, center);
+    .userName {
+      font-size: 2rem;
+    }
+    .userEmail {
+      color: gray;
+      font-size: 0.75rem;
+      margin: 10px;
+    }
+    .editProfileBtn {
+      color: v.$primaryTextColor;
+      width: 150px;
+      height: 50px;
+      font-size: 1.5rem;
+      background-color: #00a013;
+      border: none;
+      border-radius: 50px;
+    }
+    .wallet {
+      @include m.flex(row, center, center);
+      background-color: #00a013;
+      border-radius: 50px;
+      width: 150px;
+      margin: 20px;
+      .walletIcon {
+        margin: 5px;
+      }
+      .walletValue {
+        margin: 5px;
+      }
+    }
+  }
+  .navigateSection {
+    @include m.flex(column, space-between, stretch);
+    width: 85%;
+    background-color: #739c77;
+    border-radius: 40px;
+    .navigateSubSection {
+      margin: 0 20px;
+      height: 100px;
+      @include m.border(bottom);
+      @include m.flex(row, space-between, center);
+      .navsText {
+        text-align: left;
+        width: 70%;
+      }
+    }
+    .navigateSubSection:nth-child(3) {
+      border: none;
+    }
+  }
+  .joinDate {
+    width: 50%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
 }

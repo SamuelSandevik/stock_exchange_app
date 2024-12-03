@@ -27,7 +27,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
         if (response.ok) {
           setAuthorized(true);
         } else {
-          navigate("/");
+          navigate("/signUpForm");
         }
       } catch (error) {
         console.error("Authorization check failed:", error);
@@ -40,7 +40,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
 
   return authorized ? (
     <>
-      <HeaderPage/>
+      <HeaderPage />
       <LogoutBtn onLogout={handleLogout} />
 
       {/* <div className="lowerExploreContainer"> */}
