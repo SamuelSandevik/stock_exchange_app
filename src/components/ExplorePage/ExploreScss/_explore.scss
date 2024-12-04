@@ -152,7 +152,7 @@
   margin-bottom: 20px;
 }
 
-.key-stats>div {
+.key-stats > div {
   text-align: center;
 }
 
@@ -199,36 +199,54 @@
   color: white;
 }
 
-
-
-
-.crypto-container{
+.header {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem;
+  color: white;
+}
+.crypto-container {
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
   grid-template-rows: repeat(3, 1fr);
-  .crypto{
-    @include m.border(all, 1px, solid, v.$borderColor);
+  margin: 1rem 0.5rem;
+  
+  .crypto {
+    @include m.border(all, 3px, solid, v.$borderColor);
     border-radius: 0.5rem;
     margin: 0.2rem;
-    i{
-      font-size: 3rem;
+    i {
+      font-size: 2.5rem;
+    }
+    .svg{
+      width: 4rem;
+      height: 4rem;
     }
   }
-  .crypto-1{
+  .crypto-1 {
     grid-row: span 2;
+    @include m.flex(column, space-evenly, center);
+    padding: 0.5rem;
   }
-  .crypto-2, .crypto-4{
-    @include m.flex(row, space-evenly, center)
+  .crypto-content-1 {
+    width: 100px;
+    @include m.flex(row, space-between, center);
   }
-  .crypto-content-2, .crypto-content-4{
-    @include m.flex(column, center, center)
+  .crypto-2,
+  .crypto-4 {
+    @include m.flex(row, space-evenly, center);
   }
-  .crypto-3{
+  .crypto-content-2,
+  .crypto-content-4 {
+    @include m.flex(column, center, center);
+  }
+  .crypto-3 {
     grid-row: span 3;
+    @include m.flex(column, space-evenly, center);
   }
-  .crypto-5{
+  .crypto-5 {
     grid-column: span 2;
+    @include m.flex(row, space-evenly, center);
   }
 }
-

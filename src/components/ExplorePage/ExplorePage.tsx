@@ -12,8 +12,8 @@ const ExplorePage = () => {
         <div className="explore-header">Explore Page</div>
         <SearchStock/>
         <CategoriesExplore/>
-        <MarketsExplore/>
         <CryptoExplore/>
+        <MarketsExplore/>
         </>
     );
 }
