@@ -32,7 +32,7 @@ const StockPageHeader: React.FC<StockPageProps> = ({
           <div className="price-summary">
             <p className="increase">${(high - low).toFixed(2)}</p>
             <p className="procent">
-              ({((high / low) * 100).toFixed(2) + "%"}) Today
+              ({((high / low) * 100 - 100).toFixed(2) + "%"}) Today
             </p>
           </div>
         </div>
