@@ -3,9 +3,11 @@
 
 .news {
   @include m.flex(column, center, center);
+  @include m.border(all, 1px, solid, v.$borderColor);
+    border-radius: 0.5rem;
   width: 100%;
-  margin-top: 50px;
-  padding: 0 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
 
   .title {
     color: v.$primaryTextColor;

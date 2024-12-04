@@ -31,7 +31,7 @@ const NewsList: React.FC<{ ticker: string }> = ({ ticker }) => {
 
   return (
     <div className="news">
-      <h3 className="title">News</h3>
+      {/* <h3 className="title">News</h3> */}
       {news.length === 0 ? (
         <p>No news available.</p>
       ) : (

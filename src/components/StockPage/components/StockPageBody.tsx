@@ -1,24 +1,37 @@
 import "../scss/_stockPageBody.scss";
 import React, { useState, useEffect, useRef } from "react";
+import { generateMockMetrics } from "./MockMetrics";
+import NewsList from "../../exploreMainPage/exploreComponents/News/NewsList";
+import { useNavigate } from "react-router-dom";
 
 interface StockPageProps {
   high: number;
   low: number;
   ticker: string;
-  onChangeChartType: (type: "line" | "candlestick") => void;
 }
 
-const stockPageBody: React.FC<StockPageProps> = ({
-  high,
-  low,
-  ticker,
-  onChangeChartType,
-}) => {
+const stockPageBody: React.FC<StockPageProps> = ({ high, low, ticker }) => {
   const selectionMenu = [
     { text: "Overview" },
     { text: "News" },
     { text: "Related" },
   ];
+
+  const metrics = generateMockMetrics();
+
+  const navigate = useNavigate();
+
+  const handleStockClick = (ticker: string) => {
+    navigate("/stockPage", { state: { search: ticker } });
+  };
+
+  useEffect(() => {
+    // Scroll to top whenever ticker changes
+    const topElement = document.getElementById("top");
+    if (topElement) {
+      topElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [ticker]);
 
   const [activeMenu, setActiveMenu] = useState<string>("Overview");
   const [sliderStyle, setSliderStyle] = useState({ left: "0px", width: "0px" });
@@ -32,6 +45,31 @@ const stockPageBody: React.FC<StockPageProps> = ({
       setSliderStyle({ left: `${offsetLeft}px`, width: `${offsetWidth}px` });
     }
   };
+
+  const [randomNumbers, setRandomNumbers] = useState<Record<string, number>>(
+    {}
+  );
+
+  useEffect(() => {
+    // Generate random numbers for related tickers
+    const generateRandomNumbers = () => {
+      const tickers = ["NVDA", "AMZN", "MSFT", "GOOG"];
+      const newRandomNumbers: Record<string, number> = {};
+
+      tickers.forEach((relatedTicker) => {
+        if (relatedTicker !== ticker) {
+          const randomValue = parseFloat(
+            (Math.random() * (8 - -7) + -7).toFixed(2)
+          );
+          newRandomNumbers[relatedTicker] = randomValue;
+        }
+      });
+
+      setRandomNumbers(newRandomNumbers);
+    };
+
+    generateRandomNumbers();
+  }, [ticker]);
 
   useEffect(() => {
     // Ställ in sliderns position vid första renderingen
@@ -54,15 +92,17 @@ const stockPageBody: React.FC<StockPageProps> = ({
             <p className="header">About the company</p>
             <div className="about-comp">
               <p className="stock-summary">
-                Tesla är en amerikansk fordonstillverkare. Bolaget är
-                specialiserat på tillverkning av batteridrivna fordon som säljs
-                under eget varumärke och i olika modeller. <br />
-                Produktionen av bilarna sker i egna produktionsanläggningar på
-                den nordamerikanska marknaden. Bolaget grundades år 2003 och har
-                huvudkontor beläget i Austin, Texas
+                {ticker} is a US-based company operating across multiple
+                industries. It offers a range of products and services to both
+                consumers and businesses. {ticker} is known for its innovative
+                solutions and strong commitment to sustainability. <br />
+                The company has operations and facilities in various
+                international markets, with a strong presence in North America
+                and Europe. {ticker} was founded many years ago and is
+                headquartered in a major U.S. city.
               </p>
             </div>
-            <p className="header">Key Numbers</p>
+            <p className="header key-numbers-header">Key Numbers</p>
             <div className="key-numbers">
               <div className="left">
                 <div className="text">
@@ -83,9 +123,9 @@ const stockPageBody: React.FC<StockPageProps> = ({
                   <p>Mrkt cap</p>
                 </div>
                 <div className="numbers">
-                  <p>7.459 M</p>
-                  <p>32.89</p>
-                  <p>2.014T</p>
+                  <p>{metrics.volume}</p>
+                  <p>{metrics.peRatio}</p>
+                  <p>{metrics.marketCap}</p>
                 </div>
               </div>
             </div>
@@ -99,9 +139,59 @@ const stockPageBody: React.FC<StockPageProps> = ({
           </div>
         );
       case "News":
-        return <div className="news-container">News content here</div>;
+        return (
+          <div className="news-container">
+            <p className="header">News related to {ticker}</p>
+            <NewsList ticker="mock" />
+          </div>
+        );
       case "Related":
-        return <div className="related-container">Related content here</div>;
+        return (
+          <div className="related-container">
+            <p className="header">Stocks related to {ticker}</p>
+            {["NVDA", "AMZN", "MSFT", "GOOG"].map((relatedTicker) => {
+              if (relatedTicker !== ticker) {
+                const number = randomNumbers[relatedTicker];
+                return (
+                  <div
+                    key={relatedTicker}
+                    onClick={() => handleStockClick(relatedTicker)}
+                  >
+                    <p className="related-stocks">
+                      <div className="header-container">
+                        <p className="header">{relatedTicker}</p>
+                        <p
+                          className={
+                            number > 0
+                              ? "positive"
+                              : number < 0
+                              ? "negative"
+                              : "neutral"
+                          }
+                        >
+                          {number > 0 ? `+${number}` : number}%
+                        </p>
+                      </div>
+                      {relatedTicker === "NVDA" &&
+                        "Nvidia is a leading American tech company known for its GPUs, powering gaming, AI, and data centers. Founded in 1993, its products like GeForce and Tesla revolutionize visual computing."}
+                      {relatedTicker === "AMZN" &&
+                        "Amazon is a global e-commerce and cloud computing leader, founded by Jeff Bezos in 1994. Known for its vast online marketplace and services like AWS, Amazon revolutionized retail and digital services, becoming one of the world's most valuable companies."}
+                      {relatedTicker === "MSFT" &&
+                        "Microsoft, founded in 1975 by Bill Gates and Paul Allen, is a global technology company known for its software products, including Windows, Office Suite, and Azure cloud services. It plays a leading role in software development, hardware, and artificial intelligence."}
+                      {relatedTicker === "GOOG" &&
+                        "Google, founded in 1998 by Larry Page and Sergey Brin, is a global technology giant best known for its search engine. It also develops products like Android, YouTube, Google Cloud, and Google Ads, shaping the digital landscape through advertising, cloud computing, and AI technologies."}
+                      <div className="stock-link-container">
+                        <p className="stock-link">Link to Stock</p>
+                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                      </div>
+                    </p>
+                  </div>
+                );
+              }
+              return null; // Don't render the current ticker
+            })}
+          </div>
+        );
       default:
         return <div>Invalid option</div>;
     }
