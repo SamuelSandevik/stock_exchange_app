@@ -8,68 +8,100 @@
 }
 
 .categories-container {
-  display: flex; /* Gör så att barnen visas horisontellt */
-  gap: 16px; /* Mellanrum mellan bilderna */
-  overflow-x: auto; /* Lägg till horisontell scroll */
-  overflow-y: hidden; /* Dölj vertikal scroll */
-  scrollbar-width: thin; /* Anpassa skrollbarens storlek (Firefox-stöd) */
-  scrollbar-color: black transparent; /* Anpassa skrollbarens färg (Firefox-stöd) */
-  padding: 8px; /* Lägg till lite padding för estetik */
-  transition: all 0.3s ease; /* Smidig övergång vid hover */
+  display: flex;
+  /* Gör så att barnen visas horisontellt */
+  gap: 16px;
+  /* Mellanrum mellan bilderna */
+  overflow-x: auto;
+  /* Lägg till horisontell scroll */
+  overflow-y: hidden;
+  /* Dölj vertikal scroll */
+  scrollbar-width: thin;
+  /* Anpassa skrollbarens storlek (Firefox-stöd) */
+  scrollbar-color: black transparent;
+  /* Anpassa skrollbarens färg (Firefox-stöd) */
+  padding: 8px;
+  /* Lägg till lite padding för estetik */
+  transition: all 0.3s ease;
+  /* Smidig övergång vid hover */
 
   div {
-    flex-shrink: 0; /* Gör så att bilder inte krymper */
+    flex-shrink: 0;
+
+    /* Gör så att bilder inte krymper */
     img {
-      height: 250px;
-      width: 150px;
-      object-fit: cover; /* Ser till att bilder fyller sina boxar proportionellt */
-      border-radius: 8px; /* Lägg till rundade hörn */
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      /* Ser till att bilder fyller sina boxar proportionellt */
+      border-radius: 8px;
+      /* Lägg till rundade hörn */
     }
   }
 
   &:hover {
-    overflow-x: auto; /* Aktivera horisontell scroll på hover */
+    overflow-x: auto;
+    /* Aktivera horisontell scroll på hover */
   }
 }
 
 /* Valfritt: Anpassa skrollbarens utseende */
 .categories-container::-webkit-scrollbar {
-  height: 8px; /* Höjd på skrollbaren */
+  height: 8px;
+  /* Höjd på skrollbaren */
   background-color: black;
 }
 
 .categories-container::-webkit-scrollbar-thumb {
-  background-color: black; /* Färg på skrollbargreppet */
-  border-radius: 4px; /* Rundade hörn */
+  background-color: black;
+  /* Färg på skrollbargreppet */
+  border-radius: 4px;
+  /* Rundade hörn */
 }
 
 .categories-container::-webkit-scrollbar-track {
-  background: transparent; /* Färg på skrollbarens "bakgrund" */
+  background: transparent;
+  /* Färg på skrollbarens "bakgrund" */
   color: black;
 }
 
 .markets-container {
-  display: flex; /* Gör så att flaggorna visas horisontellt */
-  gap: 16px; /* Mellanrum mellan flaggorna */
-  overflow-x: auto; /* Lägg till horisontell scroll */
-  overflow-y: hidden; /* Dölj vertikal scroll */
-  scrollbar-width: thin; /* Anpassa skrollbarens storlek (Firefox-stöd) */
-  scrollbar-color: black transparent; /* Anpassa skrollbarens färg (Firefox-stöd) */
-  padding: 8px; /* Lägg till lite padding för estetik */
-  transition: all 0.3s ease; /* Smidig övergång vid hover */
+  display: flex;
+  /* Gör så att flaggorna visas horisontellt */
+  gap: 16px;
+  /* Mellanrum mellan flaggorna */
+  overflow-x: auto;
+  /* Lägg till horisontell scroll */
+  overflow-y: hidden;
+  /* Dölj vertikal scroll */
+  scrollbar-width: thin;
+  /* Anpassa skrollbarens storlek (Firefox-stöd) */
+  scrollbar-color: black transparent;
+  /* Anpassa skrollbarens färg (Firefox-stöd) */
+  padding: 8px;
+  /* Lägg till lite padding för estetik */
+  transition: all 0.3s ease;
+  /* Smidig övergång vid hover */
 
   div {
-    flex-shrink: 0; /* Gör så att flaggorna inte krymper */
+    flex-shrink: 0;
+
+    /* Gör så att flaggorna inte krymper */
     .flag-icon {
-      height: 80px; /* Anpassa höjden */
-      width: auto; /* Behåll proportionerna */
-      border-radius: 8px; /* Rundade hörn */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+      height: 150px;
+      /* Anpassa höjden */
+      width: auto;
+      /* Behåll proportionerna */
+      border-radius: 8px;
+      /* Rundade hörn */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Lätt skugga */
     }
   }
 
   &:hover {
-    overflow-x: auto; /* Aktivera horisontell scroll på hover */
+    overflow-x: auto;
+    /* Aktivera horisontell scroll på hover */
   }
 }
 
@@ -88,10 +120,11 @@
 }
 
 .country-name {
-  //   margin-top: 10px;
+  margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
   color: white;
+  float: right;
 }
 
 .header-container {
@@ -119,7 +152,7 @@
   margin-bottom: 20px;
 }
 
-.key-stats > div {
+.key-stats>div {
   text-align: center;
 }
 
