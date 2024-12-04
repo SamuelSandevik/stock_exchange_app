@@ -1,5 +1,6 @@
 {
-  "USA": {
+  "USA": [
+    {
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "AAPL",
@@ -38,7 +39,282 @@
       }
     }
   },
-  "UK": {
+  {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "GOOGL",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "US/Eastern"
+    },
+      "Time Series (Daily)": {
+        "2024-11-20": {
+          "1. open": "1425.0000",
+          "2. high": "1450.0000",
+          "3. low": "1412.5000",
+          "4. close": "1445.0000",
+          "5. volume": "3458900"
+        },
+        "2024-11-19": {
+          "1. open": "1400.0000",
+          "2. high": "1420.0000",
+          "3. low": "1390.0000",
+          "4. close": "1410.0000",
+          "5. volume": "2984500"
+        },
+        "2024-11-18": {
+          "1. open": "1390.0000",
+          "2. high": "1405.0000",
+          "3. low": "1385.0000",
+          "4. close": "1395.0000",
+          "5. volume": "2783000"
+        },
+        "2024-11-13": {
+          "1. open": "1350.0000",
+          "2. high": "1370.0000",
+          "3. low": "1345.0000",
+          "4. close": "1365.0000",
+          "5. volume": "3051200"
+        }
+      }
+    }, 
+    {
+      "Meta Data": {
+        "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+        "2. Symbol": "MSFT",
+        "3. Last Refreshed": "2024-11-20",
+        "4. Output Size": "Full size",
+        "5. Time Zone": "US/Eastern"
+      },
+      "Time Series (Daily)": {
+        "2024-11-20": {
+          "1. open": "350.0000",
+          "2. high": "355.0000",
+          "3. low": "348.5000",
+          "4. close": "354.0000",
+          "5. volume": "4201100"
+        },
+        "2024-11-19": {
+          "1. open": "345.0000",
+          "2. high": "350.0000",
+          "3. low": "342.5000",
+          "4. close": "348.0000",
+          "5. volume": "3984000"
+        },
+        "2024-11-18": {
+          "1. open": "340.0000",
+          "2. high": "345.0000",
+          "3. low": "338.0000",
+          "4. close": "342.0000",
+          "5. volume": "3850000"
+        },
+        "2024-11-13": {
+          "1. open": "330.0000",
+          "2. high": "340.0000",
+          "3. low": "328.0000",
+          "4. close": "335.0000",
+          "5. volume": "4402100"
+        }
+      }
+    },
+    {
+      "Meta Data": {
+        "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+        "2. Symbol": "AMZN",
+        "3. Last Refreshed": "2024-11-20",
+        "4. Output Size": "Full size",
+        "5. Time Zone": "US/Eastern"
+      },
+      "Time Series (Daily)": {
+        "2024-11-20": {
+          "1. open": "130.0000",
+          "2. high": "135.0000",
+          "3. low": "128.5000",
+          "4. close": "134.0000",
+          "5. volume": "5102200"
+        },
+        "2024-11-19": {
+          "1. open": "128.0000",
+          "2. high": "130.0000",
+          "3. low": "127.0000",
+          "4. close": "129.5000",
+          "5. volume": "4903400"
+        },
+        "2024-11-18": {
+          "1. open": "125.0000",
+          "2. high": "128.0000",
+          "3. low": "124.0000",
+          "4. close": "126.0000",
+          "5. volume": "4652300"
+        },
+        "2024-11-13": {
+          "1. open": "120.0000",
+          "2. high": "125.0000",
+          "3. low": "119.5000",
+          "4. close": "123.0000",
+          "5. volume": "4804000"
+        }
+      }
+    },
+    {
+      "Meta Data": {
+        "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+        "2. Symbol": "TSLA",
+        "3. Last Refreshed": "2024-11-20",
+        "4. Output Size": "Full size",
+        "5. Time Zone": "US/Eastern"
+      },
+      "Time Series (Daily)": {
+        "2024-11-20": {
+          "1. open": "240.0000",
+          "2. high": "245.0000",
+          "3. low": "238.0000",
+          "4. close": "244.0000",
+          "5. volume": "5100000"
+        },
+        "2024-11-19": {
+          "1. open": "235.0000",
+          "2. high": "240.0000",
+          "3. low": "232.0000",
+          "4. close": "237.5000",
+          "5. volume": "4800000"
+        },
+        "2024-11-18": {
+          "1. open": "230.0000",
+          "2. high": "235.0000",
+          "3. low": "228.0000",
+          "4. close": "233.0000",
+          "5. volume": "4600000"
+        },
+        "2024-11-13": {
+          "1. open": "220.0000",
+          "2. high": "230.0000",
+          "3. low": "219.0000",
+          "4. close": "225.0000",
+          "5. volume": "5200000"
+        }
+      }
+    },
+    {
+      "Meta Data": {
+        "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+        "2. Symbol": "NFLX",
+        "3. Last Refreshed": "2024-11-20",
+        "4. Output Size": "Full size",
+        "5. Time Zone": "US/Eastern"
+      },
+      "Time Series (Daily)": {
+        "2024-11-20": {
+          "1. open": "430.0000",
+          "2. high": "435.0000",
+          "3. low": "428.0000",
+          "4. close": "432.0000",
+          "5. volume": "3800000"
+        },
+        "2024-11-19": {
+          "1. open": "425.0000",
+          "2. high": "430.0000",
+          "3. low": "422.0000",
+          "4. close": "426.5000",
+          "5. volume": "3600000"
+        },
+        "2024-11-18": {
+          "1. open": "420.0000",
+          "2. high": "425.0000",
+          "3. low": "418.0000",
+          "4. close": "423.0000",
+          "5. volume": "3400000"
+        },
+        "2024-11-13": {
+          "1. open": "410.0000",
+          "2. high": "420.0000",
+          "3. low": "408.0000",
+          "4. close": "415.0000",
+          "5. volume": "4000000"
+        }
+      }
+    },
+    {
+      "Meta Data": {
+        "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+        "2. Symbol": "NVDA",
+        "3. Last Refreshed": "2024-11-20",
+        "4. Output Size": "Full size",
+        "5. Time Zone": "US/Eastern"
+      },
+      "Time Series (Daily)": {
+        "2024-11-20": {
+          "1. open": "510.0000",
+          "2. high": "520.0000",
+          "3. low": "508.0000",
+          "4. close": "518.0000",
+          "5. volume": "6200000"
+        },
+        "2024-11-19": {
+          "1. open": "500.0000",
+          "2. high": "510.0000",
+          "3. low": "498.0000",
+          "4. close": "505.0000",
+          "5. volume": "5900000"
+        },
+        "2024-11-18": {
+          "1. open": "495.0000",
+          "2. high": "500.0000",
+          "3. low": "490.0000",
+          "4. close": "495.0000",
+          "5. volume": "5700000"
+        },
+        "2024-11-13": {
+          "1. open": "480.0000",
+          "2. high": "490.0000",
+          "3. low": "478.0000",
+          "4. close": "485.0000",
+          "5. volume": "6000000"
+        }
+      }
+    },
+    {
+      "Meta Data": {
+        "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+        "2. Symbol": "DIS",
+        "3. Last Refreshed": "2024-11-20",
+        "4. Output Size": "Full size",
+        "5. Time Zone": "US/Eastern"
+      },
+      "Time Series (Daily)": {
+        "2024-11-20": {
+          "1. open": "90.0000",
+          "2. high": "92.0000",
+          "3. low": "89.5000",
+          "4. close": "91.5000",
+          "5. volume": "3000000"
+        },
+        "2024-11-19": {
+          "1. open": "88.5000",
+          "2. high": "90.0000",
+          "3. low": "88.0000",
+          "4. close": "89.5000",
+          "5. volume": "2800000"
+        },
+        "2024-11-18": {
+          "1. open": "87.0000",
+          "2. high": "88.5000",
+          "3. low": "86.5000",
+          "4. close": "87.5000",
+          "5. volume": "2600000"
+        },
+        "2024-11-13": {
+          "1. open": "85.0000",
+          "2. high": "87.0000",
+          "3. low": "84.5000",
+          "4. close": "86.0000",
+          "5. volume": "2900000"
+        }
+      }
+    }
+  ],
+  "UK": [
+    {
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "BP",
@@ -69,8 +345,204 @@
         "5. volume": "3801100"
       }
     }
-  },
-  "CANADA": {
+  }, {
+        "Meta Data": {
+          "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+          "2. Symbol": "HSBA",
+          "3. Last Refreshed": "2024-11-20",
+          "4. Output Size": "Full size",
+          "5. Time Zone": "Europe/London"
+        },
+        "Time Series (Daily)": {
+          "2024-11-20": {
+            "1. open": "6.0000",
+            "2. high": "6.2000",
+            "3. low": "5.9000",
+            "4. close": "6.1500",
+            "5. volume": "35000000"
+          },
+          "2024-11-19": {
+            "1. open": "5.8500",
+            "2. high": "6.0000",
+            "3. low": "5.8000",
+            "4. close": "5.9500",
+            "5. volume": "32000000"
+          },
+          "2024-11-18": {
+            "1. open": "5.8000",
+            "2. high": "5.9000",
+            "3. low": "5.7000",
+            "4. close": "5.8500",
+            "5. volume": "31000000"
+          },
+          "2024-11-13": {
+            "1. open": "5.6000",
+            "2. high": "5.8000",
+            "3. low": "5.5000",
+            "4. close": "5.7000",
+            "5. volume": "33000000"
+          }
+        }
+      },
+      {
+        "Meta Data": {
+          "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+          "2. Symbol": "BARC",
+          "3. Last Refreshed": "2024-11-20",
+          "4. Output Size": "Full size",
+          "5. Time Zone": "Europe/London"
+        },
+        "Time Series (Daily)": {
+          "2024-11-20": {
+            "1. open": "1.8000",
+            "2. high": "1.8500",
+            "3. low": "1.7500",
+            "4. close": "1.8200",
+            "5. volume": "25000000"
+          },
+          "2024-11-19": {
+            "1. open": "1.7500",
+            "2. high": "1.8000",
+            "3. low": "1.7000",
+            "4. close": "1.7800",
+            "5. volume": "24000000"
+          },
+          "2024-11-18": {
+            "1. open": "1.7200",
+            "2. high": "1.7500",
+            "3. low": "1.7000",
+            "4. close": "1.7300",
+            "5. volume": "23000000"
+          },
+          "2024-11-13": {
+            "1. open": "1.6800",
+            "2. high": "1.7200",
+            "3. low": "1.6500",
+            "4. close": "1.7000",
+            "5. volume": "26000000"
+          }
+        }
+      },
+      {
+        "Meta Data": {
+          "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+          "2. Symbol": "LLOY",
+          "3. Last Refreshed": "2024-11-20",
+          "4. Output Size": "Full size",
+          "5. Time Zone": "Europe/London"
+        },
+        "Time Series (Daily)": {
+          "2024-11-20": {
+            "1. open": "0.4800",
+            "2. high": "0.5000",
+            "3. low": "0.4700",
+            "4. close": "0.4900",
+            "5. volume": "45000000"
+          },
+          "2024-11-19": {
+            "1. open": "0.4700",
+            "2. high": "0.4800",
+            "3. low": "0.4600",
+            "4. close": "0.4700",
+            "5. volume": "43000000"
+          },
+          "2024-11-18": {
+            "1. open": "0.4600",
+            "2. high": "0.4700",
+            "3. low": "0.4500",
+            "4. close": "0.4600",
+            "5. volume": "42000000"
+          },
+          "2024-11-13": {
+            "1. open": "0.4400",
+            "2. high": "0.4600",
+            "3. low": "0.4300",
+            "4. close": "0.4500",
+            "5. volume": "44000000"
+          }
+        }
+      },
+      {
+        "Meta Data": {
+          "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+          "2. Symbol": "ULVR",
+          "3. Last Refreshed": "2024-11-20",
+          "4. Output Size": "Full size",
+          "5. Time Zone": "Europe/London"
+        },
+        "Time Series (Daily)": {
+          "2024-11-20": {
+            "1. open": "40.0000",
+            "2. high": "41.0000",
+            "3. low": "39.5000",
+            "4. close": "40.5000",
+            "5. volume": "1200000"
+          },
+          "2024-11-19": {
+            "1. open": "39.5000",
+            "2. high": "40.0000",
+            "3. low": "39.0000",
+            "4. close": "39.8000",
+            "5. volume": "1100000"
+          },
+          "2024-11-18": {
+            "1. open": "39.0000",
+            "2. high": "39.5000",
+            "3. low": "38.5000",
+            "4. close": "39.2000",
+            "5. volume": "1000000"
+          },
+          "2024-11-13": {
+            "1. open": "38.0000",
+            "2. high": "39.0000",
+            "3. low": "37.5000",
+            "4. close": "38.7000",
+            "5. volume": "1300000"
+          }
+        }
+      },
+      {
+        "Meta Data": {
+          "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+          "2. Symbol": "GSK",
+          "3. Last Refreshed": "2024-11-20",
+          "4. Output Size": "Full size",
+          "5. Time Zone": "Europe/London"
+        },
+        "Time Series (Daily)": {
+          "2024-11-20": {
+            "1. open": "15.0000",
+            "2. high": "15.2000",
+            "3. low": "14.8000",
+            "4. close": "15.1000",
+            "5. volume": "9000000"
+          },
+          "2024-11-19": {
+            "1. open": "14.7000",
+            "2. high": "15.0000",
+            "3. low": "14.6000",
+            "4. close": "14.8000",
+            "5. volume": "8500000"
+          },
+          "2024-11-18": {
+            "1. open": "14.5000",
+            "2. high": "14.7000",
+            "3. low": "14.4000",
+            "4. close": "14.6000",
+            "5. volume": "8000000"
+          },
+          "2024-11-13": {
+            "1. open": "14.2000",
+            "2. high": "14.5000",
+            "3. low": "14.1000",
+            "4. close": "14.4000",
+            "5. volume": "9200000"
+          }
+        }
+      }
+  ],
+  "CANADA": [
+  {
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "SHOP",
@@ -108,8 +580,125 @@
         "5. volume": "1200000"
       }
     }
+  },  {
+  "Meta Data": {
+    "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+    "2. Symbol": "RY",
+    "3. Last Refreshed": "2024-11-20",
+    "4. Output Size": "Full size",
+    "5. Time Zone": "America/Toronto"
   },
-  "CHINA": {
+  "Time Series (Daily)": {
+    "2024-11-20": {
+      "1. open": "95.0000",
+      "2. high": "96.5000",
+      "3. low": "94.8000",
+      "4. close": "96.2000",
+      "5. volume": "2800000"
+    },
+    "2024-11-19": {
+      "1. open": "94.0000",
+      "2. high": "95.5000",
+      "3. low": "93.5000",
+      "4. close": "94.8000",
+      "5. volume": "2600000"
+    },
+    "2024-11-18": {
+      "1. open": "93.8000",
+      "2. high": "94.5000",
+      "3. low": "93.0000",
+      "4. close": "94.2000",
+      "5. volume": "2500000"
+    },
+    "2024-11-13": {
+      "1. open": "92.5000",
+      "2. high": "93.8000",
+      "3. low": "92.0000",
+      "4. close": "93.2000",
+      "5. volume": "2700000"
+    }
+  }
+},
+{
+  "Meta Data": {
+    "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+    "2. Symbol": "TD",
+    "3. Last Refreshed": "2024-11-20",
+    "4. Output Size": "Full size",
+    "5. Time Zone": "America/Toronto"
+  },
+  "Time Series (Daily)": {
+    "2024-11-20": {
+      "1. open": "85.0000",
+      "2. high": "86.2000",
+      "3. low": "84.7000",
+      "4. close": "85.8000",
+      "5. volume": "3200000"
+    },
+    "2024-11-19": {
+      "1. open": "84.0000",
+      "2. high": "85.0000",
+      "3. low": "83.8000",
+      "4. close": "84.9000",
+      "5. volume": "3000000"
+    },
+    "2024-11-18": {
+      "1. open": "83.5000",
+      "2. high": "84.2000",
+      "3. low": "83.0000",
+      "4. close": "83.9000",
+      "5. volume": "2900000"
+    },
+    "2024-11-13": {
+      "1. open": "82.7000",
+      "2. high": "83.5000",
+      "3. low": "82.2000",
+      "4. close": "83.2000",
+      "5. volume": "3100000"
+    }
+  }
+},
+{
+  "Meta Data": {
+    "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+    "2. Symbol": "ENB",
+    "3. Last Refreshed": "2024-11-20",
+    "4. Output Size": "Full size",
+    "5. Time Zone": "America/Toronto"
+  },
+  "Time Series (Daily)": {
+    "2024-11-20": {
+      "1. open": "50.0000",
+      "2. high": "51.0000",
+      "3. low": "49.8000",
+      "4. close": "50.7000",
+      "5. volume": "1800000"
+    },
+    "2024-11-19": {
+      "1. open": "49.5000",
+      "2. high": "50.2000",
+      "3. low": "49.0000",
+      "4. close": "49.8000",
+      "5. volume": "1700000"
+    },
+    "2024-11-18": {
+      "1. open": "49.2000",
+      "2. high": "49.7000",
+      "3. low": "48.8000",
+      "4. close": "49.3000",
+      "5. volume": "1600000"
+    },
+    "2024-11-13": {
+      "1. open": "48.5000",
+      "2. high": "49.2000",
+      "3. low": "48.0000",
+      "4. close": "48.8000",
+      "5. volume": "1900000"
+    }
+  }
+}],
+  "CHINA": [
+  {
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "BABA",
@@ -147,8 +736,125 @@
         "5. volume": "4700000"
       }
     }
+  },  {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "JD",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Asia/Shanghai"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "31.5000",
+        "2. high": "32.8000",
+        "3. low": "31.0000",
+        "4. close": "32.2000",
+        "5. volume": "3800000"
+      },
+      "2024-11-19": {
+        "1. open": "30.8000",
+        "2. high": "31.7000",
+        "3. low": "30.5000",
+        "4. close": "31.5000",
+        "5. volume": "3600000"
+      },
+      "2024-11-18": {
+        "1. open": "30.0000",
+        "2. high": "31.2000",
+        "3. low": "29.8000",
+        "4. close": "30.6000",
+        "5. volume": "3400000"
+      },
+      "2024-11-13": {
+        "1. open": "29.5000",
+        "2. high": "30.5000",
+        "3. low": "29.2000",
+        "4. close": "30.0000",
+        "5. volume": "3500000"
+      }
+    }
   },
-  "GERMANY": {
+  {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "NIO",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Asia/Shanghai"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "12.5000",
+        "2. high": "13.0000",
+        "3. low": "12.2000",
+        "4. close": "12.8000",
+        "5. volume": "6500000"
+      },
+      "2024-11-19": {
+        "1. open": "12.2000",
+        "2. high": "12.7000",
+        "3. low": "11.9000",
+        "4. close": "12.3000",
+        "5. volume": "6200000"
+      },
+      "2024-11-18": {
+        "1. open": "11.8000",
+        "2. high": "12.4000",
+        "3. low": "11.5000",
+        "4. close": "12.1000",
+        "5. volume": "6000000"
+      },
+      "2024-11-13": {
+        "1. open": "11.3000",
+        "2. high": "12.0000",
+        "3. low": "11.0000",
+        "4. close": "11.6000",
+        "5. volume": "5800000"
+      }
+    }
+  },
+  {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "BIDU",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Asia/Shanghai"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "122.0000",
+        "2. high": "124.0000",
+        "3. low": "121.5000",
+        "4. close": "123.5000",
+        "5. volume": "3400000"
+      },
+      "2024-11-19": {
+        "1. open": "121.0000",
+        "2. high": "122.8000",
+        "3. low": "120.5000",
+        "4. close": "121.9000",
+        "5. volume": "3200000"
+      },
+      "2024-11-18": {
+        "1. open": "120.5000",
+        "2. high": "121.5000",
+        "3. low": "119.5000",
+        "4. close": "120.7000",
+        "5. volume": "3100000"
+      },
+      "2024-11-13": {
+        "1. open": "119.0000",
+        "2. high": "120.5000",
+        "3. low": "118.5000",
+        "4. close": "119.8000",
+        "5. volume": "3000000"
+      }
+    }
+  }],
+  "GERMANY": [
+  {
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "SAP",
@@ -186,8 +892,104 @@
         "5. volume": "2000000"
       }
     }
+  },  {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "VOW3",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Europe/Berlin"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "186.0000",
+        "2. high": "188.5000",
+        "3. low": "185.0000",
+        "4. close": "187.3000",
+        "5. volume": "1400000"
+      },  
+      "2024-11-19": {
+        "1. open": "185.0000",
+        "2. high": "187.5000",
+        "3. low": "184.0000",
+        "4. close": "186.3000",
+        "5. volume": "1400000"
+      },
+      "2024-11-13": {
+        "1. open": "185.0000",
+        "2. high": "186.8000",
+        "3. low": "184.5000",
+        "4. close": "185.9000",
+        "5. volume": "1350000"
+      }
+    }
   },
-  "INDIA": {
+  {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "SIE",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Europe/Berlin"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "147.0000",
+        "2. high": "149.2000",
+        "3. low": "146.5000",
+        "4. close": "148.5000",
+        "5. volume": "1250000"
+      }, 
+      "2024-11-18": {
+        "1. open": "149.0000",
+        "2. high": "149.8000",
+        "3. low": "145.5000",
+        "4. close": "147.9000",
+        "5. volume": "1200000"
+      },
+      "2024-11-13": {
+        "1. open": "146.0000",
+        "2. high": "147.8000",
+        "3. low": "145.5000",
+        "4. close": "146.9000",
+        "5. volume": "1200000"
+      }
+    }
+  },
+  {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "ALV",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Europe/Berlin"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "205.0000",
+        "2. high": "207.5000",
+        "3. low": "204.0000",
+        "4. close": "206.8000",
+        "5. volume": "1100000"
+      },
+      "2024-11-18": {
+        "1. open": "203.0000",
+        "2. high": "208.5000",
+        "3. low": "202.0000",
+        "4. close": "205.8000",
+        "5. volume": "1100000"
+      },
+      "2024-11-13": {
+        "1. open": "204.0000",
+        "2. high": "206.0000",
+        "3. low": "203.5000",
+        "4. close": "205.4000",
+        "5. volume": "1050000"
+      }
+    }
+  }],
+  "INDIA": [
+  {
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "INFY",
@@ -225,5 +1027,68 @@
         "5. volume": "1250000"
       }
     }
-  }
+  }, {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "RELIANCE",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Asia/Kolkata"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "2400.00",
+        "2. high": "2420.00",
+        "3. low": "2390.00",
+        "4. close": "2410.00",
+        "5. volume": "3500000"
+      },
+      "2024-11-19": {
+        "1. open": "2390.00",
+        "2. high": "2405.00",
+        "3. low": "2385.00",
+        "4. close": "2395.00",
+        "5. volume": "3400000"
+      }, 
+      "2024-11-13": {
+        "1. open": "2550.00",
+        "2. high": "2605.00",
+        "3. low": "2585.00",
+        "4. close": "2595.00",
+        "5. volume": "3300000"
+      }
+    }
+  },
+  {
+    "Meta Data": {
+      "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+      "2. Symbol": "TCS",
+      "3. Last Refreshed": "2024-11-20",
+      "4. Output Size": "Full size",
+      "5. Time Zone": "Asia/Kolkata"
+    },
+    "Time Series (Daily)": {
+      "2024-11-20": {
+        "1. open": "3550.00",
+        "2. high": "3580.00",
+        "3. low": "3535.00",
+        "4. close": "3570.00",
+        "5. volume": "1800000"
+      },
+      "2024-11-19": {
+        "1. open": "3530.00",
+        "2. high": "3550.00",
+        "3. low": "3520.00",
+        "4. close": "3540.00",
+        "5. volume": "1750000"
+      }, 
+      "2024-11-13": {
+        "1. open": "3330.00",
+        "2. high": "3350.00",
+        "3. low": "3320.00",
+        "4. close": "3340.00",
+        "5. volume": "1780000"
+      }
+    }
+  }]
 }
