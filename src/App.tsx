@@ -27,7 +27,7 @@ const App = () => {
           <Route
             path="/profile"
             element={
-              isLoggedIn ? <ProfilePage /> : <Navigate to="/signUpForm" />
+              isLoggedIn ? <ProfilePage /> : <Navigate to="/signUpForm" replace/>
             }
           />
 

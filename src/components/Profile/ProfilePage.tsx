@@ -4,6 +4,7 @@ import "./ProfileScss/_profile.scss";
 import { IonIcon } from "@ionic/react";
 import { arrowForwardSharp, exit, person, trendingUpOutline, wallet } from 'ionicons/icons';
 import { useNavigate } from "react-router";
+import useAuth from "../../services/useAuth";
 
 
 
@@ -15,6 +16,7 @@ const ProfilePage = () => {
     created: "",
   });
   const navigate = useNavigate();
+  const { setIsLoggedIn } = useAuth();
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -41,8 +43,8 @@ const ProfilePage = () => {
         method: "GET",
         credentials: "include",
       });
+      setIsLoggedIn(false);
       // Handle the logout actions here, like updating the state or redirecting
-      console.log("Logged out successfully");
       navigate("/");
 
     } catch (error) {
@@ -126,3 +128,5 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
+
+

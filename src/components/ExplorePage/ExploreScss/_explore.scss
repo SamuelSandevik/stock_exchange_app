@@ -211,31 +211,46 @@
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
   grid-template-rows: repeat(3, 1fr);
   margin: 1rem 0.5rem;
-  
+
+  .crypto-header {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
   .crypto {
     @include m.border(all, 3px, solid, v.$borderColor);
     border-radius: 0.5rem;
     margin: 0.2rem;
+    .positive{
+      color: v.$positiveTextColor; 
+    }
+    .negative{
+      color: v.$negativeTextColor; 
+    }
     i {
       font-size: 2.5rem;
     }
-    .svg{
+    .svg {
       width: 4rem;
       height: 4rem;
     }
   }
   .crypto-1 {
     grid-row: span 2;
-    @include m.flex(column, space-evenly, center);
+    @include m.flex(column, space-evenly, flex-start);
     padding: 0.5rem;
-  }
-  .crypto-content-1 {
-    width: 100px;
-    @include m.flex(row, space-between, center);
+    .crypto-ticker-1 {
+      @include m.flex(column, space-evenly, center);
+    }
+    .crypto-content-1 {
+      width: 100px;
+      @include m.flex(row, space-between, center);
+    }
   }
   .crypto-2,
   .crypto-4 {
     @include m.flex(row, space-evenly, center);
+    margin-right: 0.3rem;
   }
   .crypto-content-2,
   .crypto-content-4 {
@@ -248,5 +263,8 @@
   .crypto-5 {
     grid-column: span 2;
     @include m.flex(row, space-evenly, center);
+    .crypto-content-5 {
+      @include m.flex(column, space-evenly, center);
+    }
   }
 }
