@@ -7,6 +7,7 @@ import "./mainpageScss/_mainpagePage.scss";
 import LogoutBtn from "./exploreComponents/LogoutBtn";
 import SearchStock from "./exploreComponents/SearchStock";
 import NewsList from "./exploreComponents/News/NewsList";
+import MarketToday from "./exploreComponents/MarketToday";
 
 interface ExploreMainPageProps {
   handleLogout: () => void;
@@ -40,13 +41,13 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
   return authorized ? (
     <>
       <LogoutBtn onLogout={handleLogout} />
-
+      <MarketToday />
       {/* <div className="lowerExploreContainer"> */}
-      <DailyTopStockDiv />
-      <SavedStockDiv />
+      {/* <DailyTopStockDiv />
+      <SavedStockDiv /> */}
       {/* </div> */}
 
-      <NewsList ticker="mock" />
+      {/* <NewsList ticker="mock" /> */}
     </>
   ) : null;
 };

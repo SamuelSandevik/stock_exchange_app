@@ -39,3 +39,12 @@
     @warn "Ogiltig riktning: #{$direction}. Använd 'all', 'top', 'bottom', 'left' eller 'right'.";
   }
 }
+
+@mixin horScroll {
+  display: flex; // Gör barnen till flexbox-element
+  overflow-x: auto; // Tillåt horisontell scroll
+  gap: 0.5rem; // Lägger till avstånd mellan korten
+  padding: 1rem; // Undvik att scrollbaren överlappar innehållet
+  scroll-snap-type: x mandatory; // Valfritt: Snap-effekt för scroll
+  scrollbar-color: black transparent;
+}
