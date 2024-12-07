@@ -35,22 +35,57 @@
 
     .render-content-container {
         padding: 1rem 0;
+        .header-container{
+            @include m.flex(row, space-between, center);
+            .header {
+                font-size: 1rem;
+                font-weight: 600;
+                margin: 1rem;
+            }
+            .positive{
+                color: v.$positiveTextColor; 
+                margin-right: 3rem;
+            }
+            .negative{
+                color: v.$negativeTextColor; 
+                margin-right: 3rem;
+            }
 
-        .header {
-            font-size: 1rem;
-            font-weight: 600;
+        }
+
+        .related-stocks{
+            @include m.border(all, 1px, solid, v.$borderColor);
+            padding: 1rem;
+            border-radius: 0.5rem;
             margin: 1rem;
+        }
+        
+        .stock-link-container{
+            @include m.flex(row, flex-start, center);
+            .stock-link{
+                color: v.$negativeTextColor; 
+            }
+            i{
+                color: v.$negativeTextColor; 
+                margin: 1rem;
+            }
+
         }
 
         .about-comp {
             @include m.border(all, 1px, solid, v.$borderColor);
             padding: 1rem;
             border-radius: 0.5rem;
+            margin-top: 1rem;
 
             .stock-sumary {
                 font-size: 0.75rem;
                 font-weight: 400;
             }
+        }
+
+        .key-numbers-header{
+            margin: 1rem 0;
         }
 
         .key-numbers {

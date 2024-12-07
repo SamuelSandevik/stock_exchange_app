@@ -49,6 +49,7 @@ const StockPage = () => {
 
   return (
     <div>
+      <div id="top"></div>
       <StockPageHeader
         high={high}
         low={low}
@@ -65,7 +66,6 @@ const StockPage = () => {
         high={high}
         low={low}
         ticker={searchTerm}
-        onChangeChartType={setChartType}
       />
     </div>
   );

@@ -1,104 +1,95 @@
-@use '../../../scss/variables/variables' as v;
-@use '../../../scss/variables/mixins/mixins' as m;
-
+@use "../../../scss/variables/variables" as v;
+@use "../../../scss/variables/mixins/mixins" as m;
 
 .balle {
-    font: 100;
+  font: 100;
 }
 
 .form-container {
-    font-family: "franklin-gothic-urw", sans-serif;
+  font-family: "franklin-gothic-urw", sans-serif;
+  @include m.flex(column, center, center);
+  color: white;
+  padding-top: 100px;
+  .textDiv {
     @include m.flex(column, center, center);
+    @include m.size(auto, 100%);
+    font-weight: 100;
+    margin-bottom: 2rem;
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+  }
 
+  .innerForm-container {
+    @include m.flex(column, center, center);
+    width: 100%;
+    padding: 1rem 4rem;
 
+    .form {
+      @include m.flex(column, center, start);
+      @include m.size(auto, 100%);
 
-    .textDiv {
-        @include m.flex(column, center, center);
+      .inputs {
+        @include m.size(12rem, 100%);
+        margin-bottom: 1rem;
+
+        .emailInput {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 0.5s ease, visibility 0.5s ease; // Kortare tid för att visa skillnad i UI
+
+          &.hidden {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+
+        input {
+          margin-top: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 8px;
+          border: 1px solid lightgrey;
+          width: 100%;
+        }
+
+        .forgotPsword {
+          font-size: 0.75rem;
+          margin: 1rem 0 0 1rem;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+
+      .btn {
         @include m.size(auto, 100%);
-        font-weight: 100;
-        margin-bottom: 2rem;
-        h1 {
-            margin-bottom: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background-color: v.$mainColor;
+        color: v.$secondaryTextColor;
+        border: none;
+        border-radius: 8px;
+
+        span {
+          margin-left: 0.5rem;
         }
-    }
+      }
 
-    .innerForm-container {
-        @include m.flex(column, center, center);
-        width: 100%;
-        padding: 1rem 4rem;
+      .member {
+        @include m.flex(row, space-evenly, center);
+        @include m.size(auto, 100%);
+        margin-top: 1rem;
 
-        .form {
-            @include m.flex(column, center, start);
-            @include m.size(auto, 100%);
-
-
-            .inputs {
-                @include m.size(12rem, 100%);
-                margin-bottom: 1rem;
-
-                .emailInput {
-                    opacity: 1;
-                    visibility: visible;
-                    transition: opacity 0.5s ease, visibility 0.5s ease; // Kortare tid för att visa skillnad i UI
-                
-                    &.hidden {
-                        opacity: 0;
-                        visibility: hidden;
-                    }
-                }
-
-                input {
-                    margin-top: 0.5rem;
-                    padding: 0.75rem 1.5rem;
-                    border-radius: 8px;
-                    border: 1px solid lightgrey;
-                    width: 100%;
-                }
-    
-                .forgotPsword {
-                    font-size: 0.75rem;
-                    margin: 1rem 0 0 1rem;
-                    font-weight: 600;
-                    cursor: pointer;
-                }
-
-            }
-            
-
-
-            .btn {
-                @include m.size(auto, 100%);
-                padding: 0.75rem 1.5rem;
-                background-color: v.$mainColor;
-                color: v.$secondaryTextColor;
-                border: none;
-                border-radius: 8px;
-                
-                span {
-                    margin-left: 0.5rem;
-                }
-                
-            }
-
-            .member {
-                @include m.flex(row, space-evenly, center);
-                @include m.size(auto, 100%);
-                margin-top: 1rem;
-
-                .loginBtn {
-                    @include m.size(auto, auto);
-                    padding: 0.5rem 1rem;
-                    margin: 0;
-                    font-size: 0.75rem;   
-                }
-
-                P {
-                    font-weight: 600;
-                    font-size: 0.75rem;
-                }
-                
-            }
+        .loginBtn {
+          @include m.size(auto, auto);
+          padding: 0.5rem 1rem;
+          margin: 0;
+          font-size: 0.75rem;
         }
+
+        P {
+          font-weight: 600;
+          font-size: 0.75rem;
+        }
+      }
     }
+  }
 }
-

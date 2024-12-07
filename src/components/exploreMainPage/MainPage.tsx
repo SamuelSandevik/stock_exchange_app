@@ -8,6 +8,7 @@ import LogoutBtn from "./exploreComponents/LogoutBtn";
 import SearchStock from "./exploreComponents/SearchStock";
 import NewsList from "./exploreComponents/News/NewsList";
 import MarketToday from "./exploreComponents/MarketToday";
+import HeaderPage from "../HeaderPage/HeaderPage";
 
 interface ExploreMainPageProps {
   handleLogout: () => void;
@@ -27,7 +28,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
         if (response.ok) {
           setAuthorized(true);
         } else {
-          navigate("/");
+          navigate("/signUpForm");
         }
       } catch (error) {
         console.error("Authorization check failed:", error);
@@ -40,6 +41,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
 
   return authorized ? (
     <>
+      <HeaderPage />
       <LogoutBtn onLogout={handleLogout} />
       <MarketToday />
       {/* <div className="lowerExploreContainer"> */}

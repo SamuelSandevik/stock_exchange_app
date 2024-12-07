@@ -11,6 +11,7 @@ import BottomNavbar from "./components/BottomNavbar/BottomNavBar";
 import ExplorePage from "./components/ExplorePage/ExplorePage";
 import CountryMarketPage from "./components/ExplorePage/ExplorePageComponents/CountryMarketData";
 import CategoryPage from "./components/ExplorePage/ExplorePageComponents/CategoriesPage";
+import ProfilePage from "./components/Profile/ProfilePage";
 
 const App = () => {
   const { isLoggedIn, setIsLoggedIn, logout } = useAuth();
@@ -21,6 +22,14 @@ const App = () => {
         <Routes>
           {/* Startsida */}
           <Route path="/" element={<Homepage />} />
+
+          {/*Profil sida*/}
+          <Route
+            path="/profile"
+            element={
+              isLoggedIn ? <ProfilePage /> : <Navigate to="/signUpForm" replace/>
+            }
+          />
 
           {/* Sign Up och Login-sida */}
           <Route
@@ -50,9 +59,15 @@ const App = () => {
             }
           />
           <Route path="/stockPage" element={<StockPage />} />
-          <Route path="/explore" element={<ExplorePage/>} />
-          <Route path="/explore/country/:country" element={<CountryMarketPage />} />
-          <Route path="/explore/category/:category" element={<CategoryPage />} />
+          <Route path="/explore" element={<ExplorePage />} />
+          <Route
+            path="/explore/country/:country"
+            element={<CountryMarketPage />}
+          />
+          <Route
+            path="/explore/category/:category"
+            element={<CategoryPage />}
+          />
         </Routes>
         <BottomNavbar />
       </div>
