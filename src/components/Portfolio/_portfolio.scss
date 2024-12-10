@@ -1,0 +1,23 @@
+@use "../../scss/variables/variables" as v;
+@use "../../scss/variables/mixins/mixins" as m;
+
+.back-button {
+    font-size: 16px;
+    background-color: v.$positiveTextColor;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 1rem;
+  }
+
+.portfolio {
+  @include m.flex(column, center, center);
+  margin-top: 5rem;
+  
+  .portfolio-header {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

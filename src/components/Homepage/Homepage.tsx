@@ -20,6 +20,13 @@ const Homepage = () => {
   // const navigate = useNavigate();
   const [stocks, setStocks] = useState<StockData[]>([]);
 
+  const stockScroll = () => {
+  const stockElement = document.getElementById("stock-scroll");
+    if (stockElement) {
+      stockElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     // Generera data för flera aktier
     const generatedStocks = ["TSLA", "NVDA", "AMZN", "GOOG", "AAPL"].map(
@@ -74,10 +81,15 @@ const Homepage = () => {
           all the us stocks</p>
       </div>
 
+      
+      <div className="arrow-homepage" >
+      <i className="fa-solid fa-circle-arrow-down arrow" onClick={stockScroll}></i>
+      </div>
+
       <div>
         {/* Buttons to switch views */}
         <div className="chart-super-container">
-          <div className="chartSwitchBtns">
+          <div className="chartSwitchBtns" id="stock-scroll">
             <button onClick={() => setView("top")} className="switchBtn" style={{ height: topButtonHeight }}>Top</button>
             <button onClick={() => setView("trending")} className="switchBtn" style={{ height: trendingButtonHeight }}>Trending</button>
           </div>
@@ -85,7 +97,7 @@ const Homepage = () => {
           {/* Conditional rendering based on state */}
           {view === "top" &&
             <div className="chartDivContainer">
-              <div className="tableheader">
+              <div className="tableheader" >
                 <p className="name">Company</p>
                 <p className="date">Today</p>
               </div>

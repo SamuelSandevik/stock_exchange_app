@@ -1,4 +1,5 @@
 import SearchStock from "../exploreMainPage/exploreComponents/SearchStock";
+import HeaderPage from "../HeaderPage/HeaderPage";
 import StockSearch from "../StockSearch/StockSearch";
 import CategoriesExplore from "./ExplorePageComponents/CategoriesExplore";
 import CryptoExplore from "./ExplorePageComponents/CryptoExplore";
@@ -9,7 +10,7 @@ import "./ExploreScss/_explore.scss";
 const ExplorePage = () => {
     return (
         <>
-        <div className="explore-header">Explore Page</div>
+        <HeaderPage/>
         <SearchStock/>
         <CategoriesExplore/>
         <CryptoExplore/>

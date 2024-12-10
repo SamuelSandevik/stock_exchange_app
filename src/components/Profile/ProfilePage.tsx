@@ -15,6 +15,7 @@ const ProfilePage = () => {
     email: "",
     created: "",
   });
+  const [authorized, setAuthorized] = useState(false);
   const navigate = useNavigate();
   const { setIsLoggedIn } = useAuth();
   useEffect(() => {
@@ -45,12 +46,38 @@ const ProfilePage = () => {
       });
       setIsLoggedIn(false);
       // Handle the logout actions here, like updating the state or redirecting
+      
       navigate("/");
 
     } catch (error) {
       console.error("Logout failed:", error);
     }
   };
+
+  useEffect(() => {
+    const checkAuthorization = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/check-auth", {
+          method: "GET",
+          credentials: "include",
+        });
+        if (response.ok) {
+          setAuthorized(true);
+        } else {
+          navigate("/signUpForm");
+        }
+      } catch (error) {
+        console.error("Authorization check failed:", error);
+        navigate("/signUpForm");
+      }
+    };
+
+    checkAuthorization();
+  }, [navigate]);
+
+  const goToEditProfile = () => {
+    navigate("/edit-profile");
+  }
 
   const notFormattedDate = user.created;
 
@@ -69,18 +96,16 @@ const ProfilePage = () => {
       arrowicon: arrowForwardSharp,
       color: "white",
       action: () => {
-        console.log("Navigate to saved stocks");
-        // Add navigation logic here
+        navigate("/foryou");
       },
     },
     {
       icon: wallet,
-      title: "Go to portfolio * Under Dev",
+      title: "Go to portfolio",
       arrowicon: arrowForwardSharp,
       color: "white",
       action: () => {
-        console.log("Navigate to portfolio");
-        // Add navigation logic here
+        navigate("/portfolio");
       },
     },
     {
@@ -93,14 +118,14 @@ const ProfilePage = () => {
   ];
 
 
-  return (
+  return authorized ? (
 
     <div className="profileContainer">
       <div className="topProfile">
         <IonIcon icon={person} style={{ fontSize: '80px', color: 'white' }}></IonIcon>
         <p className="userName">@{user.username}</p>
         <p className="userEmail">{user.email}</p>
-        <button className="editProfileBtn">Edit Profile</button>
+        <button className="editProfileBtn" onClick={goToEditProfile}>Edit Profile</button>
         <div className="wallet">
           <IonIcon className="walletIcon" icon={wallet} style={{ fontSize: '20px', color: 'white' }}></IonIcon>
           <p className="walletValue">$10 000</p>
@@ -124,7 +149,7 @@ const ProfilePage = () => {
 
     </div>
 
-  );
+  ) : null;
 };
 
 export default ProfilePage;

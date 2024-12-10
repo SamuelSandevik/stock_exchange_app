@@ -12,6 +12,8 @@ import ExplorePage from "./components/ExplorePage/ExplorePage";
 import CountryMarketPage from "./components/ExplorePage/ExplorePageComponents/CountryMarketData";
 import CategoryPage from "./components/ExplorePage/ExplorePageComponents/CategoriesPage";
 import ProfilePage from "./components/Profile/ProfilePage";
+import Portfolio from "./components/Portfolio/Portfolio";
+import EditProfile from "./components/EditProfile/EditProfile";
 
 const App = () => {
   const { isLoggedIn, setIsLoggedIn, logout } = useAuth();
@@ -27,9 +29,37 @@ const App = () => {
           <Route
             path="/profile"
             element={
-              isLoggedIn ? <ProfilePage /> : <Navigate to="/signUpForm" replace/>
+              isLoggedIn ? (
+                <ProfilePage />
+              ) : (
+                <Navigate to="/signUpForm" replace />
+              )
             }
           />
+          {/*Portfolio sida, under dev*/ }
+          <Route
+            path="/portfolio"
+            element={
+              isLoggedIn ? (
+              <Portfolio />
+            ) : (
+            <Navigate to="/signUpForm" replace />
+            )
+            }
+          />
+          {/*Portfolio sida, under dev*/ }
+          <Route
+            path="/edit-profile"
+            element={
+              isLoggedIn ? (
+              <EditProfile />
+            ) : (
+            <Navigate to="/signUpForm" replace />
+            )
+            }
+          />
+
+
 
           {/* Sign Up och Login-sida */}
           <Route

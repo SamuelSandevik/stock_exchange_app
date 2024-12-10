@@ -1,0 +1,34 @@
+@use "../../../scss/variables/variables" as v;
+@use "../../../scss/variables/mixins/mixins" as m;
+
+.edit-page{
+    @include m.flex(column, center, center);
+    .edit-profile-container{
+        width: 90%;
+        height: 70%;
+        @include m.border(all, 1px, solid, v.$borderColor);
+        @include m.flex(column, center, center);
+        border-radius: 1rem;
+        .edit-header-container{
+            @include m.flex(row, center, center);
+            .edit-header{
+                font-size: 1rem;
+                    font-weight: 600;
+            }
+        }
+        form{
+            @include m.flex(column, center, center);
+            input{
+                border-radius: 0.5rem;
+                border: none;
+                padding: 0.2rem;
+                margin: 0.2rem;
+            }
+            
+        }
+    }
+
+}
+p, h1{
+    color:white;
+}
