@@ -19,6 +19,11 @@ type CategoryData = {
   };
   "Time Series (Daily)": Record<string, TimeSeriesData>; // Använd Record för dynamiska nycklar
 };
+
+type CategoryCollection = {
+  [key: string]: CategoryData[];
+};
+
 const CategoryPage: React.FC = () => {
   const navigate = useNavigate();
   type Categories =
@@ -34,10 +39,12 @@ const CategoryPage: React.FC = () => {
     return <p>No data available for {category || "this category"}</p>;
   }
 
-  const categoryData = data[category] as CategoryData;
-  if (!categoryData) {
+  const categoryDataArray = data[category] as CategoryData[]; // Array of datasets
+
+  if (!categoryDataArray || categoryDataArray.length === 0) {
     return <p>No data available for {category}</p>;
   }
+
   const handleBackClick = () => {
     navigate("/explore");
   };
@@ -49,39 +56,46 @@ const CategoryPage: React.FC = () => {
         <i className="fa-solid fa-chevron-left"></i>
       </button>
 
-      <div className="key-stats">
-        <div>
-          <p className="label">Symbol</p>
-          <p className="symbol">{categoryData["Meta Data"]["2. Symbol"]}</p>
-        </div>
-        <div>
-          <p className="label">Last Refreshed</p>
-          <p className="last-refreshed">
-            {categoryData["Meta Data"]["3. Last Refreshed"]}
-          </p>
-        </div>
-      </div>
-
-      <div className="time-series">
-        {Object.keys(categoryData["Time Series (Daily)"]).map((date) => {
-          const dataForDate = categoryData["Time Series (Daily)"][date];
-          const change = (
-            parseFloat(dataForDate["4. close"]) -
-            parseFloat(dataForDate["1. open"])
-          ).toFixed(2);
-          const changeClass = parseFloat(change) >= 0 ? "positive" : "negative";
-          return (
-            <div key={date} className="time-series-entry">
-              <p className="time-series-date">{date}</p>
-              <p className="time-series-price">
-                Open: {dataForDate["1. open"]} | Close:{" "}
-                {dataForDate["4. close"]}
-              </p>
-              <p className={`change-value ${changeClass}`}>Change: {change}</p>
+      {categoryDataArray.map((categoryData, index) => (
+        <div key={index} className="company-section">
+          <div className="key-stats">
+            <div>
+              <p className="label">Symbol</p>
+              <p className="symbol">{categoryData["Meta Data"]["2. Symbol"]}</p>
             </div>
-          );
-        })}
-      </div>
+            <div>
+              <p className="label">Last Refreshed</p>
+              <p className="last-refreshed">
+                {categoryData["Meta Data"]["3. Last Refreshed"]}
+              </p>
+            </div>
+          </div>
+
+          <div className="time-series">
+            {Object.keys(categoryData["Time Series (Daily)"]).map((date) => {
+              const dataForDate = categoryData["Time Series (Daily)"][date];
+              const change = (
+                parseFloat(dataForDate["4. close"]) -
+                parseFloat(dataForDate["1. open"])
+              ).toFixed(2);
+              const changeClass =
+                parseFloat(change) >= 0 ? "positive" : "negative";
+              return (
+                <div key={date} className="time-series-entry">
+                  <p className="time-series-date">{date}</p>
+                  <p className="time-series-price">
+                    Open: {dataForDate["1. open"]} | Close:{" "}
+                    {dataForDate["4. close"]}
+                  </p>
+                  <p className={`change-value ${changeClass}`}>
+                    Change: {change}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
