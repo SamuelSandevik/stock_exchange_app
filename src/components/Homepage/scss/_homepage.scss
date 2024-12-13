@@ -39,6 +39,14 @@
     color: white;
   }
 }
+.arrow-homepage{
+  @include m.flex(row, center, center);
+  margin: 2rem;
+  .arrow{
+    color: #ffffff;
+    font-size: 1.5rem;
+  }
+}
 
 .homePageText {
   width: 100%;
