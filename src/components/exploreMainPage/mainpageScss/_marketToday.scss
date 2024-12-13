@@ -1,25 +1,23 @@
 @use "../../../scss/variables/variables" as v;
-@use "../../../scss/variables/mixins/mixins" as m; 
+@use "../../../scss/variables/mixins/mixins" as m;
 
 .market-container {
-    width: 100%;
-    overflow: hidden;
-
-    .market-scroll {
-        @include m.horScroll;
-        .market-card {
-            flex: 0 0 200px; // Gör varje kort 250px brett och förhindrar flexbox att ändra storleken
-            @include m.border(all, 1px, solid, v.$borderColor);
-            padding: 1rem;
-            border-radius: 12px;
-            .name-performance {
-                @include m.flex(row,space-between,center);
-            }
-        }
-    }
-}
-
-p {
+  width: 100%;
+  overflow: hidden;
+  p {
     color: v.$primaryTextColor;
     font-size: 10px;
+  }
+  .market-scroll {
+    @include m.horScroll;
+    .market-card {
+      flex: 0 0 200px; // Gör varje kort 250px brett och förhindrar flexbox att ändra storleken
+      @include m.border(all, 1px, solid, v.$borderColor);
+      padding: 1rem;
+      border-radius: 12px;
+      .name-performance {
+        @include m.flex(row, space-between, center);
+      }
+    }
+  }
 }

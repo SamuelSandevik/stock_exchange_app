@@ -157,7 +157,7 @@
       }
     }
   ],
-  "finance": {
+  "finance": [ {
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "JPM",
@@ -195,8 +195,8 @@
         "5. volume": "4600000"
       }
     }
-  },
-  "tech": {
+    } ],
+  "tech": [{
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "GOOGL",
@@ -234,8 +234,8 @@
         "5. volume": "5200000"
       }
     }
-  },
-  "industry": {
+  }],
+  "industry": [{
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "GE",
@@ -273,8 +273,8 @@
         "5. volume": "2900000"
       }
     }
-  },
-  "healthcare": {
+  }],
+  "healthcare": [{
     "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",
       "2. Symbol": "PFE",
@@ -312,5 +312,5 @@
         "5. volume": "1800000"
       }
     }
-  }
+  }]
 }
