@@ -5,6 +5,7 @@ import { IonIcon } from "@ionic/react";
 import { arrowForwardSharp, exit, person, trendingUpOutline, wallet } from 'ionicons/icons';
 import { useNavigate } from "react-router";
 import useAuth from "../../services/useAuth";
+import { FaRegUser } from "react-icons/fa";
 
 
 
@@ -112,7 +113,7 @@ const ProfilePage = () => {
       icon: person,
       title: "Log out",
       arrowicon: exit,
-      color: "red",
+      color: "#fc7676",
       action: handleLogout, // Correct: Pass the function reference
     },
   ];
@@ -122,11 +123,13 @@ const ProfilePage = () => {
 
     <div className="profileContainer">
       <div className="topProfile">
-        <IonIcon icon={person} style={{ fontSize: '80px', color: 'white' }}></IonIcon>
+      <FaRegUser style={{ fontSize: '60px', color: 'white' }}/>
+        
         <p className="userName">@{user.username}</p>
         <p className="userEmail">{user.email}</p>
         <button className="editProfileBtn" onClick={goToEditProfile}>Edit Profile</button>
         <div className="wallet">
+        
           <IonIcon className="walletIcon" icon={wallet} style={{ fontSize: '20px', color: 'white' }}></IonIcon>
           <p className="walletValue">$10 000</p>
         </div>
@@ -134,11 +137,11 @@ const ProfilePage = () => {
       <div className="navigateSection">
         {navigateSections.map((navs, index) => (
           <div key={index} className="navigateSubSection">
-            <IonIcon icon={navs.icon} style={{ fontSize: '30px', color: navs.color }} />
+            <IonIcon icon={navs.icon} style={{ fontSize: '35px', color: navs.color }} />
             <p className="navsText" style={{ color: navs.color }}>{navs.title}</p>
             <IonIcon
               icon={navs.arrowicon}
-              style={{ fontSize: '30px', color: navs.color }}
+              style={{ fontSize: '35px', color: navs.color }}
               onClick={navs.action}
             />
           </div>

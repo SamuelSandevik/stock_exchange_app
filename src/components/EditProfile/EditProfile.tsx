@@ -12,8 +12,6 @@ const EditProfile = () => {
   const [email, setEmail] = useState("");
   const [currentUserName, setCurrentUserName] = useState("");
   const [newUserName, setNewUserName] = useState("");
-  const [isUsernameVisible, setUsernameVisible] = useState(true);
-  const [isEmailVisible, setEmailVisible] = useState(false);
 
   const editEmail = async (
     e: React.MouseEvent<HTMLFormElement, MouseEvent>
@@ -60,13 +58,6 @@ const EditProfile = () => {
       setStatus(error.response?.data?.message || "Error updating username.");
     }
   };
-  const toggleUsernameVisibility = () => {
-    setUsernameVisible(!isUsernameVisible);
-  };
-
-  const toggleEmailVisibility = () => {
-    setEmailVisible(!isEmailVisible);
-  };
 
   return (
     <>
@@ -75,78 +66,74 @@ const EditProfile = () => {
         <div className="edit-profile-container">
           <h1>Edit Profile</h1>
 
-          <p onClick={toggleUsernameVisibility}>
+          <div className="username-container">
             <div className="edit-header-container">
               <p className="edit-header">Update Username</p>
-              <i
-                className={`fa-solid ${
-                  isUsernameVisible ? "fa-chevron-up" : "fa-chevron-down"
-                }`}
-              ></i>
             </div>
-          </p>
-          {isUsernameVisible && (
             <form onSubmit={editUserName}>
-              <p>Email:</p>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                placeholder="Email"
+                className="change-form-input"
               />
-              <p>Current username:</p>
               <input
                 type="text"
                 value={currentUserName}
                 onChange={(e) => setCurrentUserName(e.target.value)}
                 required
+                placeholder="Current username"
+                className="change-form-input"
               />
-              <p>New username:</p>
               <input
                 type="text"
                 value={newUserName}
                 onChange={(e) => setNewUserName(e.target.value)}
                 required
+                placeholder="New username"
+                className="change-form-input"
               />
 
               <button type="submit">Update</button>
             </form>
-          )}
+          </div>
 
-          <p onClick={toggleEmailVisibility}>
-            
-              <div className="edit-header-container">
-                <p className="edit-header">Update Email </p>{" "}
-                <i className={`fa-solid ${isEmailVisible ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
-              </div>
-          </p>
-          {isEmailVisible && (
+          <div className="email-container">
+            <div className="edit-header-container">
+              <p className="edit-header">Update Email </p>
+            </div>
+
             <form onSubmit={editEmail}>
-              <p>Username:</p>
               <input
                 type="text"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 required
+                placeholder="Username"
+                className="change-form-input"
               />
-              <p>Current email:</p>
               <input
                 type="email"
                 value={currentEmail}
                 onChange={(e) => setCurrentEmail(e.target.value)}
                 required
+                placeholder="Current email"
+                className="change-form-input"
               />
-              <p>New email:</p>
               <input
                 type="email"
                 value={newEmail}
                 onChange={(e) => setNewEmail(e.target.value)}
                 required
+                placeholder="New email"
+                className="change-form-input"
               />
 
               <button type="submit">Update</button>
             </form>
-          )}
+          </div>
         </div>
       </div>
       <BottomNavbar />
