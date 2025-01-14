@@ -64,17 +64,11 @@ const Homepage = () => {
   const topButtonHeight = view === "top" ? "30px" : "20px";
   const trendingButtonHeight = view === "trending" ? "30px" : "20px";
 
-  // const goToSignUp = () => {
-  //   navigate("/signUpForm");
-  // };
 
   return (
     <div>
       <HeaderPage />
-
-      {/* <div className="header-container">
-        <LineChartHomepage exampleData={exampleData} />
-      </div> */}
+      
       <div className="homePageText">
         <p>Welcome
           browser through
