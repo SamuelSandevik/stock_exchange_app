@@ -1,9 +1,9 @@
 const GetRelatedStockApiAlphaV = async (ticker: string) => {
-  const API_KEY = "J6GO8J0TPZCB62V3";
-
   try {
     const response = await fetch(
-      `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${ticker}&apikey=${API_KEY}`
+      `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${ticker}&apikey=${
+        import.meta.env.VITE_API_KEY_RELATED_STOCKS_AV
+      }`
     );
 
     if (!response.ok) {

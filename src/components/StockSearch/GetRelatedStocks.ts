@@ -1,7 +1,9 @@
 const GetRelatedStockApi = async (ticker: string) => {
   try {
     const response = await fetch(
-      `https://api.polygon.io/v1/related-companies/${ticker}?apiKey=qsYxsMPmpFENUUFxpzsmj9GzloEpL3CN`
+      `https://api.polygon.io/v1/related-companies/${ticker}?apiKey=${
+        import.meta.env.VITE_API_KEY_RELATED_STOCKS
+      }`
     );
     const data = await response.json();
 
