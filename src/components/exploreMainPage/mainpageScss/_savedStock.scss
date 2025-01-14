@@ -17,16 +17,18 @@
   }
   .chart-super-container {
     margin: auto;
+    max-width: 768px;
     @include m.flex(row);
-    @include m.horScroll(2rem);
+    @include m.horScroll(1rem);
     .clickableDiv {
-      @include m.flex(row);
+      @include m.flex(row, center);
+      flex: 0 0 135px;
       .chart-box {
         height: auto;
         @include m.flex(column, $align: center);
         border: 1px solid v.$borderColor;
         border-radius: 10px;
-        flex: 0 0 140px;
+
         .chart-container {
           width: 70px;
         }
