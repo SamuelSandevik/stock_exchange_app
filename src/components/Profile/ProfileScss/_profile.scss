@@ -43,6 +43,7 @@
   .navigateSection {
     @include m.flex(column, space-between, stretch);
     width: 85%;
+    max-width: 768px;
     background-color: v.$borderColor;
     border-radius: 40px;
     .navigateSubSection {
