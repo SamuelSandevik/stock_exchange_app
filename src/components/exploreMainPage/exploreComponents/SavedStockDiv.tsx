@@ -1,8 +1,10 @@
-import "../mainpageScss/_mainpagePage.scss";
+import "../mainpageScss/_savedStock.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { generateChartData } from "../../MockDataForAPI/Mockdata";
 import Chart from "../../Homepage/HomepageStockChart";
+import { useNavigate } from "react-router-dom";
+import { log } from "console";
 
 interface StockData {
   ticker: string;
@@ -15,7 +17,7 @@ interface StockData {
 const SavedStockDiv: React.FC = () => {
   const [stocks, setStocks] = useState<StockData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchSavedStocks = async () => {
       try {
@@ -49,10 +51,18 @@ const SavedStockDiv: React.FC = () => {
       } finally {
         setLoading(false);
       }
+
+
     };
 
     fetchSavedStocks();
   }, []);
+  const goToStock = (stock: string) => {
+
+    navigate("/stockPage", { state: { search: stock } });
+    console.log(stock);
+
+  }
 
   return (
     <div className="stockContainer">
@@ -64,18 +74,21 @@ const SavedStockDiv: React.FC = () => {
       ) : stocks.length > 0 ? (
         <div className="chart-super-container">
           {stocks.map((stock) => (
-            <Chart
-              key={stock.ticker}
-              data={stock.data}
-              ticker={stock.ticker}
-              percentage={stock.percentage}
-              closePrice={stock.closePrice}
-              changePrice={stock.changePrice}
-            />
+            <div className="clickableDiv" onClick={() => goToStock(stock.ticker)}>
+              <Chart
+
+                key={stock.ticker}
+                data={stock.data}
+                ticker={stock.ticker}
+                percentage={stock.percentage}
+                closePrice={stock.closePrice}
+                changePrice={stock.changePrice}
+              />
+            </div>
           ))}
         </div>
       ) : (
-        <p>You have no saved stocks.</p>
+        <p className="empty">You have no saved stocks.</p>
       )}
     </div>
   );

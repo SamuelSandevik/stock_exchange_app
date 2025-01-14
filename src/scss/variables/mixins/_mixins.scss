@@ -1,24 +1,24 @@
-@use '../variables' as v;
+@use "../variables" as v;
 
-@mixin flex($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin size($h, $w) {
-    height: $h;
-    width: $w;
+  height: $h;
+  width: $w;
 }
 
 @mixin forSize($size) {
-    @if ($size == v.$desktop) {
-      @media screen and (min-width: v.$desktop) {
-        @content;
-      }
+  @if ($size == v.$desktop) {
+    @media screen and (min-width: v.$desktop) {
+      @content;
     }
   }
+}
 
 @mixin boxShadow() {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -40,10 +40,10 @@
   }
 }
 
-@mixin horScroll {
+@mixin horScroll($gap: 0.5rem) {
   display: flex; // Gör barnen till flexbox-element
   overflow-x: auto; // Tillåt horisontell scroll
-  gap: 0.5rem; // Lägger till avstånd mellan korten
+  gap: $gap; // Lägger till avstånd mellan korten
   padding: 1rem; // Undvik att scrollbaren överlappar innehållet
   scroll-snap-type: x mandatory; // Valfritt: Snap-effekt för scroll
   scrollbar-color: black transparent;
