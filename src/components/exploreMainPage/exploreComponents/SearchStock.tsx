@@ -28,16 +28,16 @@ const SearchStock = () => {
   return (
     <div className="search-container">
       <form action="" className="search-form">
+        <button onClick={searchStock}>
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
         <input
           type="text"
-          placeholder="Ticker"
+          placeholder="Search for a Ticker"
           value={search}
           onChange={(e) => handleSearch(e.target.value.toUpperCase())}
           className="search-input"
         />
-        <button onClick={searchStock}>
-          <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
       </form>
       {showSearchedList && (
         <SearchedStockList search={search} onSelected={handleTickerSelect} />

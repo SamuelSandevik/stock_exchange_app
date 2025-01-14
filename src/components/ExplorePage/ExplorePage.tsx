@@ -11,6 +11,9 @@ const ExplorePage = () => {
     return (
         <>
         <HeaderPage/>
+        <div className="explore-header">
+            Explore
+        </div>
         <SearchStock/>
         <CategoriesExplore/>
         <CryptoExplore/>
