@@ -7,6 +7,30 @@
   padding: 0;
 }
 
+.homepage-start-logo{
+  width: 100%;
+  height: 85svh;
+  @include m.flex(column, center, center);
+  .homepage-logo{
+
+  }
+  .homepage-start-text{
+    font-size: 4rem;
+    color: white;
+    font-weight: bold;
+  }
+}
+.arrow-homepage{
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  .arrow{
+    color: #ffffff;
+    font-size: 1.5rem;
+  }
+}
+
 .header-homepage {
   align-items: center;
   justify-content: space-between;
@@ -39,14 +63,6 @@
     color: white;
   }
 }
-.arrow-homepage{
-  @include m.flex(row, center, center);
-  margin: 2rem;
-  .arrow{
-    color: #ffffff;
-    font-size: 1.5rem;
-  }
-}
 
 .homePageText {
   width: 100%;
@@ -73,8 +89,9 @@
     border-top-right-radius: 10px;
     width: 100px;
     margin-left: 15px;
-    color: v.$primaryTextColor;
-    background-color: v.$mainColorBtns;
+    color: white;
+    background-color: v.$borderColor;
+    font-size: 1rem;
   }
 }
 .chartDivContainer {
@@ -91,6 +108,7 @@
   width: 90%;
   p {
     color: v.$primaryTextColor;
+    font-size: 1.4rem;
   }
 }
 .chart-box-container {
@@ -106,6 +124,8 @@
   @include m.border(bottom, 1px, v.$borderColor, solid);
   padding: 1rem;
   color: v.$primaryTextColor;
+  background-color: v.$borderColor;
+  border-radius: 5px;
   .ticker {
     text-align: center;
     padding: 1rem 0;
@@ -135,9 +155,9 @@
     }
   }
   .positive {
-    color: green;
+    color: v.$positiveTextColor;
   }
   .negative {
-    color: red;
+    color: v.$negativeTextColor;
   }
 }
