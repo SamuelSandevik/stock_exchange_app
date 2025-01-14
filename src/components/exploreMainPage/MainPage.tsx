@@ -49,7 +49,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
       <SavedStockDiv /> */}
       {/* </div> */}
 
-      {/* <NewsList ticker="mock" /> */}
+      <NewsList ticker="mock" />
     </>
   ) : null;
 };
