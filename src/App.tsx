@@ -14,6 +14,7 @@ import CategoryPage from "./components/ExplorePage/ExplorePageComponents/Categor
 import ProfilePage from "./components/Profile/ProfilePage";
 import Portfolio from "./components/Portfolio/Portfolio";
 import EditProfile from "./components/EditProfile/EditProfile";
+import HeaderPage from "./components/HeaderPage/HeaderPage";
 
 const App = () => {
   const { isLoggedIn, setIsLoggedIn, logout } = useAuth();

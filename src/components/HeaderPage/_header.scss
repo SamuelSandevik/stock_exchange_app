@@ -1,1 +1,18 @@
+@use '../../scss/variables/mixins/mixins' as m;
+@use '../../scss/variables/variables' as v;
 
+.nav-mobile-container{
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+    @include m.flex(row, space-between, center);
+    .nav-logo-container{
+        img{
+            margin: 10px 0 0 15px;
+            scale: 1.3;
+        }
+    }
+    .profile-icon-container{
+        margin: 10px 15px 0 0;
+    }
+}
