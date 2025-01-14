@@ -1,5 +1,8 @@
 @use "../../../scss/variables/variables" as v;
-
+.mainpage-body {
+  max-width: 768px;
+  margin: 0 auto;
+}
 #dailyShowStock {
   display: flex;
   flex-direction: column;
