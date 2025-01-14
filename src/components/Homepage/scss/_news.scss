@@ -6,8 +6,21 @@
   @include m.border(all, 1px, solid, v.$borderColor);
     border-radius: 0.5rem;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 8rem;
   padding: 1rem;
+  position: relative;
+  
+  .news-background-image{
+    object-fit: cover;
+    filter: brightness(0.5);
+    position: absolute; // Placerar bilden relativt till `.news`
+  top: 0;
+  left: 0;
+  width: 100%; // Täck hela bredden av föräldraelementet
+  height: 100%; // Täck hela höjden av föräldraelementet // Beskär och skalar bilden proportionellt så att den fyller utrymmet
+  z-index: -1; 
+
+  }
 
   .title {
     color: v.$primaryTextColor;

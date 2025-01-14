@@ -1,12 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import Chart from "./HomepageStockChart";
 import { useEffect, useState } from "react";
 import { generateChartData } from "../MockDataForAPI/Mockdata";
-import LineChartHomepage from "./LineChart/LineChartHomepage";
-import { exampleData } from "./LineChart/exampleData";
 import HeaderPage from "../HeaderPage/HeaderPage";
 import StockNews from "./News/News";
-import AAPLNeonChart from "./TestChart";
+import ssLogo from "../../../public/logo-white-256x256.png";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 interface StockData {
   ticker: string;
@@ -69,16 +67,20 @@ const Homepage = () => {
     <div>
       <HeaderPage />
       
-      <div className="homePageText">
-        <p>Welcome
-          browser through
-          all the us stocks</p>
+      <div className="homepage-start-logo">
+        <img src={ssLogo} alt="homepage-logo" />
+        <div className="homepage-start-text">
+          SILLY
+        </div>
+        <div className="homepage-start-text">
+          STOCKS
+        </div>
+      </div>
+      <div className="arrow-homepage" >
+      <MdKeyboardDoubleArrowDown onClick={stockScroll} color="white" fontSize="2.5rem"/>
       </div>
 
       
-      <div className="arrow-homepage" >
-      <i className="fa-solid fa-circle-arrow-down arrow" onClick={stockScroll}></i>
-      </div>
 
       <div>
         {/* Buttons to switch views */}
