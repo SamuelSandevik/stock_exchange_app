@@ -90,6 +90,9 @@ const SavedStockDiv: React.FC = () => {
       ) : (
         <p className="empty">You have no saved stocks.</p>
       )}
+      <div className="line-father">
+        <div className="line"></div>
+      </div>
     </div>
   );
 };

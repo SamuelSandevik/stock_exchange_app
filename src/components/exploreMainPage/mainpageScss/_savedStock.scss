@@ -3,6 +3,7 @@
 .stockContainer {
   margin: auto;
   width: 100%;
+  max-width: 768px;
   //   border: 1px solid v.$borderColor;
 
   .stockDivTitle {
@@ -11,12 +12,11 @@
     p {
       font-size: 1.5rem;
       width: fit-content;
-      margin: auto;
+
       color: v.$primaryTextColor;
     }
   }
   .chart-super-container {
-    margin: auto;
     max-width: 768px;
     @include m.flex(row);
     @include m.horScroll(1rem);
@@ -38,6 +38,17 @@
       }
     }
   }
+  .line-father {
+    width: 100%;
+    padding: 1rem;
+    .line {
+      height: 1px;
+      width: 100%;
+      background-color: v.$borderColor;
+    }
+  }
   .empty {
+    color: white;
+    padding: 1rem;
   }
 }
