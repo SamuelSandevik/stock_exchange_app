@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { generateMockMetrics } from "./MockMetrics";
 import NewsList from "../../exploreMainPage/exploreComponents/News/NewsList";
 import { useNavigate } from "react-router-dom";
+import sendTicker from "./SaveTicker";
 
 interface StockPageProps {
   high: number;
@@ -165,8 +166,8 @@ const stockPageBody: React.FC<StockPageProps> = ({ high, low, ticker }) => {
                             number > 0
                               ? "positive"
                               : number < 0
-                              ? "negative"
-                              : "neutral"
+                                ? "negative"
+                                : "neutral"
                           }
                         >
                           {number > 0 ? `+${number}` : number}%
@@ -204,11 +205,11 @@ const stockPageBody: React.FC<StockPageProps> = ({ high, low, ticker }) => {
         <button onClick={() => onChangeChartType("candlestick")}>
           Candlestick Chart
         </button>
-      </div>
+      </div> */}
 
       <div className="save-stock-container">
         <button onClick={() => sendTicker(ticker)}>Save Stock</button>
-      </div> */}
+      </div>
       <div className="selection-menu">
         {selectionMenu.map((item, index) => (
           <p
