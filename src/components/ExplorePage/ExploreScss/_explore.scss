@@ -1,7 +1,12 @@
 @use "../../../scss/variables/variables" as v;
 @use "../../../scss/variables/mixins/mixins" as m;
 
-.explore-header,
+.explore-header{
+  font-size: 2rem;
+  color: white;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
 .white-header {
   margin-left: 2%;
   color: white;
