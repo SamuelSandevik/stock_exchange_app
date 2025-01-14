@@ -111,86 +111,161 @@
   }
 }
 
-
 .back-button {
-  font-size: 16px;
-  background-color: v.$positiveTextColor;
-  ;
-  color: white;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background-color: #1f1f1f; // Dark button background
   border: none;
-  padding: 10px 15px;
+  border-radius: 8px;
+  color: #ffffff; // Light text
+  font-size: 24px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  i {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background-color: #333333; // Slightly lighter on hover
+  }
+}
+
+.country-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; // Bright white for title
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .country-container {
-  width: 100%;
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; // Space between elements
+  padding: 20px;
+  background-color: #000; // Dark background for dark mode
+  color: #e0e0e0; // Light text for readability
 
-  @include m.flex(row, center, center);
-}
 
-.company-card {
-  height: 200px;
-  width: 300px;
-  background-color: #000;
-  border-radius: 8px;
-  border: solid gray 1px;
-  box-shadow: 0 4px 6px rgba(81, 81, 81, 0.6);
-  padding: 16px;
-  margin: 16px 8px;
-  font-family: Arial, sans-serif;
+  // Card design
+  .company-card {
+    background-color: #1f1f1f; // Dark card background
+    border-radius: 12px;
+    border: solid 1px rgba(255, 255, 255, 0.1); // Subtle border
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); // Softer shadow
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  .company-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-
-    .last-refreshed {
-      font-size: 12px;
-      color: v.$secondaryTextColor;
+    &:hover {
+      transform: translateY(-4px); // Subtle lift on hover
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
     }
 
-    .symbol {
-      font-size: 20px;
-      font-weight: bold;
-      color: v.$primaryTextColor;
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .last-refreshed {
+        font-size: 12px;
+        color: #bbbbbb; // Light gray for secondary text
+      }
+
+      .symbol {
+        font-size: 22px;
+        font-weight: bold;
+        color: #ffffff; // Bright white for primary text
+      }
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap; // Wrap stats on smaller screens
+      justify-content: space-between;
+
+      .stat {
+        text-align: center;
+        flex: 1;
+
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+
+        .label {
+          font-size: 14px;
+          color: #bbbbbb; // Secondary text color
+          margin-bottom: 6px;
+        }
+
+        .value {
+          font-size: 18px;
+          font-weight: bold;
+
+          &.positive {
+            color: #4caf50; // Green for positive values
+          }
+
+          &.negative {
+            color: #f44336; // Red for negative values
+          }
+
+          &.volume {
+            color: #ffffff; // White for volume
+          }
+        }
+      }
     }
   }
 
-  .stats {
-    display: flex;
-    justify-content: space-between;
+  // Responsive adjustments
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr; // Single column layout on small screens
 
-    .stat {
-      text-align: center;
-      flex: 1;
+    .back-button {
+      font-size: 20px; // Smaller font for smaller screens
+    }
 
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
+    .country-name {
+      font-size: 20px; // Smaller title font
+    }
 
-      .label {
-        font-size: 12px;
-        color: v.$secondaryTextColor;
-        margin-bottom: 4px;
-      }
+    .company-card {
+      padding: 16px; // Reduced padding for smaller screens
+    }
+  }
 
-      .value {
-        font-size: 16px;
-        font-weight: bold;
+  @media (max-width: 480px) {
+    gap: 10px; // Less gap on very small screens
 
-        &.positive {
-          color: v.$positiveTextColor;
-        }
+    .back-button {
+      font-size: 18px;
+      padding: 8px 12px; // Smaller button
+    }
 
-        &.negative {
-          color: v.$negativeTextColor;
-        }
+    .country-name {
+      font-size: 18px;
+    }
 
-        &.volume {
-          color: v.$primaryTextColor;
-        }
-      }
+    .company-card {
+      padding: 12px; // Even smaller padding for compact layout
+    }
+
+    .stats .stat {
+      flex: 1 1 100%; // Full width for each stat
+      margin-right: 0; // No margin between stats
+      margin-bottom: 12px; // Add spacing between rows
     }
   }
 }
