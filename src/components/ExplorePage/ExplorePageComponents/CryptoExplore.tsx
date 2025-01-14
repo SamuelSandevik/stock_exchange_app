@@ -1,12 +1,14 @@
 import React, { useMemo } from "react";
 import xrpIcon from "../../../assets/ripple-svgrepo-com.svg";
 import solanaIcon from "../../../assets/solana-svgrepo-com.svg";
+import { useNavigate } from "react-router-dom";
 
 const generateRandomNumber = () => {
   return parseFloat((Math.random() * (8 - -7) + -7).toFixed(1));
 };
 
 const CryptoExplore = () => {
+  const navigate = useNavigate();
   const btcNumber = useMemo(() => generateRandomNumber(), []);
   const solNumber = useMemo(() => generateRandomNumber(), []);
   const ethNumber = useMemo(() => generateRandomNumber(), []);
@@ -17,7 +19,12 @@ const CryptoExplore = () => {
     <>
       <h2 className="white-header">Crypto Currencies</h2>
       <div className="crypto-container">
-        <div className="crypto-1 crypto">
+        <div
+          onClick={() => {
+            navigate("/StockPage", { state: { search: "BTC" } });
+          }}
+          className="crypto-1 crypto"
+        >
           <div className="crypto-content-1">
             <i className="fa-brands fa-bitcoin"></i>
             <div className="crypto-ticker-1">
@@ -38,7 +45,12 @@ const CryptoExplore = () => {
           <p>Bitcoin</p>
           <p>$101,823.04</p>
         </div>
-        <div className="crypto-2 crypto">
+        <div
+          className="crypto-2 crypto"
+          onClick={() => {
+            navigate("/StockPage", { state: { search: "SOL" } });
+          }}
+        >
           <img className="svg" src={solanaIcon} alt="" />
           <div className="crypto-content-2">
             <p className="crypto-header">SOL</p>
@@ -55,7 +67,12 @@ const CryptoExplore = () => {
             </p>
           </div>
         </div>
-        <div className="crypto-3 crypto">
+        <div
+          className="crypto-3 crypto"
+          onClick={() => {
+            navigate("/StockPage", { state: { search: "ETH" } });
+          }}
+        >
           <i className="fa-brands fa-ethereum"></i>
           <p className="crypto-header">ETH</p>
           <p
@@ -71,13 +88,18 @@ const CryptoExplore = () => {
           </p>
           <p>$3,784.76</p>
         </div>
-        <div className="crypto-4 crypto">
+        <div
+          className="crypto-4 crypto"
+          onClick={() => {
+            navigate("/StockPage", { state: { search: "LTC" } });
+          }}
+        >
           <i className="fa-solid fa-litecoin-sign"></i>
           <div className="crypto-content-4">
             <p className="crypto-header">LTC</p>
             <p
               className={
-                  ltcNumber > 0
+                ltcNumber > 0
                   ? "positive"
                   : ltcNumber < 0
                   ? "negative"
@@ -88,7 +110,12 @@ const CryptoExplore = () => {
             </p>
           </div>
         </div>
-        <div className="crypto-5 crypto">
+        <div
+          className="crypto-5 crypto"
+          onClick={() => {
+            navigate("/StockPage", { state: { search: "XRP" } });
+          }}
+        >
           <img className="svg" src={xrpIcon} alt="" />
           <div className="crypto-content-5">
             <p className="crypto-header">XRP</p>
@@ -100,7 +127,9 @@ const CryptoExplore = () => {
                   ? "negative"
                   : "neutral"
               }
-            >{xrpNumber > 0 ? `+${xrpNumber}` : xrpNumber}%</p>
+            >
+              {xrpNumber > 0 ? `+${xrpNumber}` : xrpNumber}%
+            </p>
           </div>
           <div className="crypto-content-5">
             <p>Market Cap</p>
