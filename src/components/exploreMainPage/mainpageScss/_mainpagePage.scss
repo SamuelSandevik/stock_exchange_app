@@ -1,6 +1,9 @@
 @use "../../../scss/variables/variables" as v;
 @use "../../../scss/variables/mixins/mixins" as m;
-
+.mainpage-body {
+  max-width: 768px;
+  margin: 0 auto;
+}
 #dailyShowStock {
   display: flex;
   flex-direction: column;

@@ -3,10 +3,9 @@
 
 .news {
   @include m.flex(column, center, center);
-  @include m.border(all, 1px, solid, v.$borderColor);
+  // @include m.border(all, 1px, solid, v.$borderColor);
     border-radius: 0.5rem;
   width: 100%;
-  margin-top: 8rem;
   padding: 1rem;
   position: relative;
   
@@ -25,6 +24,7 @@
   .title {
     color: v.$primaryTextColor;
     margin-bottom: 30px;
+
   }
 
   .newsSuperContainer {
@@ -36,19 +36,22 @@
 
       .newsTitle {
         margin: 0 10px;
-      }
-
-      .newsBody {
-        margin: 10px;
-      }
-
-      .date {
-        width: 95%;
+        width: 100%;
         text-align: left;
       }
 
+      .newsBody {
+        margin: 1rem 0;
+      }
+
+      .date {
+        width: 100%;
+        text-align: left;
+
+      }
+
       .articleLink {
-        width: 95%;
+        width: 100%;
         margin-top: 1rem;
         text-decoration: none;
         color: limegreen;
@@ -62,7 +65,7 @@
 
       .line {
         height: 1px;
-        width: 96.5%;
+        width: 100%;
         background-color: v.$borderColor;
         margin: 20px 0;
       }

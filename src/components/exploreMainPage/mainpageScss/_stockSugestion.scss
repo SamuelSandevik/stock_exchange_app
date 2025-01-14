@@ -1,0 +1,88 @@
+@use "../../../scss/variables/variables" as v;
+@use "../../../scss/variables/mixins/mixins" as m;
+
+.sugestion-container {
+    @include m.flex(column, center, center);
+    color: v.$primaryTextColor;
+
+    .sugestion-header {
+        text-align: left;
+        width: 100%;
+        padding: 1rem 1rem 0 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .sugestion-undertext {
+        text-align: left;
+        width: 100%;
+        padding: 0 1rem;
+        font-weight: 400;
+        color: gray;
+    }
+
+    .sugestion-scroll {
+        @include m.horScroll();
+        width: 100%;
+
+        .sugestion-card {
+            @include m.flex(column, center, center);
+            @include m.border($color: v.$borderColor);
+            padding: 1rem;
+            border-radius: 10px;
+            flex: 0 0 40%;
+
+            .stock-img {
+                height: 3rem;
+            }
+
+            .ticker {
+                margin: 1rem 0 0.25rem 0;
+                font-weight: 600;
+            }
+
+            .positive {
+                color: v.$positiveTextColor;
+                font-size: 0.75rem;
+            }
+
+            .negative {
+                color: v.$negativeTextColor;
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+    .line-father {
+        padding: 1.5rem 1rem 1rem 1rem ;
+        width: 100%;
+        .line {
+            height: 1px;
+            width: 100%;
+            background-color: v.$borderColor;
+        }
+    }
+
+}
+
+@media (min-width: 600px) {
+    .sugestion-container {
+        .sugestion-scroll {
+            .sugestion-card {
+                flex: 0 0 30%;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .sugestion-container {
+        .sugestion-scroll {
+            overflow-x: hidden;
+            .sugestion-card {
+                flex: 0 0 18.5%;
+                flex-grow: 1;
+            }
+        }
+    }
+}
