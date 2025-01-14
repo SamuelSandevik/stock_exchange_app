@@ -24,7 +24,7 @@ type MarketData = {
   [country: string]: StockData[];
 };
 
-const marketData: any = data;
+const marketData: MarketData = data as MarketData;
 
 const calculatePercentageChange = (
   latest: number,
@@ -37,11 +37,15 @@ const calculatePercentageChange = (
 const CountryMarketPage: React.FC = () => {
   const navigate = useNavigate();
   const { country } = useParams<{ country: string }>();
-  const normalizedCountry: string | undefined = country?.toUpperCase();
-  const countryData: StockData[] =
-    marketData[normalizedCountry as keyof MarketData];
 
-  if (!countryData || countryData.length === 0) {
+  if (!country) {
+    return <p>Country not specified in the URL.</p>;
+  }
+
+  const normalizedCountry: string = country.toUpperCase();
+  const countryData: StockData[] = marketData[normalizedCountry] || [];
+
+  if (!countryData.length) {
     return <p>No data available for {country}</p>;
   }
 
@@ -70,10 +74,10 @@ const CountryMarketPage: React.FC = () => {
 
         const latestClose = parseFloat(dailyData[latestDate]["4. close"]);
         const previousClose = previousDate
-          ? parseFloat(dailyData[previousDate]["4. close"])
+          ? parseFloat(dailyData[previousDate]?.["4. close"] || "0")
           : null;
         const weekAgoClose = weekAgoDate
-          ? parseFloat(dailyData[weekAgoDate]["4. close"])
+          ? parseFloat(dailyData[weekAgoDate]?.["4. close"] || "0")
           : null;
 
         const dailyChange = previousClose
@@ -84,41 +88,33 @@ const CountryMarketPage: React.FC = () => {
           : "N/A";
 
         const latestStats = dailyData[latestDate];
-        const dailyChangeNumber = isNaN(parseFloat(dailyChange))
-          ? 0
-          : parseFloat(dailyChange);
-        const weeklyChangeNumber = isNaN(parseFloat(weeklyChange))
-          ? 0
-          : parseFloat(weeklyChange);
-
         const dailyChangeClass =
-          dailyChangeNumber > 0 ? "positive" : "negative";
+          !isNaN(parseFloat(dailyChange)) && parseFloat(dailyChange) > 0
+            ? "positive"
+            : "negative";
         const weeklyChangeClass =
-          weeklyChangeNumber > 0 ? "positive" : "negative";
+          !isNaN(parseFloat(weeklyChange)) && parseFloat(weeklyChange) > 0
+            ? "positive"
+            : "negative";
 
         return (
-          <div key={index} className="company-container">
-            <div className="header-container">
+          <div key={index} className="company-card">
+            <div className="company-header">
               <p className="last-refreshed">Last Refreshed: {latestDate}</p>
               <p className="symbol">{company["Meta Data"]["2. Symbol"]}</p>
             </div>
-
-            <div className="key-stats">
-              <div className="daily-change">
+            <div className="stats">
+              <div className="stat">
                 <p className="label">Daily Change</p>
-                <p className={`change-value ${dailyChangeClass}`}>
-                  {dailyChange}
-                </p>
+                <p className={`value ${dailyChangeClass}`}>{dailyChange}</p>
               </div>
-              <div className="weekly-change">
+              <div className="stat">
                 <p className="label">Weekly Change</p>
-                <p className={`change-value ${weeklyChangeClass}`}>
-                  {weeklyChange}
-                </p>
+                <p className={`value ${weeklyChangeClass}`}>{weeklyChange}</p>
               </div>
-              <div className="volume">
+              <div className="stat">
                 <p className="label">Volume</p>
-                <p className="volume-value">{latestStats["5. volume"]}</p>
+                <p className="value volume">{latestStats["5. volume"]}</p>
               </div>
             </div>
           </div>

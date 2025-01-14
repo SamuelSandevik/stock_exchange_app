@@ -1,12 +1,13 @@
 @use "../../../scss/variables/variables" as v;
 @use "../../../scss/variables/mixins/mixins" as m;
 
-.explore-header{
+.explore-header {
   font-size: 2rem;
   color: white;
   margin-left: 0.5rem;
   font-weight: bold;
 }
+
 .white-header {
   margin-left: 2%;
   color: white;
@@ -110,10 +111,6 @@
   }
 }
 
-.country-container {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
 
 .back-button {
   font-size: 16px;
@@ -125,65 +122,77 @@
   cursor: pointer;
 }
 
-.country-name {
-  margin-top: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  float: right;
+.country-container {
+  width: 100%;
+
+  @include m.flex(row, center, center);
 }
 
-.header-container {
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px 0;
-  align-items: flex-start;
-  height: 10svh;
-}
+.company-card {
+  height: 200px;
+  width: 300px;
+  background-color: #000;
+  border-radius: 8px;
+  border: solid gray 1px;
+  box-shadow: 0 4px 6px rgba(81, 81, 81, 0.6);
+  padding: 16px;
+  margin: 16px 8px;
+  font-family: Arial, sans-serif;
 
-.symbol {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-}
+  .company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
 
-.last-refreshed {
-  font-size: 14px;
-  color: #666;
-}
+    .last-refreshed {
+      font-size: 12px;
+      color: v.$secondaryTextColor;
+    }
 
-.key-stats {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
+    .symbol {
+      font-size: 20px;
+      font-weight: bold;
+      color: v.$primaryTextColor;
+    }
+  }
 
-.key-stats>div {
-  text-align: center;
-}
+  .stats {
+    display: flex;
+    justify-content: space-between;
 
-.label {
-  font-size: 12px;
-  color: #666;
-}
+    .stat {
+      text-align: center;
+      flex: 1;
 
-.change-value {
-  font-size: 16px;
-  font-weight: bold;
-}
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
 
-.change-value.positive {
-  color: green;
-}
+      .label {
+        font-size: 12px;
+        color: v.$secondaryTextColor;
+        margin-bottom: 4px;
+      }
 
-.change-value.negative {
-  color: red;
-}
+      .value {
+        font-size: 16px;
+        font-weight: bold;
 
-.volume-value {
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
+        &.positive {
+          color: v.$positiveTextColor;
+        }
+
+        &.negative {
+          color: v.$negativeTextColor;
+        }
+
+        &.volume {
+          color: v.$primaryTextColor;
+        }
+      }
+    }
+  }
 }
 
 .time-series {
