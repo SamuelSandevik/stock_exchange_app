@@ -28,6 +28,7 @@
     .form {
       @include m.flex(column, center, start);
       @include m.size(auto, 100%);
+      max-width: 768px;
 
       .inputs {
         @include m.size(12rem, 100%);

@@ -82,7 +82,7 @@ const Homepage = () => {
 
       
 
-      <div>
+      <div className="homepage-content-container">
         {/* Buttons to switch views */}
         <div className="chart-super-container">
           <div className="chartSwitchBtns" id="stock-scroll">

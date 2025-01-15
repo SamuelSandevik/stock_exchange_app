@@ -75,9 +75,13 @@
     margin: 50px 0;
   }
 }
-.chart-super-container {
-  @include m.flex(column, flex-start, flex-start);
-  width: 100%;
+.homepage-content-container{
+  @include m.flex(column, center, center);
+  .chart-super-container {
+    @include m.flex(column, center, center);
+    width: 100%;
+    max-width: 768px;
+  }
 }
 .chartSwitchBtns {
   margin-left: 2%;
