@@ -51,32 +51,31 @@ const SavedStockDiv: React.FC = () => {
       } finally {
         setLoading(false);
       }
-
-
     };
 
     fetchSavedStocks();
   }, []);
   const goToStock = (stock: string) => {
-
     navigate("/stockPage", { state: { search: stock } });
     console.log(stock);
-
-  }
+  };
 
   return (
     <div className="stockContainer">
       <div className="stockDivTitle">
         <p>Saved Stocks</p>
+        <p className="saved-undertext">Your saved tickets</p>
       </div>
       {loading ? (
         <p>Loading...</p>
       ) : stocks.length > 0 ? (
         <div className="chart-super-container">
           {stocks.map((stock) => (
-            <div className="clickableDiv" onClick={() => goToStock(stock.ticker)}>
+            <div
+              className="clickableDiv"
+              onClick={() => goToStock(stock.ticker)}
+            >
               <Chart
-
                 key={stock.ticker}
                 data={stock.data}
                 ticker={stock.ticker}

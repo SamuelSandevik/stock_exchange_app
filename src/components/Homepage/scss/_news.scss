@@ -54,11 +54,11 @@
         width: 100%;
         margin-top: 1rem;
         text-decoration: none;
-        color: limegreen;
+        color: v.$negativeTextColor;
         cursor: pointer;
 
         &:visited {
-          color: green;
+          color: v.$visitedLinkColor;
         }
 
       }

@@ -44,7 +44,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
     <>
       <HeaderPage />
       <div className="mainpage-body">
-        <LogoutBtn onLogout={handleLogout} />
+        {/* <LogoutBtn onLogout={handleLogout} /> */}
         <MarketToday />
         {/* <div className="lowerExploreContainer"> */}
         {/* <DailyTopStockDiv /> */}
