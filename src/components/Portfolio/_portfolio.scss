@@ -1,23 +1,44 @@
 @use "../../scss/variables/variables" as v;
 @use "../../scss/variables/mixins/mixins" as m;
 
-.back-button {
-    font-size: 16px;
-    background-color: v.$positiveTextColor;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin: 1rem;
-  }
-
-.portfolio {
+.portfolio-super-container{
+  width: 100%;
   @include m.flex(column, center, center);
-  margin-top: 5rem;
-  
-  .portfolio-header {
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
+  .portfolio-container {
+    width: 90%;
+    max-width: 768px;
+  .back-button {
+    @include m.flex(row, flex-start, center);
+    padding: 10px 16px;
+    margin: 6rem 0 0 1rem;
+    background-color: #1f1f1f;
+    border: solid 1px rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    i {
+      margin-right: 8px;
+    }
+    
+    &:hover {
+      background-color: #333333;
+    }
   }
+  
+  .portfolio {
+    @include m.flex(column, center, center);
+    margin-top: 5rem;
+    padding: 1rem 2rem;
+    
+    .portfolio-header {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
+
 }
