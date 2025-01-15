@@ -2,7 +2,7 @@
 @use "../../../scss/variables/variables" as v;
 
 .profileContainer {
-  padding-top: 50px;
+  padding-top: 8rem;
   height: 700px;
   color: v.$primaryTextColor;
   @include m.flex(column, space-between, center);

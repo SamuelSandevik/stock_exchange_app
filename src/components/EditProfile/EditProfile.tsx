@@ -61,7 +61,6 @@ const EditProfile = () => {
 
   return (
     <>
-      <HeaderPage />
       <div className="edit-page">
           <h1>Edit Profile</h1>
         <div className="edit-profile-container">

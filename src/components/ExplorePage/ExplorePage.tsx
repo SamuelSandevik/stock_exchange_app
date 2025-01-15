@@ -10,7 +10,8 @@ import "./ExploreScss/_explore.scss";
 const ExplorePage = () => {
     return (
         <>
-        <HeaderPage/>
+        <div className="explore-super-container">
+        <div className="explore-container">
         <div className="explore-header">
             Explore
         </div>
@@ -18,6 +19,8 @@ const ExplorePage = () => {
         <CategoriesExplore/>
         <CryptoExplore/>
         <MarketsExplore/>
+        </div>
+        </div>
         </>
     );
 }

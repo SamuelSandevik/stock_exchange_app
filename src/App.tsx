@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div>
+      <HeaderPage />
         <Routes>
           {/* Startsida */}
           <Route path="/" element={<Homepage />} />
@@ -37,30 +37,24 @@ const App = () => {
               )
             }
           />
-          {/*Portfolio sida, under dev*/ }
+          {/*Portfolio sida, under dev*/}
           <Route
             path="/portfolio"
             element={
-              isLoggedIn ? (
-              <Portfolio />
-            ) : (
-            <Navigate to="/signUpForm" replace />
-            )
+              isLoggedIn ? <Portfolio /> : <Navigate to="/signUpForm" replace />
             }
           />
-          {/*Portfolio sida, under dev*/ }
+          {/*Portfolio sida, under dev*/}
           <Route
             path="/edit-profile"
             element={
               isLoggedIn ? (
-              <EditProfile />
-            ) : (
-            <Navigate to="/signUpForm" replace />
-            )
+                <EditProfile />
+              ) : (
+                <Navigate to="/signUpForm" replace />
+              )
             }
           />
-
-
 
           {/* Sign Up och Login-sida */}
           <Route
@@ -101,7 +95,6 @@ const App = () => {
           />
         </Routes>
         <BottomNavbar />
-      </div>
     </BrowserRouter>
   );
 };

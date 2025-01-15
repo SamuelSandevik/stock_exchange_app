@@ -65,7 +65,6 @@ const Homepage = () => {
 
   return (
     <div>
-      <HeaderPage />
       
       <div className="homepage-start-logo">
         <img src={ssLogo} alt="homepage-logo" />
@@ -127,16 +126,6 @@ const Homepage = () => {
         </div>
 
         <StockNews />
-        {/*  {stocks.map((stock) => (
-            <Chart
-              key={stock.ticker}
-              data={stock.data}
-              ticker={stock.ticker}
-              percentage={`${stock.percentage}%`}
-              closePrice={stock.closePrice}
-              changePrice={stock.changePrice}
-            />
-          ))} */}
 
       </div>
     </div>
