@@ -1,5 +1,6 @@
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import data from "../ExplorePageComponents/mockCategoriesData.json"; // Mockdatafilen från tidigare steg
+import data from "../ExplorePageComponents/mockCategoriesData.json";
 
 type TimeSeriesData = {
   "1. open": string;
@@ -17,7 +18,7 @@ type CategoryData = {
     "4. Output Size": string;
     "5. Time Zone": string;
   };
-  "Time Series (Daily)": Record<string, TimeSeriesData>; // Använd Record för dynamiska nycklar
+  "Time Series (Daily)": Record<string, TimeSeriesData>;
 };
 
 type CategoryCollection = {
@@ -26,6 +27,7 @@ type CategoryCollection = {
 
 const CategoryPage: React.FC = () => {
   const navigate = useNavigate();
+
   type Categories =
     | "consumer-discretionary"
     | "finance"
@@ -39,7 +41,7 @@ const CategoryPage: React.FC = () => {
     return <p>No data available for {category || "this category"}</p>;
   }
 
-  const categoryDataArray = data[category] as CategoryData[]; // Array of datasets
+  const categoryDataArray = data[category] as CategoryData[];
 
   if (!categoryDataArray || categoryDataArray.length === 0) {
     return <p>No data available for {category}</p>;
@@ -50,52 +52,58 @@ const CategoryPage: React.FC = () => {
   };
 
   return (
-    <div className="category-container">
-      <h1 className="category-name">{category} Companies</h1>
-      <button className="back-button" onClick={handleBackClick}>
-        <i className="fa-solid fa-chevron-left"></i>
-      </button>
+    <div className="super-container">
+      <div className="top-row">
+        <button className="back-button" id="top" onClick={handleBackClick}>
+          <i className="fa-solid fa-chevron-left"></i>&nbsp;&nbsp;&nbsp;Back
+        </button>
+        <p className="country-name">{category} companies</p>
+      </div>
 
-      {categoryDataArray.map((categoryData, index) => (
-        <div key={index} className="company-section">
-          <div className="key-stats">
-            <div>
-              <p className="label">Symbol</p>
-              <p className="symbol">{categoryData["Meta Data"]["2. Symbol"]}</p>
-            </div>
-            <div>
-              <p className="label">Last Refreshed</p>
-              <p className="last-refreshed">
-                {categoryData["Meta Data"]["3. Last Refreshed"]}
-              </p>
-            </div>
-          </div>
+      <div className="country-container">
+        {categoryDataArray.map((categoryData, index) => {
+          const latestDate = Object.keys(
+            categoryData["Time Series (Daily)"]
+          )[0];
+          const latestData = categoryData["Time Series (Daily)"][latestDate];
 
-          <div className="time-series">
-            {Object.keys(categoryData["Time Series (Daily)"]).map((date) => {
-              const dataForDate = categoryData["Time Series (Daily)"][date];
-              const change = (
-                parseFloat(dataForDate["4. close"]) -
-                parseFloat(dataForDate["1. open"])
-              ).toFixed(2);
-              const changeClass =
-                parseFloat(change) >= 0 ? "positive" : "negative";
-              return (
-                <div key={date} className="time-series-entry">
-                  <p className="time-series-date">{date}</p>
-                  <p className="time-series-price">
-                    Open: {dataForDate["1. open"]} | Close:{" "}
-                    {dataForDate["4. close"]}
-                  </p>
-                  <p className={`change-value ${changeClass}`}>
-                    Change: {change}
-                  </p>
+          const change = (
+            parseFloat(latestData["4. close"]) -
+            parseFloat(latestData["1. open"])
+          ).toFixed(2);
+
+          const changeClass = parseFloat(change) >= 0 ? "positive" : "negative";
+
+          return (
+            <div
+              key={categoryData["Meta Data"]["2. Symbol"]} // Use Symbol as a unique key
+              onClick={() => {
+                navigate("/StockPage", {
+                  state: { search: categoryData["Meta Data"]["2. Symbol"] },
+                });
+              }}
+              className="company-card"
+            >
+              <div className="company-header">
+                <p className="symbol">
+                  {categoryData["Meta Data"]["2. Symbol"]}
+                </p>
+                <p className="last-refreshed">Last Refreshed: {latestDate}</p>
+              </div>
+              <div className="stats">
+                <div className="stat">
+                  <p className="label">Daily Change</p>
+                  <p className={`value ${changeClass}`}>{change}</p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      ))}
+                <div className="stat">
+                  <p className="label">Volume</p>
+                  <p className="value volume">{latestData["5. volume"]}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
