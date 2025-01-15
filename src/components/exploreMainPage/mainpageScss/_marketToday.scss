@@ -4,10 +4,34 @@
 .market-container {
   width: 100%;
   overflow: hidden;
+
+
+  .market-text-container {
+    padding: 1rem 1rem 0 1rem;
+    .market-header {
+      color: v.$primaryTextColor;
+      font-size: 1.5rem;
+      // padding: 1rem 1rem 0 1rem;
+      font-weight: 500;
+    }
+
+    .market-undertext {
+        text-align: left;
+        width: 100%;
+        // padding: 0 1rem;
+        font-weight: 400;
+        color: gray;
+        font-size: 1rem;
+    }
+  }
+
+  
+
   p {
     color: v.$primaryTextColor;
-    font-size: 10px;
+    font-size: 0.75rem;
   }
+
   .market-scroll {
     @include m.horScroll;
     .market-card {
@@ -17,7 +41,27 @@
       border-radius: 12px;
       .name-performance {
         @include m.flex(row, space-between, center);
+      
+        .positive {
+          color: v.$positiveTextColor;
+          font-size: 0.75rem;
       }
+
+      .negative {
+          color: v.$negativeTextColor;
+          font-size: 0.75rem;
+      }
+      }
+    }
+  }
+
+  .line-father {
+    width: 100%;
+    padding: 1rem 1rem 1rem 1rem; 
+    .line {
+      height: 1px;
+      width: 100%;
+      background-color: v.$borderColor;
     }
   }
 }

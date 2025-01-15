@@ -12,8 +12,10 @@ const StockSugestions = () => {
 
   return (
     <div className="sugestion-container">
-      <p className="sugestion-header">Sugested stocks</p>
-      <p className="sugestion-undertext">Popular tickets on SillyStock</p>
+      <div className="sugestion-text-container">
+        <p className="sugestion-header">Sugested stocks</p>
+        <p className="sugestion-undertext">Popular tickets on SillyStock</p>
+      </div>
       <div className="sugestion-scroll">
         {stockData.map((s, i) => (
           <div

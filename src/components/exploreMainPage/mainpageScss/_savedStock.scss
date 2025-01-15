@@ -8,12 +8,20 @@
 
   .stockDivTitle {
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     p {
       font-size: 1.5rem;
       width: fit-content;
 
       color: v.$primaryTextColor;
+    }
+
+    .saved-undertext {
+      text-align: left;
+        width: 100%;
+        font-weight: 400;
+        color: gray;
+        font-size: 1rem;
     }
   }
   .chart-super-container {
@@ -26,7 +34,6 @@
       .chart-box {
         height: auto;
         @include m.flex(column, $align: center);
-        border: 1px solid v.$borderColor;
         border-radius: 10px;
 
         .chart-container {

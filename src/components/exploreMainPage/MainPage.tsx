@@ -43,7 +43,7 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
   return authorized ? (
     <>
       <div className="mainpage-body">
-        <LogoutBtn onLogout={handleLogout} />
+        {/* <LogoutBtn onLogout={handleLogout} /> */}
         <MarketToday />
         {/* <div className="lowerExploreContainer"> */}
         {/* <DailyTopStockDiv /> */}
