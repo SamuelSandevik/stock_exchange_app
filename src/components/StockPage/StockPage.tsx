@@ -48,7 +48,7 @@ const StockPage = () => {
   }, [searchTerm]);
 
   return (
-    <div>
+    <div className="stockpage-container" style={{ marginTop: "5rem" }}>
       <div id="top"></div>
       <StockPageHeader
         high={high}
@@ -57,11 +57,6 @@ const StockPage = () => {
         onChangeChartType={setChartType}
       />
       <AAPLStockChart />
-      {/* <ChartSwitcher
-        chartType={chartType}
-        lineData={chartData}
-        candleData={candleData}
-      /> */}
       <StockPageBody
         high={high}
         low={low}

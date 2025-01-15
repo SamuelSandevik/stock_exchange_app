@@ -1,60 +1,59 @@
 @use "../../../scss/variables/variables" as v;
 @use "../../../scss/variables/mixins/mixins" as m;
 
-.stock-page-header {
+.stockpage-container {
+    
+  .stock-page-header {
     padding: 1rem;
-    color: v.$primaryTextColor ;
+    color: v.$primaryTextColor;
+   
 
     .market-container {
-        @include m.flex(row,flex-start,center);
+      @include m.flex(row, flex-start, center);
 
-        .flag {
-            @include m.size(1rem,auto);
-        }
+      .flag {
+        @include m.size(1rem, auto);
+      }
 
-        p {
-            color: v.$primaryTextColor ;
-            font-size: 0.75rem;
-            margin-left: 0.5rem;
-        }
+      p {
+        color: v.$primaryTextColor;
+        font-size: 0.75rem;
+        margin-left: 0.5rem;
+      }
     }
 
     .price-company-container {
-        @include m.flex(row,space-between,center);
-        color: v.$primaryTextColor ;
+      @include m.flex(row, space-between, center);
+      color: v.$primaryTextColor;
 
-        .price-change {
-            text-align: end;
-            .price-summary {
-                @include m.flex(row,center,center);
-                p {
-                    font-size: 0.75rem;
-                    margin-left: 0.25rem;
-                }
-            }
-
-            .price {
-                font-size: 1.25rem;
-                font-weight: 600;   
-            }
-        }
-    
-    }
-    
-    .company-container {
-        color: v.$primaryTextColor ;
-        text-align: start;
-        .company {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-
-        .ticker {
+      .price-change {
+        text-align: end;
+        .price-summary {
+          @include m.flex(row, center, center);
+          p {
             font-size: 0.75rem;
+            margin-left: 0.25rem;
+          }
         }
+
+        .price {
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+      }
     }
+
+    .company-container {
+      color: v.$primaryTextColor;
+      text-align: start;
+      .company {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .ticker {
+        font-size: 0.75rem;
+      }
+    }
+  }
 }
-
-
-
-

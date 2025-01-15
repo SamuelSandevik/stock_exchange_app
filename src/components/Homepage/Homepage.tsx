@@ -81,10 +81,10 @@ const Homepage = () => {
 
       
 
-      <div className="homepage-content-container">
+      <div className="homepage-content-container" id="stock-scroll">
         {/* Buttons to switch views */}
         <div className="chart-super-container">
-          <div className="chartSwitchBtns" id="stock-scroll">
+          <div className="chartSwitchBtns" >
             <button onClick={() => setView("top")} className="switchBtn" style={{ height: topButtonHeight }}>Top</button>
             <button onClick={() => setView("trending")} className="switchBtn" style={{ height: trendingButtonHeight }}>Trending</button>
           </div>
