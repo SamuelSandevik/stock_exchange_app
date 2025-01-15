@@ -2,13 +2,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./ProfileScss/_profile.scss";
 import { IonIcon } from "@ionic/react";
-import { arrowForwardSharp, exit, person, trendingUpOutline, wallet } from 'ionicons/icons';
+import {
+  arrowForwardSharp,
+  exit,
+  person,
+  trendingUpOutline,
+  wallet,
+} from "ionicons/icons";
 import { useNavigate } from "react-router";
 import useAuth from "../../services/useAuth";
-import { FaRegUser } from "react-icons/fa";
-
-
-
+import { FaRegUser } from "react-icons/fa6";
 
 const ProfilePage = () => {
   const [user, setUser] = useState({
@@ -38,7 +41,6 @@ const ProfilePage = () => {
   }, []);
 
   const handleLogout = async () => {
-
     // Call handleLogout for logout actions
     try {
       await fetch("http://localhost:3000/logout", {
@@ -47,9 +49,8 @@ const ProfilePage = () => {
       });
       setIsLoggedIn(false);
       // Handle the logout actions here, like updating the state or redirecting
-      
-      navigate("/");
 
+      navigate("/");
     } catch (error) {
       console.error("Logout failed:", error);
     }
@@ -78,7 +79,7 @@ const ProfilePage = () => {
 
   const goToEditProfile = () => {
     navigate("/edit-profile");
-  }
+  };
 
   const notFormattedDate = user.created;
 
@@ -118,30 +119,38 @@ const ProfilePage = () => {
     },
   ];
 
-
   return authorized ? (
-
     <div className="profileContainer">
       <div className="topProfile">
-      <FaRegUser style={{ fontSize: '60px', color: 'white' }}/>
-        
+        <FaRegUser style={{ fontSize: "60px", color: "white" }} />
+
         <p className="userName">@{user.username}</p>
         <p className="userEmail">{user.email}</p>
-        <button className="editProfileBtn" onClick={goToEditProfile}>Edit Profile</button>
+        <button className="editProfileBtn" onClick={goToEditProfile}>
+          Edit Profile
+        </button>
         <div className="wallet">
-        
-          <IonIcon className="walletIcon" icon={wallet} style={{ fontSize: '20px', color: 'white' }}></IonIcon>
+          <IonIcon
+            className="walletIcon"
+            icon={wallet}
+            style={{ fontSize: "20px", color: "white" }}
+          ></IonIcon>
           <p className="walletValue">$10 000</p>
         </div>
       </div>
       <div className="navigateSection">
         {navigateSections.map((navs, index) => (
           <div key={index} className="navigateSubSection">
-            <IonIcon icon={navs.icon} style={{ fontSize: '35px', color: navs.color }} />
-            <p className="navsText" style={{ color: navs.color }}>{navs.title}</p>
+            <IonIcon
+              icon={navs.icon}
+              style={{ fontSize: "35px", color: navs.color }}
+            />
+            <p className="navsText" style={{ color: navs.color }}>
+              {navs.title}
+            </p>
             <IonIcon
               icon={navs.arrowicon}
-              style={{ fontSize: '35px', color: navs.color }}
+              style={{ fontSize: "35px", color: navs.color }}
               onClick={navs.action}
             />
           </div>
@@ -149,12 +158,8 @@ const ProfilePage = () => {
       </div>
 
       <p className="joinDate">User since: {formatDate(notFormattedDate)}</p>
-
     </div>
-
   ) : null;
 };
 
 export default ProfilePage;
-
-
