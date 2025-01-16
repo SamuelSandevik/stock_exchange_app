@@ -4,9 +4,13 @@
 
 .explore-super-container{
   @include m.flex(column, center, center);
+  overflow-x: hidden;
+  width: 100%;
   .explore-container{
     max-width: 768px;
-    @include m.flex(column, center, center);
+    width: 100%;
+    @include m.flex(column, center, flex-start);
+    overflow-x: hidden;
     
     .explore-header {
       font-size: 2rem;
@@ -24,120 +28,94 @@
 
 .categories-container {
   display: flex;
-  /* Gör så att barnen visas horisontellt */
   gap: 16px;
-  /* Mellanrum mellan bilderna */
   overflow-x: auto;
-  /* Lägg till horisontell scroll */
   overflow-y: hidden;
-  /* Dölj vertikal scroll */
   scrollbar-width: thin;
-  /* Anpassa skrollbarens storlek (Firefox-stöd) */
   scrollbar-color: black transparent;
-  /* Anpassa skrollbarens färg (Firefox-stöd) */
-  padding: 8px;
-  /* Lägg till lite padding för estetik */
+  padding: 0 0.8rem;
+  margin: 1rem 0;
   transition: all 0.3s ease;
-  /* Smidig övergång vid hover */
+  max-width: 100%;
+  width: 100%;
 
   div {
     flex-shrink: 0;
-
-    /* Gör så att bilder inte krymper */
     img {
       height: 200px;
       width: 200px;
       object-fit: cover;
-      /* Ser till att bilder fyller sina boxar proportionellt */
       border-radius: 8px;
-      /* Lägg till rundade hörn */
     }
   }
 
   &:hover {
     overflow-x: auto;
-    /* Aktivera horisontell scroll på hover */
   }
 }
 
-/* Valfritt: Anpassa skrollbarens utseende */
 .categories-container::-webkit-scrollbar {
   height: 8px;
-  /* Höjd på skrollbaren */
   background-color: black;
 }
 
 .categories-container::-webkit-scrollbar-thumb {
   background-color: black;
-  /* Färg på skrollbargreppet */
   border-radius: 4px;
-  /* Rundade hörn */
 }
 
 .categories-container::-webkit-scrollbar-track {
   background: transparent;
-  /* Färg på skrollbarens "bakgrund" */
   color: black;
 }
 
 .markets-container {
   display: flex;
-  /* Gör så att flaggorna visas horisontellt */
   gap: 16px;
-  /* Mellanrum mellan flaggorna */
   overflow-x: auto;
-  /* Lägg till horisontell scroll */
   overflow-y: hidden;
-  /* Dölj vertikal scroll */
   scrollbar-width: thin;
-  /* Anpassa skrollbarens storlek (Firefox-stöd) */
   scrollbar-color: black transparent;
-  /* Anpassa skrollbarens färg (Firefox-stöd) */
-  padding: 8px;
-  /* Lägg till lite padding för estetik */
+  padding: 0 0.8rem;
+  margin: 1rem 0;
   transition: all 0.3s ease;
-  /* Smidig övergång vid hover */
+  max-width: 100%;
+  width: 100%;
 
   div {
     flex-shrink: 0;
 
-    /* Gör så att flaggorna inte krymper */
     .flag-icon {
       height: 150px;
-      /* Anpassa höjden */
       width: auto;
-      /* Behåll proportionerna */
       border-radius: 8px;
-      /* Rundade hörn */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      /* Lätt skugga */
     }
   }
 
   &:hover {
     overflow-x: auto;
-    /* Aktivera horisontell scroll på hover */
   }
 }
 
 @media (min-width: 768px) {
   .categories-container,
   .markets-container {
-    max-width: 768px; // Begränsa bredden
-    margin: 0 auto; // Centrera innehållet
-    overflow-x: auto; // Tillåt horisontell scroll
+    max-width: 768px; 
+    margin: 0 auto; 
+    overflow-x: auto;
   }
 }
 
 .super-container {
   margin-top: 8rem;
   background-color: black;
-  width: 100%; // Fix for horizontal scroll
+  width: 100%; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow-x: hidden; // Prevent horizontal scrolling
+  overflow-x: hidden;
 
   .top-row {
     max-width: 768px;
@@ -145,8 +123,8 @@
     height: auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 16px; // Reduced padding
-    box-sizing: border-box; // Include padding in width calculation
+    padding: 0 16px; 
+    box-sizing: border-box; 
     background-color: #121212;
     margin-top: 32px;
 
@@ -193,7 +171,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-    box-sizing: border-box; // Include padding in width calculation
+    box-sizing: border-box;
 
     .company-card {
       background-color: #1f1f1f;
@@ -288,9 +266,10 @@
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* 3 columns */
   grid-template-rows: repeat(3, 1fr);
-  margin: 1rem 0.5rem;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+  width: 100%;
 
   .crypto-header {
     font-size: 1rem;
