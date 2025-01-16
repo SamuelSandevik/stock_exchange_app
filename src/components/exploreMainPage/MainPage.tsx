@@ -42,7 +42,6 @@ const ExploreMainPage: React.FC<ExploreMainPageProps> = ({ handleLogout }) => {
 
   return authorized ? (
     <>
-      <HeaderPage />
       <div className="mainpage-body">
         {/* <LogoutBtn onLogout={handleLogout} /> */}
         <MarketToday />

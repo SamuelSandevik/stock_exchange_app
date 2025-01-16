@@ -1,16 +1,25 @@
 @use "../../../scss/variables/variables" as v;
 @use "../../../scss/variables/mixins/mixins" as m;
 
-.explore-header {
-  font-size: 2rem;
-  color: white;
-  margin-left: 0.5rem;
-  font-weight: bold;
-}
 
-.white-header {
-  margin-left: 2%;
-  color: white;
+.explore-super-container{
+  @include m.flex(column, center, center);
+  .explore-container{
+    max-width: 768px;
+    @include m.flex(column, center, center);
+    
+    .explore-header {
+      font-size: 2rem;
+      color: white;
+      margin-left: 0.5rem;
+      font-weight: bold;
+      margin-top: 8rem;
+    }
+    .white-header{
+      margin-left: 2%;
+      color: white;
+    }
+  }
 }
 
 .categories-container {
@@ -111,7 +120,17 @@
   }
 }
 
+@media (min-width: 768px) {
+  .categories-container,
+  .markets-container {
+    max-width: 768px; // Begränsa bredden
+    margin: 0 auto; // Centrera innehållet
+    overflow-x: auto; // Tillåt horisontell scroll
+  }
+}
+
 .super-container {
+  margin-top: 8rem;
   background-color: black;
   width: 100%; // Fix for horizontal scroll
   display: flex;

@@ -48,7 +48,6 @@ const formatDate = (dateString: string) => {
 const StockNews: React.FC = () => {
     return (
         <div className="news">
-            <img src="../../../../public/blackflowers.jpg" className="news-background-image" alt="News background image" />
             <h1 className="title">Latest Stock News</h1>
             <div className="newsSuperContainer">
                 {stockNews.map((article, index) => (

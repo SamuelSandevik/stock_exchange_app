@@ -4,22 +4,12 @@
 .news {
   @include m.flex(column, center, center);
   // @include m.border(all, 1px, solid, v.$borderColor);
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
+    margin-top: 10rem;
   width: 100%;
+  max-width: 768px;
   padding: 1rem;
   position: relative;
-  
-  .news-background-image{
-    object-fit: cover;
-    filter: brightness(0.5);
-    position: absolute; // Placerar bilden relativt till `.news`
-  top: 0;
-  left: 0;
-  width: 100%; // Täck hela bredden av föräldraelementet
-  height: 100%; // Täck hela höjden av föräldraelementet // Beskär och skalar bilden proportionellt så att den fyller utrymmet
-  z-index: -1; 
-
-  }
 
   .title {
     color: v.$primaryTextColor;

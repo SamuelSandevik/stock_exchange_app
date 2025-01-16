@@ -6,6 +6,9 @@
     height: 5rem;
     background-color: black;
     @include m.flex(row, space-between, center);
+    position: fixed;
+    top: 0;
+    z-index: 1050;
     .nav-logo-container{
         img{
             margin: 10px 0 0 15px;

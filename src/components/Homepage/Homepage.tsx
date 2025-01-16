@@ -65,7 +65,6 @@ const Homepage = () => {
 
   return (
     <div>
-      <HeaderPage />
       
       <div className="homepage-start-logo">
         <img src={ssLogo} alt="homepage-logo" />
@@ -82,10 +81,10 @@ const Homepage = () => {
 
       
 
-      <div>
+      <div className="homepage-content-container" id="stock-scroll">
         {/* Buttons to switch views */}
         <div className="chart-super-container">
-          <div className="chartSwitchBtns" id="stock-scroll">
+          <div className="chartSwitchBtns" >
             <button onClick={() => setView("top")} className="switchBtn" style={{ height: topButtonHeight }}>Top</button>
             <button onClick={() => setView("trending")} className="switchBtn" style={{ height: trendingButtonHeight }}>Trending</button>
           </div>
@@ -127,16 +126,6 @@ const Homepage = () => {
         </div>
 
         <StockNews />
-        {/*  {stocks.map((stock) => (
-            <Chart
-              key={stock.ticker}
-              data={stock.data}
-              ticker={stock.ticker}
-              percentage={`${stock.percentage}%`}
-              closePrice={stock.closePrice}
-              changePrice={stock.changePrice}
-            />
-          ))} */}
 
       </div>
     </div>
