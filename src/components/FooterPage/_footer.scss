@@ -2,22 +2,54 @@
 @use '../../scss/variables/variables' as v;
 
 
-
+.footer-center-container{
+    width: 100%;
+    margin-top: 5rem;
+    
+    @include m.flex(row, center, center);
+}
 .footer-container {
-    @include m.size(auto, 100vw);
-    @include m.flex(column, space-evenly, center);
-    gap: 1rem;
-    background-color: v.$mainColor;
-    color: v.$secondaryTextColor;
-    padding: 2rem;
+    @include m.flex(column, space-between, center);
+    height: 16rem;
+    width: 100%;
+    max-width: 768px;
 
-    @include m.forSize(v.$desktop) {
-        @include m.flex(row, space-evenly, center);
+    .footer-top-container{
+        @include m.flex (row, center, center);
+        .footer-logo-container{
+            margin-right: 2.5rem;
+            cursor: pointer;
+            img{
+                width: 150px;
+                height: 150px;
+            }
+        }
+        .footer-top-text{
+            p{
+                font-size: 2rem;
+                font-weight: bold;
+                color: white;
+            }
+        }
     }
-
-    .footer-section {
-        @include m.size(100%, auto);
-        @include m.flex(column, center, flex-start);
-
+    .footer-bottom-container{
+        @include m.flex(row, space-evenly, center);
+        width: 100%;
+        .footer-section-1{
+            p{
+                cursor: pointer;
+                color: white;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+        .footer-section-2{
+            p{
+                cursor: pointer;
+                color: white;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+        }
     }
 }

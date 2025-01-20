@@ -94,6 +94,7 @@ const App = () => {
             element={<CategoryPage />}
           />
         </Routes>
+        <Footer />
         <BottomNavbar />
     </BrowserRouter>
   );
