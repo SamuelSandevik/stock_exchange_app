@@ -32,9 +32,10 @@
       @include m.flex(row, center);
       flex: 0 0 135px;
       .chart-box {
-        height: auto;
-        @include m.flex(column, $align: center);
+        @include m.border(all,  1px, v.$borderColor, solid);
+        @include m.flex(column, center, center);
         border-radius: 10px;
+        height: auto;
 
         .chart-container {
           width: 70px;
