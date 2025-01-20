@@ -12,10 +12,8 @@ const Markets = () => {
     });
   };
   const handleMarketClick = (path: string) => {
-    // Scrolla till toppen
     handleScroll();
   
-    // Navigera till angiven path
     navigate(path);
   };
 
