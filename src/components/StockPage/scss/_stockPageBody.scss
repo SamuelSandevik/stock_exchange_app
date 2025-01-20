@@ -37,18 +37,16 @@
         padding: 1rem 0;
         .header-container{
             @include m.flex(row, space-between, center);
-            .header {
-                font-size: 1rem;
-                font-weight: 600;
-                margin: 1rem;
+            margin: 1rem 0;
+            .related-header {
+                font-size: 1.125rem;
+                font-weight: 700;
             }
             .positive{
                 color: v.$positiveTextColor; 
-                margin-right: 3rem;
             }
             .negative{
                 color: v.$negativeTextColor; 
-                margin-right: 3rem;
             }
 
         }
@@ -76,7 +74,7 @@
             @include m.border(all, 1px, solid, v.$borderColor);
             padding: 1rem;
             border-radius: 0.5rem;
-            margin-top: 1rem;
+            margin: 1rem;
 
             .stock-sumary {
                 font-size: 0.75rem;
@@ -85,7 +83,7 @@
         }
 
         .key-numbers-header{
-            margin: 1rem 0;
+            margin: 1rem;
         }
 
         .key-numbers {
@@ -93,6 +91,7 @@
             @include m.border(all, 1px, solid, v.$borderColor);
             padding: 1rem;
             border-radius: 0.5rem;
+            margin: 1rem;
 
             .left {
                 @include m.border(right, 1px, solid, v.$borderColor);
@@ -120,7 +119,7 @@
     }
 
     .Investment-disclaimer {
-        margin-top: 2rem;
+        margin: 2rem 1rem;
         color: darkgray;
         text-align: center;
         font-size: 0.75rem;
