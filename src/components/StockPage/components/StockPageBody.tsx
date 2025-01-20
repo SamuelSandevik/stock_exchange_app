@@ -97,6 +97,7 @@ const stockPageBody: React.FC<StockPageProps> = ({ high, low, ticker }) => {
                 industries. It offers a range of products and services to both
                 consumers and businesses. {ticker} is known for its innovative
                 solutions and strong commitment to sustainability. <br />
+                <br />
                 The company has operations and facilities in various
                 international markets, with a strong presence in North America
                 and Europe. {ticker} was founded many years ago and is
@@ -160,14 +161,14 @@ const stockPageBody: React.FC<StockPageProps> = ({ high, low, ticker }) => {
                   >
                     <p className="related-stocks">
                       <div className="header-container">
-                        <p className="header">{relatedTicker}</p>
+                        <p className="related-header">{relatedTicker}</p>
                         <p
                           className={
                             number > 0
                               ? "positive"
                               : number < 0
-                                ? "negative"
-                                : "neutral"
+                              ? "negative"
+                              : "neutral"
                           }
                         >
                           {number > 0 ? `+${number}` : number}%
