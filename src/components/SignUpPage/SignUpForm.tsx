@@ -41,6 +41,22 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
       userPswrd: userDetails.password,
     }, { withCredentials: true });
 
+    fetch("https://silly-stocks-server.onrender.com/test-cookie-set", {
+      method: "GET",
+      credentials: "include", // Krävs för att skicka cookies
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+
+      fetch("https://silly-stocks-server.onrender.com/test-cookie-read", {
+        method: "GET",
+        credentials: "include", // Skicka cookies från klienten
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+      
+    
+
     if (response.status === 200) {
       onLogin(); // Uppdaterar autentiseringsstatus när inloggningen lyckas
       navigate("/foryou");
