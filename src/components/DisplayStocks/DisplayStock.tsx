@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { GetDisplayStocksApi } from "./GetStockAPI";
 import "./displayStocksScss/_displayStocks.scss";
 
@@ -19,7 +19,6 @@ const StocksDisplay = () => {
     <div>
       <h1>Stock Information</h1>
       <div>{stocksElements}</div>
-
     </div>
   );
 };

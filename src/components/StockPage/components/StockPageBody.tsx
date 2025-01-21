@@ -4,7 +4,6 @@ import { generateMockMetrics } from "./MockMetrics";
 import NewsList from "../../exploreMainPage/exploreComponents/News/NewsList";
 import { useNavigate } from "react-router-dom";
 import sendTicker from "./SaveTicker";
-import { FaPlus } from "react-icons/fa6";
 
 interface StockPageProps {
   high: number;

@@ -21,10 +21,6 @@ type CategoryData = {
   "Time Series (Daily)": Record<string, TimeSeriesData>;
 };
 
-type CategoryCollection = {
-  [key: string]: CategoryData[];
-};
-
 const CategoryPage: React.FC = () => {
   const navigate = useNavigate();
 
@@ -61,7 +57,7 @@ const CategoryPage: React.FC = () => {
       </div>
 
       <div className="country-container">
-        {categoryDataArray.map((categoryData, index) => {
+        {categoryDataArray.map((categoryData) => {
           const latestDate = Object.keys(
             categoryData["Time Series (Daily)"]
           )[0];

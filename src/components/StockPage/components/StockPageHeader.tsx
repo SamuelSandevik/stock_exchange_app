@@ -1,4 +1,3 @@
-import sendTicker from "./SaveTicker";
 import "../scss/_stockPageHeader.scss";
 import { US } from "country-flag-icons/react/3x2";
 
@@ -6,15 +5,9 @@ interface StockPageProps {
   high: number;
   low: number;
   ticker: string;
-  onChangeChartType: (type: "line" | "candlestick") => void;
 }
 
-const StockPageHeader: React.FC<StockPageProps> = ({
-  high,
-  low,
-  ticker,
-  onChangeChartType,
-}) => {
+const StockPageHeader: React.FC<StockPageProps> = ({ high, low, ticker }) => {
   return (
     <div className="stock-page-header">
       <div className="market-container">

@@ -1,4 +1,3 @@
-import React from "react";
 import "../mainpageScss/_stockSugestion.scss";
 import { stockData } from "../data/stockData";
 import { useNavigate } from "react-router-dom";

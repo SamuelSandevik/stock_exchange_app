@@ -1,14 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import "./scss/_editProfile.scss";
-import HeaderPage from "../HeaderPage/HeaderPage";
 import BottomNavbar from "../BottomNavbar/BottomNavBar";
 
 const EditProfile = () => {
   const [userName, setUserName] = useState("");
   const [currentEmail, setCurrentEmail] = useState("");
   const [newEmail, setNewEmail] = useState("");
-  const [status, setStatus] = useState("");
+  const [, setStatus] = useState("");
   const [email, setEmail] = useState("");
   const [currentUserName, setCurrentUserName] = useState("");
   const [newUserName, setNewUserName] = useState("");
@@ -62,9 +61,8 @@ const EditProfile = () => {
   return (
     <>
       <div className="edit-page">
-          <h1>Edit Profile</h1>
+        <h1>Edit Profile</h1>
         <div className="edit-profile-container">
-
           <div className="username-container">
             <div className="edit-header-container">
               <p className="edit-header">Update Username</p>

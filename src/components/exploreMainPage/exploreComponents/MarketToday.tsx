@@ -1,4 +1,3 @@
-import React from "react";
 import "../mainpageScss/_marketToday.scss";
 import { stockMarkets } from "../data/marketData";
 

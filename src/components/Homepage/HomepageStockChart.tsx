@@ -6,7 +6,7 @@ import "./scss/_homepage.scss";
 interface ChartProps {
   data: { x: number; y: number }[];
   ticker: string;
-  company: string;
+  // company: string;
   percentage: string;
   closePrice: string;
   changePrice: string;
@@ -15,7 +15,6 @@ interface ChartProps {
 const Chart: React.FC<ChartProps> = ({
   data,
   ticker,
-  company,
   percentage,
   closePrice,
   changePrice,
@@ -68,7 +67,7 @@ const Chart: React.FC<ChartProps> = ({
       <div className="chart-box">
         <div className="company-ticker">
           <p className="ticker">{ticker}</p>
-          <p className="company">{company}</p>
+          <p className="company">{}</p>
         </div>
         <div className="chart-container">
           <ReactApexChart

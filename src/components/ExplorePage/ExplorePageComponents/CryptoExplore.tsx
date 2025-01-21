@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import xrpIcon from "../../../assets/ripple-svgrepo-com.svg";
 import solanaIcon from "../../../assets/solana-svgrepo-com.svg";
 import { useNavigate } from "react-router-dom";
