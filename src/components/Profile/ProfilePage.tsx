@@ -25,7 +25,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/userInfo", {
+        const response = await axios.get("https://silly-stocks-server.onrender.com/userInfo", {
           withCredentials: true,
         });
         setUser({
@@ -43,7 +43,7 @@ const ProfilePage = () => {
   const handleLogout = async () => {
     // Call handleLogout for logout actions
     try {
-      await fetch("http://localhost:3000/logout", {
+      await fetch("https://silly-stocks-server.onrender.com/logout", {
         method: "GET",
         credentials: "include",
       });
@@ -59,7 +59,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const checkAuthorization = async () => {
       try {
-        const response = await fetch("http://localhost:3000/check-auth", {
+        const response = await fetch("https://silly-stocks-server.onrender.com/check-auth", {
           method: "GET",
           credentials: "include",
         });

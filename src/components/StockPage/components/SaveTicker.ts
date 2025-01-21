@@ -5,7 +5,7 @@ const sendTicker = async (ticker :string) => {
 
     try {
         const response = await axios.post(
-            "http://localhost:3000/saveTicker",
+            "https://silly-stocks-server.onrender.com/saveTicker",
              {ticker},
              { withCredentials: true }
             )

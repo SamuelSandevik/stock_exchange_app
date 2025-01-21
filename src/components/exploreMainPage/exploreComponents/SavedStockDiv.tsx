@@ -22,7 +22,7 @@ const SavedStockDiv: React.FC = () => {
     const fetchSavedStocks = async () => {
       try {
         // Hämta sparade tickers från backend
-        const response = await axios.get("http://localhost:3000/savedTickers", {
+        const response = await axios.get("https://silly-stocks-server.onrender.com/savedTickers", {
           withCredentials: true,
         });
 

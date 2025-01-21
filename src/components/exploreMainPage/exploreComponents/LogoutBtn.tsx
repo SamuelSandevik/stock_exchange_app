@@ -6,7 +6,7 @@ const LogoutBtn = ({ onLogout }: { onLogout: () => void }) => {
   const handleLogout = async () => {
     try {
       // Skicka anrop till servern för att rensa token
-      await fetch("http://localhost:3000/logout", {
+      await fetch("https://silly-stocks-server.onrender.com/logout", {
         method: "GET",
         credentials: "include", // Inkludera cookies för att kunna rensa token
       });

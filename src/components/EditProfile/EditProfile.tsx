@@ -19,7 +19,7 @@ const EditProfile = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        "http://localhost:3000/updateEmail",
+        "https://silly-stocks-server.onrender.com/updateEmail",
         {
           userName,
           currentEmail,
@@ -42,7 +42,7 @@ const EditProfile = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        "http://localhost:3000/updateUserName",
+        "https://silly-stocks-server.onrender.com/updateUserName",
         {
           email,
           newUserName,

@@ -22,7 +22,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
 
   async function signUp(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
-    const response = await axios.post("http://localhost:3000/signUpForm", {
+    const response = await axios.post("https://silly-stocks-server.onrender.com/signUpForm", {
       userName: userDetails.username,
       userPswrd: userDetails.password,
       email: userDetails.email,
@@ -36,7 +36,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onLogin }) => {
 
   async function login(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
-    const response = await axios.post("http://localhost:3000/loginForm", {
+    const response = await axios.post("https://silly-stocks-server.onrender.com/loginForm", {
       userName: userDetails.username,
       userPswrd: userDetails.password,
     }, { withCredentials: true });
