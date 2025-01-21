@@ -4,6 +4,7 @@ import { generateMockMetrics } from "./MockMetrics";
 import NewsList from "../../exploreMainPage/exploreComponents/News/NewsList";
 import { useNavigate } from "react-router-dom";
 import sendTicker from "./SaveTicker";
+import { FaPlus } from "react-icons/fa6";
 
 interface StockPageProps {
   high: number;
@@ -209,7 +210,12 @@ const stockPageBody: React.FC<StockPageProps> = ({ high, low, ticker }) => {
       </div> */}
 
       <div className="save-stock-container">
-        <button onClick={() => sendTicker(ticker)}>Save Stock</button>
+        <button
+          className="save-stock-button"
+          onClick={() => sendTicker(ticker)}
+        >
+          Save Stock +
+        </button>
       </div>
       <div className="selection-menu">
         {selectionMenu.map((item, index) => (
