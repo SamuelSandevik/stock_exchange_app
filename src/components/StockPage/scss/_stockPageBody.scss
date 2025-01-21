@@ -3,7 +3,22 @@
 
 .stock-page-body {
     color: v.$primaryTextColor;
-    padding: 1rem;
+    padding: 0 1rem 1rem 1rem;
+
+
+    .save-stock-container {
+        @include m.flex(row, flex-end , center);
+        margin-bottom: 2rem;
+        width: 100%;
+        .save-stock-button {
+            @include m.border(all, 2px, v.$borderColor, solid);
+            @include m.flex(row, center, center);
+            background: none;
+            border-radius: 2rem;
+            color: v.$primaryTextColor;
+            padding: 0.5rem 2rem;
+        }
+    }
 
     .selection-menu {
         @include m.flex(row, space-evenly, center);
