@@ -4,7 +4,7 @@ import {
   trendingUpOutline,
   searchOutline,
 } from "ionicons/icons";
-import "./scss/_bottomNavbar.scss";
+import "./scss/_bottomNavBar.scss";
 import {
   useNavigate,
 } from "react-router-dom";
