@@ -4,7 +4,6 @@ import axios from "axios";
 import { generateChartData } from "../../MockDataForAPI/Mockdata";
 import Chart from "../../Homepage/HomepageStockChart";
 import { useNavigate } from "react-router-dom";
-import { log } from "console";
 
 interface StockData {
   ticker: string;
@@ -22,9 +21,12 @@ const SavedStockDiv: React.FC = () => {
     const fetchSavedStocks = async () => {
       try {
         // Hämta sparade tickers från backend
-        const response = await axios.get("https://silly-stocks-server.onrender.com/savedTickers", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://silly-stocks-server.onrender.com/savedTickers",
+          {
+            withCredentials: true,
+          }
+        );
 
         const savedTickers: string[] = response.data.savedStocks;
 

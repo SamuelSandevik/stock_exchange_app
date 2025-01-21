@@ -1,25 +1,46 @@
-import { AggregateResult, Aggregates, DailyOpenClose } from "./MockdataInterface";
+import {
+  AggregateResult,
+  Aggregates,
+  DailyOpenClose,
+} from "./MockdataInterface";
 
 // List of sample tickers for generating multiple entries
-const tickers = ["AAPL", "GOOGL", "MSFT", "AMZN", "TSLA", "NFLX", "NVDA", "META", "BABA", "INTC"];
+const tickers = [
+  "AAPL",
+  "GOOGL",
+  "MSFT",
+  "AMZN",
+  "TSLA",
+  "NFLX",
+  "NVDA",
+  "META",
+  "BABA",
+  "INTC",
+];
 
 // Helper function to get a random date in YYYY-MM-DD format
 const getRandomDateString = (start: Date, end: Date): string => {
-  const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  const date = new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
   return date.toISOString().split("T")[0];
 };
 
 const getRandomNumber = (min: number, max: number) => {
-    return parseFloat((Math.random() * (max - min) + min).toFixed(2));
-  };
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+};
 
 // Mock function for Daily Open/Close using specified parameters
-export const generateMockDailyOpenCloseData = (count: number): DailyOpenClose[] => {
+export const generateMockDailyOpenCloseData = (
+  count: number
+): DailyOpenClose[] => {
   const data: DailyOpenClose[] = [];
   for (let i = 0; i < count; i++) {
     const stocksTicker = tickers[i % tickers.length];
-    const date = getRandomDateString(new Date(2022, 0, 1), new Date(2023, 0, 1));
-    const adjusted = true;
+    const date = getRandomDateString(
+      new Date(2022, 0, 1),
+      new Date(2023, 0, 1)
+    );
 
     data.push({
       afterHours: getRandomNumber(300, 330),
@@ -39,7 +60,7 @@ export const generateMockDailyOpenCloseData = (count: number): DailyOpenClose[] 
 
 //Mock function for apex charts data
 const getRandomVariation = (min: number, max: number) => {
-  return (Math.random() * (max - min) + min);
+  return Math.random() * (max - min) + min;
 };
 
 // Funktion för att generera realistisk data och beräkna close-pris och procentförändring
@@ -64,7 +85,7 @@ export const generateChartData = (count: number, startPrice: number = 100) => {
 
   const closePrice = currentPrice; // Sista priset i sekvensen som "close"
   const percentageChange = ((closePrice - startPrice) / startPrice) * 100;
-  const changePrice = (closePrice - startPrice);
+  const changePrice = closePrice - startPrice;
 
   return {
     data,
@@ -73,7 +94,6 @@ export const generateChartData = (count: number, startPrice: number = 100) => {
     changePrice,
   };
 };
-
 
 // Mock function for Aggregates using specified parameters
 export const generateMockAggregatesData = (
@@ -87,7 +107,7 @@ export const generateMockAggregatesData = (
   count: number
 ): Aggregates[] => {
   const aggregatesData: Aggregates[] = [];
-  
+
   for (let i = 0; i < count; i++) {
     const results: AggregateResult[] = [];
     const startDate = new Date(from).getTime();
@@ -97,7 +117,8 @@ export const generateMockAggregatesData = (
     for (let j = 0; j < 10; j++) {
       const open = getRandomNumber(70, 80);
       const close = getRandomNumber(70, 80);
-      const timestamp = sort === "asc" ? startDate + j * interval : endDate - j * interval;
+      const timestamp =
+        sort === "asc" ? startDate + j * interval : endDate - j * interval;
 
       results.push({
         c: close,
@@ -119,7 +140,7 @@ export const generateMockAggregatesData = (
       results: results,
       resultsCount: results.length,
       status: "OK",
-      ticker: stocksTicker
+      ticker: stocksTicker,
     });
   }
   return aggregatesData;

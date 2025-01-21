@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import GetRelatedStockApi from "../StockSearch/GetRelatedStocks";
 import { IStock } from "./IStock";
 import "./_searchedStockList.scss";
 import { SearchedStockListProps } from "./searchedStockListProps";

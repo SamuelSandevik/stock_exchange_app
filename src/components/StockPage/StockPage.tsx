@@ -5,16 +5,14 @@ import StockPageHeader from "./components/StockPageHeader";
 import FormatStock, {
   CandlestickData,
 } from "../CandleStickChart/FormatCandleStick";
-import ChartSwitcher from "./components/ChartSwitcher";
 import StockPageBody from "./components/StockPageBody";
 import AAPLStockChart from "./components/HighChartTest";
 
 const StockPage = () => {
   const location = useLocation();
   const searchTerm = location.state?.search || "AAPL";
-  const [chartData, setChartData] = useState<{ x: number; y: number }[]>([]);
-  const [candleData, setCandleData] = useState<CandlestickData[]>([]);
-  const [chartType, setChartType] = useState<"line" | "candlestick">("line");
+  const [, setChartData] = useState<{ x: number; y: number }[]>([]);
+  const [, setCandleData] = useState<CandlestickData[]>([]);
   const [high, setHigh] = useState(0);
   const [low, setLow] = useState(0);
 
@@ -50,18 +48,9 @@ const StockPage = () => {
   return (
     <div className="stockpage-container" style={{ marginTop: "5rem" }}>
       <div id="top"></div>
-      <StockPageHeader
-        high={high}
-        low={low}
-        ticker={searchTerm}
-        onChangeChartType={setChartType}
-      />
+      <StockPageHeader high={high} low={low} ticker={searchTerm} />
       <AAPLStockChart />
-      <StockPageBody
-        high={high}
-        low={low}
-        ticker={searchTerm}
-      />
+      <StockPageBody high={high} low={low} ticker={searchTerm} />
     </div>
   );
 };

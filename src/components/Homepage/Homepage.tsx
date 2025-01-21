@@ -1,7 +1,6 @@
 import Chart from "./HomepageStockChart";
 import { useEffect, useState } from "react";
 import { generateChartData } from "../MockDataForAPI/Mockdata";
-import HeaderPage from "../HeaderPage/HeaderPage";
 import StockNews from "./News/News";
 import ssLogo from "../../../public/logo-white-256x256.png";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
@@ -109,7 +108,7 @@ const Homepage = () => {
                   key={stock.ticker}
                   data={stock.data}
                   ticker={stock.ticker}
-                  company={stock.company}
+                  // company={stock.company}
                   percentage={`${stock.percentage}%`}
                   closePrice={stock.closePrice}
                   changePrice={stock.changePrice}
@@ -131,7 +130,7 @@ const Homepage = () => {
                     key={stock.ticker}
                     data={stock.data}
                     ticker={stock.ticker}
-                    company={stock.company}
+                    // company={stock.company}
                     percentage={`${stock.percentage}%`}
                     closePrice={stock.closePrice}
                     changePrice={stock.changePrice}
